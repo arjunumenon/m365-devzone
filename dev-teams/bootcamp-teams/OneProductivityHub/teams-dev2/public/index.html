@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://unpkg.com/@microsoft/teams-js/dist/MicrosoftTeams.min.js" crossorigin="anonymous"></script>
+  <script src=" https://unpkg.com/@microsoft/mgt@1.3.4/dist/bundle/mgt-loader.js"></script>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <link rel="stylesheet"
+    href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css" />
+  <title>Microsoft Teams Tab</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <mgt-teams-provider client-id="b9fa2d05-a28b-4464-a9f7-8db20106c257"
+    auth-popup-url="https://da49da4aa5c3.ngrok.io/auth.html"
+    scopes="User.Read, User.Read.All, Calendars.Read, Contacts.Read, People.Read, Group.Read.All, Group.ReadWrite.All, Tasks.Read, Tasks.ReadWrite, Mail.ReadBasic, Mail.Read, Mail.ReadWrite">
+  </mgt-teams-provider>
+  <div class="row" id="content">
+    <mgt-login>
+      <template data-type="signed-in-button-content">
+        {{personDetails.givenName}}
+      </template>
+      <template data-type="flyout-commands">
+        <div>
+          <button data-props="@click: handleSignOut">Sign Out</button>
+          <button>Go to my profile</button>
+        </div>
+      </template>
+    </mgt-login>
+
+    <div class="column" id="one">
+      <mgt-agenda group-by-day days="7"></mgt-agenda>
+    </div>
+    <div class="column" id="two">
+      <mgt-tasks></mgt-tasks>
+    </div>
+    <div class="column" id="three">
+      <mgt-get resource="/me/messages" version="beta" scopes="mail.read" max-pages="2">
+        <template>
+          <div class="email" data-for="email in value">
+            <h4>
+              <mgt-person person-query="{{email.sender.emailAddress.address}}" view="oneline" person-card="hover">
+              </mgt-person>
+            </h4>
+            <h3>{{ email.subject }}</h3>
+            <div data-if="email.bodyPreview" class="preview" innerHtml>{{email.bodyPreview}}</div>
+            <div data-else class="preview">
+              email body is empty
+            </div>
+          </div>
+        </template>
+        <template data-type="loading">
+          loading
+        </template>
+        <template data-type="error">
+          {{ this }}
+        </template>
+      </mgt-get>
+    </div>
+
+  </div>
+</body>
+
+</html>
