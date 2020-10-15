@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "aum-react-tutorial-1-client-side-solution",
+    "id": "c867bc44-886c-4820-aaca-cae4a52c97e1",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false
+  },
+  "paths": {
+    "zippedPackage": "solution/aum-react-tutorial-1.sppkg"
+  }
+}

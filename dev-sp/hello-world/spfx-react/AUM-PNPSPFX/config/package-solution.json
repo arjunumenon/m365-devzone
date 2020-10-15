@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "aum-pnpspfx-client-side-solution",
+    "id": "4f66cc0d-519e-4130-b297-a7719d989fb1",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false
+  },
+  "paths": {
+    "zippedPackage": "solution/aum-pnpspfx.sppkg"
+  }
+}

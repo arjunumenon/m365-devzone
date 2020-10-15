@@ -1,0 +1,27 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "aum-react-hello-1-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/aumReactHello1/AumReactHello1WebPart.js",
+          "manifest": "./src/webparts/aumReactHello1/AumReactHello1WebPart.manifest.json"
+        }
+      ]
+    },
+    "aum-react-crud-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/aumReactCrud/AumReactCrudWebPart.js",
+          "manifest": "./src/webparts/aumReactCrud/AumReactCrudWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "AumReactHello1WebPartStrings": "lib/webparts/aumReactHello1/loc/{locale}.js",
+    "AumReactCrudWebPartStrings": "lib/webparts/aumReactCrud/loc/{locale}.js"
+  }
+}

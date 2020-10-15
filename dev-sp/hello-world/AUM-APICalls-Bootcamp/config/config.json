@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "aum-api-calls-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/aumApiCalls/AumApiCallsWebPart.js",
+          "manifest": "./src/webparts/aumApiCalls/AumApiCallsWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "AumApiCallsWebPartStrings": "lib/webparts/aumApiCalls/loc/{locale}.js"
+  }
+}

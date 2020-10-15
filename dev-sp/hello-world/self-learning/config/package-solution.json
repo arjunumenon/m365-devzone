@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "aum-self-learning-client-side-solution",
+    "id": "f668d530-cd67-42af-9f9c-b25f5a561f88",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false
+  },
+  "paths": {
+    "zippedPackage": "solution/aum-self-learning.sppkg"
+  }
+}
