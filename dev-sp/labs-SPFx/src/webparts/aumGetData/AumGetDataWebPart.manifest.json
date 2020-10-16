@@ -19,7 +19,7 @@
     "group": { "default": "Other" },
     "title": { "default": "aum-get-data" },
     "description": { "default": "Details of AUM Get Data" },
-    "officeFabricIconFontName": "Page",
+    "officeFabricIconFontName": "Microphone",
     "properties": {
       "description": "aum-get-data"
     }
