@@ -26,11 +26,10 @@ export default class AumGetDataWebPart extends BaseClientSideWebPart<IAumGetData
       AumGetData,
       {
         description: this.properties.description,
-        selectedmyContinent: this.properties.myContinent,
-        // numContinentVisited: this.properties.numContinentVisited,
         displayMode: this.displayMode,
         environment: Environment.type,
-        wpContext: this.context
+        wpContext: this.context,
+        WPProps : this.properties
       }
     );
 
@@ -50,6 +49,10 @@ export default class AumGetDataWebPart extends BaseClientSideWebPart<IAumGetData
     return Version.parse('1.0');
   }
 
+  protected get disableReactivePropertyChanges(): boolean {
+    return true;
+  }
+
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
@@ -65,9 +68,10 @@ export default class AumGetDataWebPart extends BaseClientSideWebPart<IAumGetData
                   label: strings.DescriptionFieldLabel
                 }),
                 PropertyPaneTextField('myContinent', {
-                  label: 'Continent where I Reside'
+                  label: 'Continent where I Reside',
+                  onGetErrorMessage: this.validateContinents.bind(this)
                 }),
-                PropertyPaneSlider('numContinentsVisited', {
+                PropertyPaneSlider('numContinentVisited', {
                   label: 'Number of continents I\'ve Visited',
                   min: 1, max: 7, showValue: true
                 })
@@ -77,6 +81,16 @@ export default class AumGetDataWebPart extends BaseClientSideWebPart<IAumGetData
         }
       ]
     };
+  }
+
+  private validateContinents(textboxValue: string): string {
+
+    const validOption:string[] = ['africa', 'asia', 'north america'];
+
+    const inputValidate = textboxValue.toLowerCase();
+    return (validOption.indexOf(inputValidate) === -1)
+    ? 'Invalid continent entry; valid options are "Africa", "Antarctica", "Asia", "Australia", "Europe", "North America", and "South America"'
+    : '';
   }
 
 }

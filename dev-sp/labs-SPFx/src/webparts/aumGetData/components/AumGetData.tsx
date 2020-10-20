@@ -7,7 +7,6 @@ import {
   DisplayMode,
   EnvironmentType
 } from '@microsoft/sp-core-library';
-import { IAumGetDataWebPartProps } from '../AumGetDataWebPart';
 
 export default class AumGetData extends React.Component<IAumGetDataProps, IAumGetDataState> {
   
@@ -31,7 +30,8 @@ export default class AumGetData extends React.Component<IAumGetDataProps, IAumGe
             <div className={ styles.column }>
               <p>{this._getPageInformation()}</p>
               <p>{this._getEnvironmentInfo()}</p>
-              <p className = {styles.description}>Selected Continent  is : {this.props.selectedmyContinent}</p>
+              <p className = {styles.description}>Selected Continent  is : {this.props.WPProps.myContinent}</p>
+              <p className = {styles.description}>I have lived in : {this.props.WPProps.numContinentVisited}</p>
             </div>
           </div>
         </div>

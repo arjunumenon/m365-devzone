@@ -23,7 +23,7 @@
     "properties": {
       "description": "aum-get-data",
       "myContinent": "Asia",
-      "numContinentsVisited": 4
+      "numContinentVisited": 4
     }
   }]
 }
