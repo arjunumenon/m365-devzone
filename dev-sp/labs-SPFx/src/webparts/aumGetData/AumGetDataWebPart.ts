@@ -85,11 +85,12 @@ export default class AumGetDataWebPart extends BaseClientSideWebPart<IAumGetData
 
   private validateContinents(textboxValue: string): string {
 
-    const validOption:string[] = ['africa', 'asia', 'north america'];
+    const validOption:string[] = ['Africa', 'Asia', 'North America'];
 
     const inputValidate = textboxValue.toLowerCase();
-    return (validOption.indexOf(inputValidate) === -1)
-    ? 'Invalid continent entry; valid options are "Africa", "Antarctica", "Asia", "Australia", "Europe", "North America", and "South America"'
+
+    return ((validOption.map(function(x){ return x.toLowerCase(); })).indexOf(inputValidate) === -1)
+    ? `Invalid continent entry; valid options are ${validOption.join(', ')}`
     : '';
   }
 
