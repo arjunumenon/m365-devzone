@@ -21,7 +21,9 @@
     "description": { "default": "Details of AUM Get Data" },
     "officeFabricIconFontName": "Microphone",
     "properties": {
-      "description": "aum-get-data"
+      "description": "aum-get-data",
+      "myContinent": "Asia",
+      "numContinentsVisited": 4
     }
   }]
 }

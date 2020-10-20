@@ -6,7 +6,8 @@ import { escape } from '@microsoft/sp-lodash-subset';
 import {
   DisplayMode,
   EnvironmentType
-} from '@microsoft/sp-core-library'
+} from '@microsoft/sp-core-library';
+import { IAumGetDataWebPartProps } from '../AumGetDataWebPart';
 
 export default class AumGetData extends React.Component<IAumGetDataProps, IAumGetDataState> {
   
@@ -19,7 +20,7 @@ export default class AumGetData extends React.Component<IAumGetDataProps, IAumGe
   private _getEnvironmentInfo() : string{
     const environmentInfo: string = this.props.environment === EnvironmentType.Local ? 'You are in Local' : 'You are in SP Mode';
 
-    return environmentInfo
+    return environmentInfo;
   }
 
   public render(): React.ReactElement<IAumGetDataProps> {
@@ -30,10 +31,26 @@ export default class AumGetData extends React.Component<IAumGetDataProps, IAumGe
             <div className={ styles.column }>
               <p>{this._getPageInformation()}</p>
               <p>{this._getEnvironmentInfo()}</p>
+              <p className = {styles.description}>Selected Continent  is : {this.props.selectedmyContinent}</p>
             </div>
           </div>
         </div>
       </div>
     );
+  }
+
+  public componentDidMount(): void {
+    this.doSomething(this.props.description);
+  }
+  
+  public componentDidUpdate(prevProps: IAumGetDataProps,
+                            prevState: IAumGetDataState): void {
+    if (this.props.description !== prevProps.description) {
+      this.doSomething(this.props.description);
+    }
+  }
+  
+  private doSomething(description: string): void {
+    // Do something with the property
   }
 }

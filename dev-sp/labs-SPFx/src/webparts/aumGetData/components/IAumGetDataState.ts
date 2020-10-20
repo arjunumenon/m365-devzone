@@ -1,4 +1,4 @@
-import {IListItem} from './IListItem'
+import {IListItem} from './IListItem';
 
 export interface IAumGetDataState{
     status: string;
