@@ -1,3 +1,3 @@
 # m365-devzone
 
-Repository for the  development in M365 Area
+This is a repository created for the development in Teams and SharePoint. Just Arjun's Playground
