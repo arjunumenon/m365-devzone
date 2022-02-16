@@ -1,0 +1,27 @@
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+
+.sampleOrganizationAnnouncement {
+  .container {
+    @include ms-Grid;
+    color: var(--primaryText, #323130);
+  }
+
+  .title {
+    @include ms-fontSize-18;
+    @include ms-fontWeight-semibold;
+  }
+
+  dt {
+    @include ms-fontWeight-bold;
+    @include ms-fontSize-14;
+    margin-top: 1rem;
+
+    &.important {
+      color: $ms-color-red;
+    }
+  }
+
+  dd {
+    margin-left: 0;
+  }
+}
