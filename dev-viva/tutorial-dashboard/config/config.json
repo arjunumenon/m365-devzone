@@ -9,10 +9,19 @@
           "manifest": "./src/webparts/sampleOrganizationAnnouncement/SampleOrganizationAnnouncementWebPart.manifest.json"
         }
       ]
+    },
+    "important-organization-announcements-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/importantOrganizationAnnouncements/ImportantOrganizationAnnouncementsApplicationCustomizer.js",
+          "manifest": "./src/extensions/importantOrganizationAnnouncements/ImportantOrganizationAnnouncementsApplicationCustomizer.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "SampleOrganizationAnnouncementWebPartStrings": "lib/webparts/sampleOrganizationAnnouncement/loc/{locale}.js"
+    "SampleOrganizationAnnouncementWebPartStrings": "lib/webparts/sampleOrganizationAnnouncement/loc/{locale}.js",
+    "ImportantOrganizationAnnouncementsApplicationCustomizerStrings": "lib/extensions/importantOrganizationAnnouncements/loc/{locale}.js"
   }
 }

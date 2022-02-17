@@ -9,11 +9,14 @@
     "test": "gulp test"
   },
   "dependencies": {
+    "@microsoft/decorators": "1.13.1",
+    "@microsoft/sp-application-base": "1.13.1",
     "@microsoft/sp-core-library": "1.13.1",
-    "@microsoft/sp-property-pane": "1.13.1",
-    "@microsoft/sp-webpart-base": "1.13.1",
+    "@microsoft/sp-dialog": "1.13.1",
     "@microsoft/sp-lodash-subset": "1.13.1",
-    "@microsoft/sp-office-ui-fabric-core": "1.13.1"
+    "@microsoft/sp-office-ui-fabric-core": "^1.13.1",
+    "@microsoft/sp-property-pane": "1.13.1",
+    "@microsoft/sp-webpart-base": "1.13.1"
   },
   "devDependencies": {
     "@microsoft/sp-build-web": "1.13.1",
