@@ -187,7 +187,7 @@ function downloadCustomAppPackages{
 #TCSTEG - Production
 $SiteCollectionUrl = "https://m365x997410.sharepoint.com/"
 
-$AppId = "1455cc3a-4fda-46db-b78e-74a2f79dd22d"
+$AppId = "F6678E64-AA03-406D-9109-5DA1E07998C7"
 $packageName = "tutorial-dashboard.sppkg"
 # $packageFolder = "./Solution"
 # # Direct Package Folder - For Testing and UAT
@@ -198,8 +198,8 @@ $DownloadFolder = "./Solution-Downloads"
 # #Add All Packages from the Folder
 # addAllCustomApps -PackagelistFolder $packageFolder -URL $SiteCollectionUrl
 
-#Adding App
-addCustomApp -PackageFolder $packageFolder -packageName $packageName -URL $SiteCollectionUrl
+# #Adding App
+# addCustomApp -PackageFolder $packageFolder -packageName $packageName -URL $SiteCollectionUrl
 
 # #Deploy App - Single
 # installCustomApp -AppId $AppId -URL $SiteCollectionUrl
@@ -216,5 +216,5 @@ addCustomApp -PackageFolder $packageFolder -packageName $packageName -URL $SiteC
 # #Remove All Custom App
 # removeCustomAppAll -URL $SiteCollectionUrl
 
-#Remove Custom App
+# # Remove Custom App
 # removeCustomApp -URL $SiteCollectionUrl -AppId $AppId
