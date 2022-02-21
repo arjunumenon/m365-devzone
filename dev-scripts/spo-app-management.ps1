@@ -188,18 +188,18 @@ function downloadCustomAppPackages{
 $SiteCollectionUrl = "https://m365x997410.sharepoint.com/"
 
 $AppId = "F6678E64-AA03-406D-9109-5DA1E07998C7"
-$packageName = "tutorial-dashboard.sppkg"
+$packageName = "rn-d-sp-fx-extension-deployment.sppkg"
 # $packageFolder = "./Solution"
 # # Direct Package Folder - For Testing and UAT
-$packageFolder = "\\wsl$\Ubuntu-18.04\home\arjun\labs-codes\m365-devzone\dev-viva\tutorial-dashboard\sharepoint\solution\"
+$packageFolder = "\\wsl$\Ubuntu-18.04\home\arjun\labs-codes\m365-devzone\dev-sp\spfx-extn-rnd\sharepoint\solution\"
 $DownloadFolder = "./Solution-Downloads"
 
 
 # #Add All Packages from the Folder
 # addAllCustomApps -PackagelistFolder $packageFolder -URL $SiteCollectionUrl
 
-# #Adding App
-# addCustomApp -PackageFolder $packageFolder -packageName $packageName -URL $SiteCollectionUrl
+#Adding App
+addCustomApp -PackageFolder $packageFolder -packageName $packageName -URL $SiteCollectionUrl
 
 # #Deploy App - Single
 # installCustomApp -AppId $AppId -URL $SiteCollectionUrl
@@ -207,8 +207,8 @@ $DownloadFolder = "./Solution-Downloads"
 # #Install App - Single
 # installCustomApp -AppId $AppId -URL $SiteCollectionUrl
 
-# #List App
-# listCustomAppDisplay -URL $SiteCollectionUrl
+#List App
+listCustomAppDisplay -URL $SiteCollectionUrl
 
 # #Download App Packages
 # downloadCustomAppPackages -DownloadFolder $DownloadFolder -URL $SiteCollectionUrl
@@ -216,5 +216,5 @@ $DownloadFolder = "./Solution-Downloads"
 # #Remove All Custom App
 # removeCustomAppAll -URL $SiteCollectionUrl
 
-# Remove Custom App
-removeCustomApp -URL $SiteCollectionUrl -AppId $AppId
+# # Remove Custom App
+# removeCustomApp -URL $SiteCollectionUrl -AppId $AppId
