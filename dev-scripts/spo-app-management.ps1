@@ -187,7 +187,7 @@ function downloadCustomAppPackages{
 #TCSTEG - Production
 $SiteCollectionUrl = "https://m365x997410.sharepoint.com/"
 
-$AppId = "F6678E64-AA03-406D-9109-5DA1E07998C7"
+$AppId = "7473e087-3bb8-4b38-b62c-38c9067fb46e"
 $packageName = "rn-d-sp-fx-extension-deployment.sppkg"
 # $packageFolder = "./Solution"
 # # Direct Package Folder - For Testing and UAT
@@ -198,8 +198,8 @@ $DownloadFolder = "./Solution-Downloads"
 # #Add All Packages from the Folder
 # addAllCustomApps -PackagelistFolder $packageFolder -URL $SiteCollectionUrl
 
-#Adding App
-addCustomApp -PackageFolder $packageFolder -packageName $packageName -URL $SiteCollectionUrl
+# #Adding App
+# addCustomApp -PackageFolder $packageFolder -packageName $packageName -URL $SiteCollectionUrl
 
 # #Deploy App - Single
 # installCustomApp -AppId $AppId -URL $SiteCollectionUrl
