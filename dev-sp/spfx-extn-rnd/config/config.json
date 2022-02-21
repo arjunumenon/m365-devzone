@@ -9,10 +9,19 @@
           "manifest": "./src/extensions/testingAppCustomizer/TestingAppCustomizerApplicationCustomizer.manifest.json"
         }
       ]
+    },
+    "second-dialog-box-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/secondDialogBox/SecondDialogBoxApplicationCustomizer.js",
+          "manifest": "./src/extensions/secondDialogBox/SecondDialogBoxApplicationCustomizer.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "TestingAppCustomizerApplicationCustomizerStrings": "lib/extensions/testingAppCustomizer/loc/{locale}.js"
+    "TestingAppCustomizerApplicationCustomizerStrings": "lib/extensions/testingAppCustomizer/loc/{locale}.js",
+    "SecondDialogBoxApplicationCustomizerStrings": "lib/extensions/secondDialogBox/loc/{locale}.js"
   }
 }

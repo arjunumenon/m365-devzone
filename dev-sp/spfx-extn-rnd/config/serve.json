@@ -20,7 +20,18 @@
         "b50fe153-6aed-4115-ba1e-441f58539912": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "testMessage": "Test message"
+            "testMessage": "Howdy Dialogues People"
+          }
+        }
+      }
+    },
+    "secondDialogBox": {
+      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "customActions": {
+        "9ec4b8ac-026d-43f9-bbfb-75b27375c67d": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "testMessage": "Hello from Second Box"
           }
         }
       }
