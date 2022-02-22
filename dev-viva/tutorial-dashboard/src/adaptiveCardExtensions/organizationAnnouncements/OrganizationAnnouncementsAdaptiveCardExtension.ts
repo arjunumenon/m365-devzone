@@ -39,29 +39,7 @@ export default class OrganizationAnnouncementsAdaptiveCardExtension extends Base
 
     return this._fetchAnnouncements();
   }
-
-  // private _fetchAnnouncements(): Promise<void> {
-  //   return this.context.spHttpClient
-  //     .get(`${this.context.pageContext.web.absoluteUrl}/_api/web/lists/getByTitle('Announcements')/items?$filter=Important eq 1&$select=Title,ID`,
-  //       SPHttpClient.configurations.v1,
-  //       {
-  //         headers: {
-  //           'accept': 'application/json;odata.metadata.none'
-  //         }
-  //       })
-  //     .then(response => response.json())
-  //     .then(announcements => {
-  //       const announcement = announcements.value.pop();
-  //       this.setState({
-  //         announcement: {
-  //           title: announcement.Title,
-  //           url: `${this.context.pageContext.web.absoluteUrl}/lists/Announcements/DispForm.aspx?ID=${announcement.ID}`
-  //         }
-  //       });
-  //     })
-  //     .catch(error => console.error(error));
-  // }
-
+  
   private _fetchAnnouncements(): Promise<void> {
     return this.context.spHttpClient
       .get(`${this.context.pageContext.web.absoluteUrl}/_api/web/lists/getByTitle('Announcements')/items?$filter=Important eq 1&$select=Title,ID`,
