@@ -39,7 +39,7 @@ export default class OrganizationAnnouncementsAdaptiveCardExtension extends Base
 
     return this._fetchAnnouncements();
   }
-  
+
   private _fetchAnnouncements(): Promise<void> {
     return this.context.spHttpClient
       .get(`${this.context.pageContext.web.absoluteUrl}/_api/web/lists/getByTitle('Announcements')/items?$filter=Important eq 1&$select=Title,ID`,
