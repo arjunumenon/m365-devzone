@@ -17,11 +17,20 @@
           "manifest": "./src/extensions/importantOrganizationAnnouncements/ImportantOrganizationAnnouncementsApplicationCustomizer.manifest.json"
         }
       ]
+    },
+    "organization-announcements-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/organizationAnnouncements/OrganizationAnnouncementsAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/organizationAnnouncements/OrganizationAnnouncementsAdaptiveCardExtension.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
     "SampleOrganizationAnnouncementWebPartStrings": "lib/webparts/sampleOrganizationAnnouncement/loc/{locale}.js",
-    "ImportantOrganizationAnnouncementsApplicationCustomizerStrings": "lib/extensions/importantOrganizationAnnouncements/loc/{locale}.js"
+    "ImportantOrganizationAnnouncementsApplicationCustomizerStrings": "lib/extensions/importantOrganizationAnnouncements/loc/{locale}.js",
+    "OrganizationAnnouncementsAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/organizationAnnouncements/loc/{locale}.js"
   }
 }

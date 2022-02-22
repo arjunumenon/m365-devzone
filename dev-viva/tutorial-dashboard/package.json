@@ -16,7 +16,8 @@
     "@microsoft/sp-lodash-subset": "1.13.1",
     "@microsoft/sp-office-ui-fabric-core": "^1.13.1",
     "@microsoft/sp-property-pane": "1.13.1",
-    "@microsoft/sp-webpart-base": "1.13.1"
+    "@microsoft/sp-webpart-base": "1.13.1",
+    "@microsoft/sp-adaptive-card-extension-base": "1.13.1"
   },
   "devDependencies": {
     "@microsoft/sp-build-web": "1.13.1",
