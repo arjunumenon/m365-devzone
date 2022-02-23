@@ -33,8 +33,8 @@ function  createCustomAADApp{
 $APIPermissionList = "https://graph.microsoft.com/Group.ReadWrite.All,https://graph.microsoft.com/Directory.Read.All"
 $AppManifestJSON = "@m365-app-add-aadapp.json"
 $AppOnlyPermission = $true
-# $AddedApp = createCustomAADApp -APIPermissionList $APIPermissionList -AppManifestJSONFile $AppManifestJSON -IsAppOnlyPermission $AppOnlyPermission
+$AddedApp = createCustomAADApp -APIPermissionList $APIPermissionList -AppManifestJSONFile $AppManifestJSON -IsAppOnlyPermission $AppOnlyPermission
 
-m365 aad app add --manifest $AppManifestJSON  --platform publicClient --apisApplication $APIPermissionList --debug
+# m365 aad app add --manifest $AppManifestJSON  --platform publicClient --apisApplication $APIPermissionList --debug
 
 Write-Host "AAD App Created with details. App ID : $($AddedApp.appId). Object ID : $($AddedApp.objectId)"
