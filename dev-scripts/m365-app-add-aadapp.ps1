@@ -20,7 +20,8 @@ function  createCustomAADApp{
     # Create custom App with needed permission
     if($IsAppOnlyPermission)
     {
-        $AddedApp = (m365 aad app add --manifest $AppManifestJSONFile  --redirectUris "https://login.microsoftonline.com/common/oauth2/nativeclient" --platform publicClient --apisApplication $APIPermissionList --output json) | ConvertFrom-Json
+        # $AddedApp = (m365 aad app add --manifest $AppManifestJSONFile  --redirectUris "https://login.microsoftonline.com/common/oauth2/nativeclient" --platform publicClient --apisApplication $APIPermissionList --output json) | ConvertFrom-Json
+        m365 aad app add --manifest $AppManifestJSONFile --output json --debug
     }
     else
     {

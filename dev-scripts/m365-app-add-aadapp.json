@@ -1,4 +1,75 @@
 {
-	"name": "100 Azure Dev Ops Login App",
-	"isFallbackPublicClient": true
+	"acceptMappedClaims": null,
+	"accessTokenAcceptedVersion": null,
+	"addIns": [],
+	"allowPublicClient": null,
+	"appRoles": [],
+	"oauth2AllowUrlPathMatching": false,
+	"description": null,
+	"certification": null,
+	"disabledByMicrosoftStatus": null,
+	"groupMembershipClaims": null,
+	"identifierUris": [],
+	"informationalUrls": {
+		"termsOfService": null,
+		"support": null,
+		"privacy": null,
+		"marketing": null
+	},
+	"keyCredentials": [
+		{
+			"customKeyIdentifier": "E0DC6869DD39D669ED765AB944E02215A495DBE8",
+			"endDateTime": "2022-10-02T00:00:00Z",
+			"keyId": "b11b416a-ff8c-4a25-bdda-6dd02c136817",
+			"startDateTime": "2022-02-02T00:00:00Z",
+			"type": "AsymmetricX509Cert",
+			"usage": "Verify",
+			"value": "MIIDHDCCAgSgAwIBAgIQenKs3JTVlaRGIYQnZElSBjANBgkqhkiG9w0BAQUFADAmMSQwIgYDVQQDDBtBVU0gQXp1cmUgRGV2T3BzIERlcGxveW1lbnQwHhcNMjIwMjAyMDAwMDAwWhcNMjIxMDAyMDAwMDAwWjAmMSQwIgYDVQQDDBtBVU0gQXp1cmUgRGV2T3BzIERlcGxveW1lbnQwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCgGEvMisT+GtPs6dEK7rtpvSuG77VfoKS6E7ozsoqpynKf+J+Td14YIZhRl91x8H/ftpMptHTEsgMXwV/1VQo8RrfsEQNm30o9Qx1Ti37lqvm1YI3C/rTOsA3lgTw7wvEtRQHrXg+SO1fV7Ixk4ZxIiA8Bjus4a0cLSEW+opqPImX/UqJyvqD3Oz4pBgj/d2tWqKGpkMVuh+m0VQIz8DhjMViAaTZj7jeSq1moRraMSHYVFz+dtGwOTNgo3dwBRNzlE8JKqBJ4ouDWplgpBvkJh4snvwlRhHzPMczd4C+n4kSFtcuOz68NrmM95JaXQ47vGWOb682e/luUtsT+MDPJAgMBAAGjRjBEMBMGA1UdJQQMMAoGCCsGAQUFBwMBMB0GA1UdDgQWBBShFPxTT58386jxJQCRs7RvfMXg0zAOBgNVHQ8BAf8EBAMCBSAwDQYJKoZIhvcNAQEFBQADggEBAE1e1yWznrL95xMViEf0X5e/9ufq0GBDCFC1z3eTaf+gRf2hFHnZowPvgZNqPPQsB08bg08FrhNU9E8de1azD2GsKWh1H7DH8sJoGjrZ4G7+dnPIUcKw+7pRhkhTYoRjan/X4FIIw/zsFfeYia/vi/01w1AigK7LCld3MrYlzHJl0nqJTv9lktwtYX/tizl39gSFYOkaIud0GfFdyNvoAQ8XiXniZFHITvjb9DJmjcQEYKQIZ8xa8FdNF9G4b+XsgWiJPLoECl9mM1Tg3eIf53BRIBw3j9k7386Wyxf1w7RBA7bUWUZFcnJNrnHe5tUrT6bzRKmTeK0bNuQ8DHkqPRo=",
+			"displayName": "CN=AUM Azure DevOps Deployment"
+		}
+	],
+	"knownClientApplications": [],
+	"logoUrl": null,
+	"logoutUrl": null,
+	"name": "102 Azure Dev Ops Login App",
+	"notes": null,
+	"oauth2AllowIdTokenImplicitFlow": false,
+	"oauth2AllowImplicitFlow": false,
+	"oauth2Permissions": [],
+	"oauth2RequirePostResponse": false,
+	"optionalClaims": null,
+	"orgRestrictions": [],
+	"parentalControlSettings": {
+		"countriesBlockedForMinors": [],
+		"legalAgeGroupRule": "Allow"
+	},
+	"passwordCredentials": [],
+	"preAuthorizedApplications": [],
+	"publisherDomain": "aum365.onmicrosoft.com",
+	"replyUrlsWithType": [
+		{
+			"url": "https://login.microsoftonline.com/common/oauth2/nativeclient",
+			"type": "InstalledClient"
+		}
+	],
+	"requiredResourceAccess": [
+		{
+			"resourceAppId": "00000003-0000-0000-c000-000000000000",
+			"resourceAccess": [
+				{
+					"id": "62a82d76-70ea-41e2-9197-370581804d09",
+					"type": "Role"
+				},
+				{
+					"id": "7ab1d382-f21e-4acd-a863-ba3e13f7da61",
+					"type": "Role"
+				}
+			]
+		}
+	],
+	"samlMetadataUrl": null,
+	"signInUrl": null,
+	"signInAudience": "AzureADMyOrg",
+	"tags": [],
+	"tokenEncryptionKeyId": null
 }
