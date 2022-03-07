@@ -36,20 +36,11 @@
 	"preAuthorizedApplications": [],
 	"replyUrlsWithType": [
 		{
-			"type": "InstalledClient",
-			"url": "https://login.microsoftonline.com/common/oauth2/nativeclient"
+			"url": "https://login.microsoftonline.com/common/oauth2/nativeclient",
+			"type": "InstalledClient"
 		}
 	],
 	"requiredResourceAccess": [
-		{
-			"resourceAppId": "00000003-0000-0ff1-ce00-000000000000",
-			"resourceAccess": [
-				{
-					"id": "678536fe-1083-478a-9c59-b99265e6b0d3",
-					"type": "Role"
-				}
-			]
-		},
 		{
 			"resourceAppId": "00000003-0000-0000-c000-000000000000",
 			"resourceAccess": [
@@ -63,6 +54,15 @@
 				},
 				{
 					"id": "7ab1d382-f21e-4acd-a863-ba3e13f7da61",
+					"type": "Role"
+				}
+			]
+		},
+		{
+			"resourceAppId": "00000003-0000-0ff1-ce00-000000000000",
+			"resourceAccess": [
+				{
+					"id": "678536fe-1083-478a-9c59-b99265e6b0d3",
 					"type": "Role"
 				}
 			]
