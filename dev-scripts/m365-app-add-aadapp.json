@@ -20,7 +20,7 @@
 	"knownClientApplications": [],
 	"logoUrl": null,
 	"logoutUrl": null,
-	"name": "103 Azure Dev Ops Login App",
+	"name": "100 Azure Dev Ops Login App",
 	"notes": null,
 	"oauth2AllowIdTokenImplicitFlow": false,
 	"oauth2AllowImplicitFlow": false,
@@ -47,6 +47,10 @@
 				{
 					"id": "e1fe6dd8-ba31-4d61-89e7-88639da4683d",
 					"type": "Scope"
+				},
+				{
+					"id": "332a536c-c7ef-4017-ab91-336970924f0d",
+					"type": "Role"
 				},
 				{
 					"id": "62a82d76-70ea-41e2-9197-370581804d09",
