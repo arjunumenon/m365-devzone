@@ -34,7 +34,6 @@
 	},
 	"passwordCredentials": [],
 	"preAuthorizedApplications": [],
-	"publisherDomain": "aum365.onmicrosoft.com",
 	"replyUrlsWithType": [
 		{
 			"type": "InstalledClient",
