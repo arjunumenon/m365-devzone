@@ -21,7 +21,6 @@ function  createCustomAADApp{
     if($IsAppOnlyPermission)
     {
         $AddedApp = (m365 aad app add --manifest $AppManifestJSONFile  --redirectUris "https://login.microsoftonline.com/common/oauth2/nativeclient" --platform publicClient --output json) | ConvertFrom-Json
-        Write-Host $AddedApp
     }
     else
     {
@@ -40,4 +39,12 @@ $AddedApp = createCustomAADApp -APIPermissionList $APIPermissionList -AppManifes
 
 Write-Host "AAD App Created with details. App ID : $($AddedApp.appId). Object ID : $($AddedApp.objectId). Tenant ID : $($AddedApp.tenantId)"
 
-Write-Host "Open this URL for consenting the permission - https://login.microsoftonline.com/$($AddedApp.tenantId)/v2.0/adminconsent?client_id=$($AddedApp.appId)&scope=.default"
+# Write-Host "Open this URL for consenting the permission - https://login.microsoftonline.com/$($AddedApp.tenantId)/v2.0/adminconsent?client_id=$($AddedApp.appId)&scope=.default"
+
+# # Setting Environment Variable
+# $env:CLIMICROSOFT365_AADAPPID = $($AddedApp.appId)
+# $env:CLIMICROSOFT365_TENANT = $($AddedApp.tenantId)
+
+# # m365 logout
+
+# m365 login
