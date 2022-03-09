@@ -88,7 +88,7 @@ $CertificatePath = ".\certificate\AUM Azure DevOps Deployment.pfx"
 
 # executeAADAppCreation -InitiateLogin $false
 
-initiateLoginviaCertificate -AppId "b8cd7435-ab87-4da2-b90f-c717606125e7" -TenantId "095efa67-57fa-40c7-b7cc-e96dc3e5780c"
+initiateLoginviaCertificate -AppId "a1e460f1-5ef7-46ce-99ad-7ea95dc8a867" -TenantId "095efa67-57fa-40c7-b7cc-e96dc3e5780c"
 
 # resetLogintoOriginalState
 

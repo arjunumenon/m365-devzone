@@ -185,15 +185,15 @@ function downloadCustomAppPackages{
 }
 
 #TCSTEG - Production
-$SiteCollectionUrl = "https://m365x997410.sharepoint.com/"
+$SiteCollectionUrl = "https://aum365.sharepoint.com/sites/M365CLI/"
 
-$AppId = "7473e087-3bb8-4b38-b62c-38c9067fb46e"
+$AppId = "4cf9c3e9-f5f5-469a-aa2f-409a78cb83c0"
 $packageName = "tutorial-dashboard" + ".sppkg"
 # $packageName = "rn-d-sp-fx-extension-deployment + ".sppkg"
 # $packageFolder = "./Solution"
 # # Direct Package Folder - For Testing and UAT
 # $packageFolder = "\\wsl$\Ubuntu-18.04\home\arjun\labs-codes\m365-devzone\dev-sp\spfx-extn-rnd\sharepoint\solution\"
-$packageFolder = "\\wsl$\Ubuntu-18.04\home\arjun\labs-codes\m365-devzone\dev-viva\tutorial-dashboard\sharepoint\solution"
+$packageFolder = "C:\Arjun\Codes\m365-devzone\dev-viva\tutorial-dashboard\sharepoint\solution\"
 $DownloadFolder = "./Solution-Downloads"
 
 
