@@ -218,5 +218,5 @@ listCustomAppDisplay -URL $SiteCollectionUrl
 # #Remove All Custom App
 # removeCustomAppAll -URL $SiteCollectionUrl
 
-# Remove Custom App
-removeCustomApp -URL $SiteCollectionUrl -AppId $AppId
+# # Remove Custom App
+# removeCustomApp -URL $SiteCollectionUrl -AppId $AppId
