@@ -1,12 +1,12 @@
 # Method which creates  Custom AAD App
 function  createCustomAADApp{
     param (
-        [Parameter(Mandatory = $true)]
+        [Parameter(Mandatory = $false)]
+        [string]$AppName,
+        [Parameter(Mandatory = $false)]
         [string]$APIPermissionList,
-        [Parameter(Mandatory = $true)]
-        [string]$AppManifestJSONFile,
-         [Parameter(Mandatory = $true)]
-        [boolean]$IsAppOnlyPermission
+        [Parameter(Mandatory = $false)]
+        [string]$AppManifestJSONFile = ""
     )
 
     # Checking Login status and initiate login if not logged
@@ -17,15 +17,16 @@ function  createCustomAADApp{
         m365 login
     }
 
-    # Create custom App with needed permission
-    if($IsAppOnlyPermission)
+    # Checking if manifest file exists
+    if($AppManifestJSONFile -eq "")
     {
-        $AddedApp = (m365 aad app add --manifest $AppManifestJSONFile  --redirectUris "https://login.microsoftonline.com/common/oauth2/nativeclient" --platform publicClient --output json) | ConvertFrom-Json
-        # m365 aad app add --manifest $AppManifestJSONFile  --redirectUris "https://login.microsoftonline.com/common/oauth2/nativeclient" --platform publicClient --output json --debug
+        Write-Host "Creating WITHOUT Manifest File"
+        $AddedApp = (m365 aad app add --name $AppName --apisApplication $APIPermissionList  --redirectUris "https://login.microsoftonline.com/common/oauth2/nativeclient" --platform publicClient --output json) | ConvertFrom-Json
     }
     else
     {
-        $AddedApp = (m365 aad app add --manifest $AppManifestJSONFile  --redirectUris "https://login.microsoftonline.com/common/oauth2/nativeclient" --platform publicClient --apisDelegated $APIPermissionList --output json) | ConvertFrom-Json
+        Write-Host "Creating using Manifest file"
+        $AddedApp = (m365 aad app add --manifest $AppManifestJSONFile  --redirectUris "https://login.microsoftonline.com/common/oauth2/nativeclient" --platform publicClient --output json) | ConvertFrom-Json
     }
     
     return $AddedApp
@@ -36,12 +37,16 @@ function executeAADAppCreation {
         [Parameter(Mandatory = $false)]
         [boolean]$InitiateLogin = $false
     )
-    $APIPermissionList = "https://graph.microsoft.com/Group.ReadWrite.All,https://graph.microsoft.com/Directory.Read.All"
+    $AppName = "Azure Dev Ops Login App - NO"
+    $APIPermissionList = "https://microsoft.sharepoint-df.com/Sites.FullControl.All, https://graph.microsoft.com/Sites.Read.All"
     $AppManifestJSON = "@m365-app-add-aadapp.json"
     $AppOnlyPermission = $true
-    $AddedApp = createCustomAADApp -APIPermissionList $APIPermissionList -AppManifestJSONFile $AppManifestJSON -IsAppOnlyPermission $AppOnlyPermission
 
-    # m365 aad app add --manifest $AppManifestJSON  --platform publicClient --apisApplication $APIPermissionList --debug
+    # # Using Without Manifest File
+    # $AddedApp = createCustomAADApp -AppName $AppName -APIPermissionList $APIPermissionList
+
+    # Using Manifest File
+    $AddedApp = createCustomAADApp -APIPermissionList $APIPermissionList -AppManifestJSONFile $AppManifestJSON
 
     Write-Host "AAD App Created with details. App ID : $($AddedApp.appId). Object ID : $($AddedApp.objectId). Tenant ID : $($AddedApp.tenantId)"
 
@@ -88,7 +93,7 @@ $CertificatePath = ".\certificate\AUM Azure DevOps Deployment.pfx"
 
 # executeAADAppCreation -InitiateLogin $false
 
-initiateLoginviaCertificate -AppId "a1e460f1-5ef7-46ce-99ad-7ea95dc8a867" -TenantId "095efa67-57fa-40c7-b7cc-e96dc3e5780c"
+initiateLoginviaCertificate -AppId "ceefb710-f9cf-4618-af60-1a163f5ea74c" -TenantId "095efa67-57fa-40c7-b7cc-e96dc3e5780c"
 
 # resetLogintoOriginalState
 

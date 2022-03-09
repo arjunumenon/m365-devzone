@@ -187,7 +187,7 @@ function downloadCustomAppPackages{
 #TCSTEG - Production
 $SiteCollectionUrl = "https://aum365.sharepoint.com/sites/M365CLI/"
 
-$AppId = "4cf9c3e9-f5f5-469a-aa2f-409a78cb83c0"
+$AppId = "9b7b3cab-513e-4ef3-aa3d-309c7c87af92"
 $packageName = "tutorial-dashboard" + ".sppkg"
 # $packageName = "rn-d-sp-fx-extension-deployment + ".sppkg"
 # $packageFolder = "./Solution"
@@ -218,5 +218,5 @@ listCustomAppDisplay -URL $SiteCollectionUrl
 # #Remove All Custom App
 # removeCustomAppAll -URL $SiteCollectionUrl
 
-# # Remove Custom App
-# removeCustomApp -URL $SiteCollectionUrl -AppId $AppId
+# Remove Custom App
+removeCustomApp -URL $SiteCollectionUrl -AppId $AppId
