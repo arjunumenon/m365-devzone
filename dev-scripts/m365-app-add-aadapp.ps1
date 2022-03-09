@@ -32,6 +32,10 @@ function  createCustomAADApp{
 }
 
 function executeAADAppCreation {
+    param (
+        [Parameter(Mandatory = $false)]
+        [boolean]$InitiateLogin = $false
+    )
     $APIPermissionList = "https://graph.microsoft.com/Group.ReadWrite.All,https://graph.microsoft.com/Directory.Read.All"
     $AppManifestJSON = "@m365-app-add-aadapp.json"
     $AppOnlyPermission = $true
@@ -48,19 +52,25 @@ function executeAADAppCreation {
     az ad app permission admin-consent --id $($AddedApp.objectId)
 
     .\certificate\aad-app-certificate-add.ps1 -CertificatePath $CertificatePath -AppId $($AddedApp.objectId)
+
+    # Check whether login has to be initiated
+    if($InitiateLogin)
+    {
+        initiateLoginviaCertificate -AppId $($AddedApp.appId) -TenantId $($AddedApp.tenantId)
+    }
 }
 
 function initiateLoginviaCertificate{
+    param (
+        [Parameter(Mandatory = $true)]
+        [string]$AppId,
+        [Parameter(Mandatory = $true)]
+        [string]$TenantId
+    )
     # Login in using the Certificate
     m365 logout
-    # $env:CLIMICROSOFT365_AADAPPID = $($AddedApp.appId)    
-    # $env:CLIMICROSOFT365_TENANT = $($AddedApp.tenantId)
 
-    $env:CLIMICROSOFT365_AADAPPID = "75f0b899-4313-4193-aa58-9cf758c05ebb"
-    $env:CLIMICROSOFT365_TENANT = "095efa67-57fa-40c7-b7cc-e96dc3e5780c"
-
-
-    m365 login --authType certificate --certificateFile $CertificatePath --password ''
+    m365 login --authType certificate --certificateFile $CertificatePath --password '' --appId $AppId --tenant $TenantId
 
     m365 status
 }
@@ -76,9 +86,9 @@ function resetLogintoOriginalState{
 # Adding the Client Certificate File to Azure AD App
 $CertificatePath = ".\certificate\AUM Azure DevOps Deployment.pfx"
 
-# executeAADAppCreation
+# executeAADAppCreation -InitiateLogin $false
 
-initiateLoginviaCertificate
+initiateLoginviaCertificate -AppId "b8cd7435-ab87-4da2-b90f-c717606125e7" -TenantId "095efa67-57fa-40c7-b7cc-e96dc3e5780c"
 
 # resetLogintoOriginalState
 
