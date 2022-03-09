@@ -31,21 +31,55 @@ function  createCustomAADApp{
     return $AddedApp
 }
 
-$APIPermissionList = "https://graph.microsoft.com/Group.ReadWrite.All,https://graph.microsoft.com/Directory.Read.All"
-$AppManifestJSON = "@m365-app-add-aadapp.json"
-$AppOnlyPermission = $true
-$AddedApp = createCustomAADApp -APIPermissionList $APIPermissionList -AppManifestJSONFile $AppManifestJSON -IsAppOnlyPermission $AppOnlyPermission
+function executeAADAppCreation {
+    $APIPermissionList = "https://graph.microsoft.com/Group.ReadWrite.All,https://graph.microsoft.com/Directory.Read.All"
+    $AppManifestJSON = "@m365-app-add-aadapp.json"
+    $AppOnlyPermission = $true
+    $AddedApp = createCustomAADApp -APIPermissionList $APIPermissionList -AppManifestJSONFile $AppManifestJSON -IsAppOnlyPermission $AppOnlyPermission
 
-# m365 aad app add --manifest $AppManifestJSON  --platform publicClient --apisApplication $APIPermissionList --debug
+    # m365 aad app add --manifest $AppManifestJSON  --platform publicClient --apisApplication $APIPermissionList --debug
 
-Write-Host "AAD App Created with details. App ID : $($AddedApp.appId). Object ID : $($AddedApp.objectId). Tenant ID : $($AddedApp.tenantId)"
+    Write-Host "AAD App Created with details. App ID : $($AddedApp.appId). Object ID : $($AddedApp.objectId). Tenant ID : $($AddedApp.tenantId)"
 
-Write-Host "Open this URL for consenting the permission - https://login.microsoftonline.com/$($AddedApp.tenantId)/v2.0/adminconsent?client_id=$($AddedApp.appId)&scope=.default"
+    # # Manually Opening the URL with the browser
+    # Write-Host "Open this URL for consenting the permission - https://login.microsoftonline.com/$($AddedApp.tenantId)/v2.0/adminconsent?client_id=$($AddedApp.appId)&scope=.default"
 
-# # Setting Environment Variable
-# $env:CLIMICROSOFT365_AADAPPID = $($AddedApp.appId)
-# $env:CLIMICROSOFT365_TENANT = $($AddedApp.tenantId)
+    # Consenting the Application using Azure CLI
+    az ad app permission admin-consent --id $($AddedApp.objectId)
 
-# # m365 logout
+    .\certificate\aad-app-certificate-add.ps1 -CertificatePath $CertificatePath -AppId $($AddedApp.objectId)
+}
 
-# m365 login
+function initiateLoginviaCertificate{
+    # Login in using the Certificate
+    m365 logout
+    # $env:CLIMICROSOFT365_AADAPPID = $($AddedApp.appId)    
+    # $env:CLIMICROSOFT365_TENANT = $($AddedApp.tenantId)
+
+    $env:CLIMICROSOFT365_AADAPPID = "75f0b899-4313-4193-aa58-9cf758c05ebb"
+    $env:CLIMICROSOFT365_TENANT = "095efa67-57fa-40c7-b7cc-e96dc3e5780c"
+
+
+    m365 login --authType certificate --certificateFile $CertificatePath --password ''
+
+    m365 status
+}
+
+function resetLogintoOriginalState{
+    # Resetting the login
+    m365 logout
+    $env:CLIMICROSOFT365_AADAPPID = $null
+    $env:CLIMICROSOFT365_TENANT = $null
+    m365 login
+}
+
+# Adding the Client Certificate File to Azure AD App
+$CertificatePath = ".\certificate\AUM Azure DevOps Deployment.pfx"
+
+# executeAADAppCreation
+
+initiateLoginviaCertificate
+
+# resetLogintoOriginalState
+
+

@@ -20,7 +20,7 @@
 	"knownClientApplications": [],
 	"logoUrl": null,
 	"logoutUrl": null,
-	"name": "101 Azure Dev Ops Login App",
+	"name": "100 Azure Dev Ops Login App",
 	"notes": null,
 	"oauth2AllowIdTokenImplicitFlow": false,
 	"oauth2AllowImplicitFlow": false,
