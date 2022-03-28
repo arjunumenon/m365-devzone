@@ -3,7 +3,7 @@
 Deletes already created Certificate Authority.
 .DESCRIPTION
 .EXAMPLE
-.\delete-self-signed-certificate.ps1 -CommonName "MyCert"
+.\delete-self-signed-certificate.ps1 -CommonName "AUM CI-CD Deployment App Certificate"
 This will delete the certificate from CErttificate Store which has the Name above
 #>
 Param(
