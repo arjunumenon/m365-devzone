@@ -1,7 +1,12 @@
 # Login using Certificate
 
-$env:CLIMICROSOFT365_AADAPPID = "423dd174-251a-459c-bb1e-c8b766172075"
-$env:CLIMICROSOFT365_TENANT = "095efa67-57fa-40c7-b7cc-e96dc3e5780c"
+$AADAppId = "f5a3f4dd-fdf0-435b-b524-175e214bf816"
+$AADTenantId = "095efa67-57fa-40c7-b7cc-e96dc3e5780c"
+$certificateFile = ".\Certificates\Certificate.pfx"
+$AppClientSecret = "wgp7Q~PWLtTNrAwjZawO-sYMSQjylRI6kW5dY"
 
+# # Using Certificate File
+# m365 login --authType certificate --certificateFile $certificateFile --password $password --appId $appId --tenant $TenantId
 
-m365 login --authType certificate --certificateFile ".\AUM Azure DevOps Deployment.pfx" --password ''
+# Using AAD Client Secret
+m365 login --authType secret --appId $AADAppId --tenant $AADTenantId --secret $AppClientSecret
