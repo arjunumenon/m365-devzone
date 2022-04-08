@@ -44,7 +44,7 @@ export class TeamsBot extends TeamsActivityHandler {
           break;
         }
         default:{
-          await context.sendActivity(`We did not understand your question. Try rephrasing the questions please`);
+          await context.sendActivity(`OOOOPSIE... We did not understand your question. Try rephrasing the questions please`);
           break;
         }
         /**

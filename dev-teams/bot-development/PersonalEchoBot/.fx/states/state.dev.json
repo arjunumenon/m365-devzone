@@ -7,23 +7,23 @@
         "needCreateResourceGroup": false,
         "resourceGroupName": "TCS-teams-DEV",
         "location": "eastus",
-        "resourceNameSuffix": "fc81f6",
+        "resourceNameSuffix": "840243",
         "provisionSucceeded": true
     },
     "fx-resource-appstudio": {
         "tenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
-        "teamsAppId": "ddad90c2-5a8c-45ac-a81c-6c2a8a40e312",
-        "teamsAppUpdatedAt": 1649332580186
+        "teamsAppId": "7ef4397c-6b1b-4743-9101-4cc6fe60e608",
+        "teamsAppUpdatedAt": 1649398659898
     },
     "fx-resource-identity": {
         "identityName": "TCSPersonalEchoBot",
         "identityResourceId": "/subscriptions/acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2/resourceGroups/TCS-teams-DEV/providers/Microsoft.ManagedIdentity/userAssignedIdentities/TCSPersonalEchoBot",
-        "identityClientId": "848e1e5b-bea3-4ad6-81d7-38cdc65e1744"
+        "identityClientId": "8f6d8e3e-e3dd-4812-8b33-a0d6e5ec5944"
     },
     "fx-resource-bot": {
-        "botId": "9e785ae9-79fc-49b2-8989-4f4159f59346",
+        "botId": "27bbcc9b-d1ec-4920-8ad7-0e593c7b365d",
         "botPassword": "{{fx-resource-bot.botPassword}}",
-        "objectId": "33bacf72-6f98-4fa4-9aed-f8f77159c565",
+        "objectId": "f7c0803e-c6e4-4926-ac8f-ec98f36afc22",
         "skuName": "F1",
         "siteName": "TCSPersonalEchoBotbot",
         "validDomain": "tcspersonalechobotbot.azurewebsites.net",
@@ -32,14 +32,14 @@
         "siteEndpoint": "https://tcspersonalechobotbot.azurewebsites.net"
     },
     "fx-resource-aad-app-for-teams": {
-        "clientId": "80ffbc88-e351-402c-a0cd-86a14ad0e032",
+        "clientId": "7661e35d-8882-4244-bcee-5663ed4223d7",
         "clientSecret": "{{fx-resource-aad-app-for-teams.clientSecret}}",
-        "objectId": "6a560054-d30a-493c-a883-bc14f821b7d9",
-        "oauth2PermissionScopeId": "1a23501c-38d0-416f-bf98-27eec36db91b",
+        "objectId": "91dc4842-dca7-4ac4-9326-0c7b80289873",
+        "oauth2PermissionScopeId": "4807d9e6-e2e3-4307-b187-0c497ab9c397",
         "tenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
         "oauthHost": "https://login.microsoftonline.com",
         "oauthAuthority": "https://login.microsoftonline.com/7c9154c9-0f63-443e-a07a-8a3ede021afc",
-        "applicationIdUris": "api://botid-9e785ae9-79fc-49b2-8989-4f4159f59346"
+        "applicationIdUris": "api://botid-27bbcc9b-d1ec-4920-8ad7-0e593c7b365d"
     },
     "fx-resource-cicd": {}
 }

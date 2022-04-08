@@ -1,0 +1,9 @@
+{
+  "generator-teams": {
+    "promptValues": {
+      "developer": "AUM LLC"
+    },
+    "libraryName": "botYoteams",
+    "generator-version": "3.5.0"
+  }
+}

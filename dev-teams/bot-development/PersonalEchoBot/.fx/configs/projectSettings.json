@@ -20,5 +20,10 @@
             "fx-resource-cicd"
         ]
     },
-    "programmingLanguage": "typescript"
+    "programmingLanguage": "typescript",
+    "pluginSettings": {
+        "fx-resource-bot": {
+            "capabilities": []
+        }
+    }
 }
