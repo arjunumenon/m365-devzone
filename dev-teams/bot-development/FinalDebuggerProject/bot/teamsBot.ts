@@ -43,6 +43,10 @@ export class TeamsBot extends TeamsActivityHandler {
           await context.sendActivity({ attachments: [CardFactory.adaptiveCard(card)] });
           break;
         }
+        default:{
+          await context.sendActivity(`Ooopsie. I don't understand you. Try it again.`);
+          break;
+        }
         /**
          * case "yourCommand": {
          *   await context.sendActivity(`Add your response here!`);

@@ -11,8 +11,8 @@
         "termsOfUseUrl": "{{{state.fx-resource-frontend-hosting.endpoint}}}{{{state.fx-resource-frontend-hosting.indexPath}}}/termsofuse"
     },
     "icons": {
-        "color": "resources/color.png",
-        "outline": "resources/outline.png"
+        "color": "resources/icon-color.png",
+        "outline": "resources/icon-outline.png"
     },
     "name": {
         "short": "{{config.manifest.appName.short}}",
@@ -48,6 +48,10 @@
                         {
                             "title": "learn",
                             "description": "Learn about Adaptive Card and Bot Command"
+                        },
+                        {
+                            "title": "help",
+                            "description": "Get help"
                         }
                     ]
                 }
