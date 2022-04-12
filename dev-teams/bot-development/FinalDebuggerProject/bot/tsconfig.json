@@ -10,6 +10,7 @@
     "tsBuildInfoFile": "./lib/.tsbuildinfo",
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "mapRoot": "./bot/lib/",
+    "mapRoot": "../bot../",
+    // "sourceRoot": "./../bot/"
   }
 }
