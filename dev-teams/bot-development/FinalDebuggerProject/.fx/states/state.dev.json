@@ -1,0 +1,46 @@
+{
+    "solution": {
+        "teamsAppTenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
+        "subscriptionId": "acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2",
+        "subscriptionName": "Visual Studio Enterprise",
+        "tenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
+        "needCreateResourceGroup": false,
+        "resourceGroupName": "TCS-teams-DEV",
+        "location": "eastus",
+        "resourceNameSuffix": "62ad55",
+        "provisionSucceeded": true
+    },
+    "fx-resource-appstudio": {
+        "tenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
+        "teamsAppId": "1a7c3c1a-dbf2-49db-a99a-746fc95bb864",
+        "teamsAppUpdatedAt": 1649665632293
+    },
+    "fx-resource-identity": {
+        "identityName": "finaldebugdev",
+        "identityResourceId": "/subscriptions/acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2/resourceGroups/TCS-teams-DEV/providers/Microsoft.ManagedIdentity/userAssignedIdentities/finaldebugdev",
+        "identityClientId": "86eab3b8-7abd-42a6-888d-d24c822f6e02"
+    },
+    "fx-resource-bot": {
+        "botId": "57b151b3-810b-430e-92c2-2d8fa30687c8",
+        "botPassword": "{{fx-resource-bot.botPassword}}",
+        "objectId": "479b6552-1bad-456c-bf1d-7984f1b8b125",
+        "skuName": "S1",
+        "siteName": "finaldebugdevbot",
+        "validDomain": "finaldebugdevbot.azurewebsites.net",
+        "appServicePlanName": "finaldebugdevbot",
+        "botWebAppResourceId": "/subscriptions/acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2/resourceGroups/TCS-teams-DEV/providers/Microsoft.Web/sites/finaldebugdevbot",
+        "siteEndpoint": "https://finaldebugdevbot.azurewebsites.net"
+    },
+    "fx-resource-aad-app-for-teams": {
+        "clientId": "c93fc0e2-b8bc-4107-b1b0-29bc45136ca5",
+        "clientSecret": "{{fx-resource-aad-app-for-teams.clientSecret}}",
+        "objectId": "4ff7a82d-9744-41fb-adb0-e699b7f4f546",
+        "oauth2PermissionScopeId": "b1cdc57f-8d82-411e-a596-9d8b1926eb36",
+        "tenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
+        "oauthHost": "https://login.microsoftonline.com",
+        "oauthAuthority": "https://login.microsoftonline.com/7c9154c9-0f63-443e-a07a-8a3ede021afc",
+        "applicationIdUris": "api://botid-57b151b3-810b-430e-92c2-2d8fa30687c8"
+    },
+    "fx-resource-cicd": {},
+    "fx-resource-api-connector": {}
+}
