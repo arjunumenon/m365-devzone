@@ -11,6 +11,6 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "mapRoot": "../bot../",
-    // "sourceRoot": "./../bot/"
+    "sourceRoot": "./../bot/"
   }
 }
