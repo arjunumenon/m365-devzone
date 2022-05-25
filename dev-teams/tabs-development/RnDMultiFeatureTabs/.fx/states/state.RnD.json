@@ -8,7 +8,7 @@
         "resourceGroupName": "TCS-teams-DEV",
         "location": "eastus",
         "resourceNameSuffix": "adda96",
-        "provisionSucceeded": true
+        "provisionSucceeded": false
     },
     "fx-resource-appstudio": {
         "tenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
@@ -22,7 +22,7 @@
     },
     "fx-resource-aad-app-for-teams": {
         "clientId": "35f78a49-2bf8-4cb2-a82a-147d403f9917",
-        "clientSecret": "{{fx-resource-aad-app-for-teams.clientSecret}}",
+        "clientSecret": "QZR8Q~rTGtnUpBh1trCT7KlnEL4Rsflb0_nQJbsf",
         "objectId": "f4c631b9-816d-4f4d-bce0-d39e5381af29",
         "oauth2PermissionScopeId": "a6e53b38-7ec0-4e55-8f7a-8df30d58c84b",
         "tenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
