@@ -1,0 +1,36 @@
+{
+    "solution": {
+        "teamsAppTenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c",
+        "subscriptionId": "acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2",
+        "subscriptionName": "Visual Studio Enterprise",
+        "tenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
+        "needCreateResourceGroup": false,
+        "resourceGroupName": "TCS-teams-DEV",
+        "location": "eastus",
+        "resourceNameSuffix": "fa410c",
+        "provisionSucceeded": true
+    },
+    "fx-resource-appstudio": {
+        "tenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c",
+        "teamsAppId": "f6cf9ae0-da32-44e8-a6ce-85b027a1a219",
+        "teamsAppUpdatedAt": 1653463238213
+    },
+    "fx-resource-identity": {
+        "identityName": "plainbotorqae02c58",
+        "identityResourceId": "/subscriptions/acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2/resourceGroups/TCS-teams-DEV/providers/Microsoft.ManagedIdentity/userAssignedIdentities/plainbotorqae02c58",
+        "identityClientId": "b574d92b-02e1-4572-9243-c527f8d3c255"
+    },
+    "fx-resource-bot": {
+        "botId": "e64332ce-ea7a-4baf-86b1-66d944b31e4e",
+        "botPassword": "{{fx-resource-bot.botPassword}}",
+        "objectId": "10a9aa9c-5b62-471a-a88a-34b7c8e264cb",
+        "skuName": "B1",
+        "siteName": "plainbotorqae02c58bot",
+        "validDomain": "plainbotorqae02c58bot.azurewebsites.net",
+        "appServicePlanName": "plainbotorqae02c58bot",
+        "botWebAppResourceId": "/subscriptions/acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2/resourceGroups/TCS-teams-DEV/providers/Microsoft.Web/sites/plainbotorqae02c58bot",
+        "siteEndpoint": "https://plainbotorqae02c58bot.azurewebsites.net"
+    },
+    "fx-resource-cicd": {},
+    "fx-resource-api-connector": {}
+}
