@@ -1,0 +1,42 @@
+{
+    "solution": {
+        "teamsAppTenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c",
+        "subscriptionId": "acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2",
+        "subscriptionName": "Visual Studio Enterprise",
+        "tenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
+        "needCreateResourceGroup": false,
+        "resourceGroupName": "TCS-teams-DEV",
+        "location": "eastus",
+        "resourceNameSuffix": "486002",
+        "provisionSucceeded": true
+    },
+    "fx-resource-appstudio": {
+        "tenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c",
+        "teamsAppId": "04715a3f-ce11-42c9-a33c-d981dcba308e",
+        "teamsAppUpdatedAt": 1653451776161
+    },
+    "fx-resource-identity": {
+        "identityName": "teamstabssqa658560",
+        "identityResourceId": "/subscriptions/acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2/resourceGroups/TCS-teams-DEV/providers/Microsoft.ManagedIdentity/userAssignedIdentities/teamstabssqa658560",
+        "identityClientId": "87822ba9-807f-4288-b2b5-146150ba2bc0"
+    },
+    "fx-resource-aad-app-for-teams": {
+        "clientId": "a7dbc8de-aefc-4859-a7b8-95b311ce7163",
+        "clientSecret": "{{fx-resource-aad-app-for-teams.clientSecret}}",
+        "objectId": "74224b47-16fc-4b2d-9633-7485499b97f0",
+        "oauth2PermissionScopeId": "0224198d-6a44-4c79-9a59-39ab0c0c8fce",
+        "tenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c",
+        "oauthHost": "https://login.microsoftonline.com",
+        "oauthAuthority": "https://login.microsoftonline.com/095efa67-57fa-40c7-b7cc-e96dc3e5780c",
+        "applicationIdUris": "api://teamstabssqa658560tab.z13.web.core.windows.net/a7dbc8de-aefc-4859-a7b8-95b311ce7163",
+        "frontendEndpoint": "https://teamstabssqa658560tab.z13.web.core.windows.net"
+    },
+    "fx-resource-frontend-hosting": {
+        "domain": "teamstabssqa658560tab.z13.web.core.windows.net",
+        "endpoint": "https://teamstabssqa658560tab.z13.web.core.windows.net",
+        "indexPath": "/index.html#",
+        "storageResourceId": "/subscriptions/acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2/resourceGroups/TCS-teams-DEV/providers/Microsoft.Storage/storageAccounts/teamstabssqa658560tab"
+    },
+    "fx-resource-cicd": {},
+    "fx-resource-api-connector": {}
+}
