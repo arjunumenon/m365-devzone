@@ -1,0 +1,42 @@
+{
+    "solution": {
+        "teamsAppTenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
+        "subscriptionId": "acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2",
+        "subscriptionName": "Visual Studio Enterprise",
+        "tenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
+        "needCreateResourceGroup": false,
+        "resourceGroupName": "TCS-teams-DEV",
+        "location": "eastus",
+        "resourceNameSuffix": "adda96",
+        "provisionSucceeded": true
+    },
+    "fx-resource-appstudio": {
+        "tenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
+        "teamsAppId": "1bf75e9c-6687-460b-8e92-7bf4e31ed222",
+        "teamsAppUpdatedAt": 1653490387448
+    },
+    "fx-resource-identity": {
+        "identityName": "rndtabmultifeature",
+        "identityResourceId": "/subscriptions/acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2/resourceGroups/TCS-teams-DEV/providers/Microsoft.ManagedIdentity/userAssignedIdentities/rndtabmultifeature",
+        "identityClientId": "607c46c8-5c73-4dc2-bc99-e5d577102707"
+    },
+    "fx-resource-aad-app-for-teams": {
+        "clientId": "35f78a49-2bf8-4cb2-a82a-147d403f9917",
+        "clientSecret": "{{fx-resource-aad-app-for-teams.clientSecret}}",
+        "objectId": "f4c631b9-816d-4f4d-bce0-d39e5381af29",
+        "oauth2PermissionScopeId": "a6e53b38-7ec0-4e55-8f7a-8df30d58c84b",
+        "tenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
+        "oauthHost": "https://login.microsoftonline.com",
+        "oauthAuthority": "https://login.microsoftonline.com/7c9154c9-0f63-443e-a07a-8a3ede021afc",
+        "applicationIdUris": "api://rndtabmultifeaturetab.azurewebsites.net/35f78a49-2bf8-4cb2-a82a-147d403f9917",
+        "frontendEndpoint": "https://rndtabmultifeaturetab.azurewebsites.net"
+    },
+    "fx-resource-frontend-hosting": {
+        "domain": "rndtabmultifeaturetab.azurewebsites.net",
+        "endpoint": "https://rndtabmultifeaturetab.azurewebsites.net",
+        "indexPath": "/index.html#",
+        "storageResourceId": "/subscriptions/acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2/resourceGroups/TCS-teams-DEV/providers/Microsoft.Storage/storageAccounts/rndtabmultifeaturetab"
+    },
+    "fx-resource-cicd": {},
+    "fx-resource-api-connector": {}
+}
