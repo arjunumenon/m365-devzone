@@ -7,28 +7,41 @@
         "needCreateResourceGroup": false,
         "resourceGroupName": "TCS-teams-DEV",
         "location": "eastus",
-        "resourceNameSuffix": "adda96",
-        "provisionSucceeded": false
+        "resourceNameSuffix": "20b4cc",
+        "provisionSucceeded": true
     },
     "fx-resource-appstudio": {
         "tenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
-        "teamsAppId": "1bf75e9c-6687-460b-8e92-7bf4e31ed222",
-        "teamsAppUpdatedAt": 1653490387448
+        "teamsAppId": "bce17036-85ec-4e7b-bc4f-d75a46a64997",
+        "teamsAppUpdatedAt": 1653543811250
     },
     "fx-resource-identity": {
         "identityName": "rndtabmultifeature",
         "identityResourceId": "/subscriptions/acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2/resourceGroups/TCS-teams-DEV/providers/Microsoft.ManagedIdentity/userAssignedIdentities/rndtabmultifeature",
-        "identityClientId": "607c46c8-5c73-4dc2-bc99-e5d577102707"
+        "identityClientId": "04b69493-92f1-4f6f-8821-29bc3767b06e"
+    },
+    "fx-resource-bot": {
+        "botId": "4720ccd5-02ad-40a3-b298-d651ad8ff1b5",
+        "botPassword": "{{fx-resource-bot.botPassword}}",
+        "objectId": "216b7fc9-ebe9-45db-a4e6-3999f31128c1",
+        "skuName": "B1",
+        "siteName": "rndtabmultifeaturebot",
+        "validDomain": "rndtabmultifeaturebot.azurewebsites.net",
+        "appServicePlanName": "rndtabmultifeaturebot",
+        "botWebAppResourceId": "/subscriptions/acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2/resourceGroups/TCS-teams-DEV/providers/Microsoft.Web/sites/rndtabmultifeaturebot",
+        "siteEndpoint": "https://rndtabmultifeaturebot.azurewebsites.net"
     },
     "fx-resource-aad-app-for-teams": {
-        "clientId": "35f78a49-2bf8-4cb2-a82a-147d403f9917",
-        "clientSecret": "QZR8Q~rTGtnUpBh1trCT7KlnEL4Rsflb0_nQJbsf",
-        "objectId": "f4c631b9-816d-4f4d-bce0-d39e5381af29",
-        "oauth2PermissionScopeId": "a6e53b38-7ec0-4e55-8f7a-8df30d58c84b",
+        "clientId": "db6c453d-11a4-49e5-858a-1b4d528577ec",
+        "clientSecret": "{{fx-resource-aad-app-for-teams.clientSecret}}",
+        "objectId": "2efd6f23-ffcc-4b53-b309-a3b8e5ada19d",
+        "oauth2PermissionScopeId": "279ee322-67fb-4eee-8afd-683db7ce4b35",
         "tenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
         "oauthHost": "https://login.microsoftonline.com",
         "oauthAuthority": "https://login.microsoftonline.com/7c9154c9-0f63-443e-a07a-8a3ede021afc",
-        "applicationIdUris": "api://rndtabmultifeaturetab.azurewebsites.net/35f78a49-2bf8-4cb2-a82a-147d403f9917",
+        "applicationIdUris": "api://rndtabmultifeaturetab.azurewebsites.net/botid-4720ccd5-02ad-40a3-b298-d651ad8ff1b5",
+        "botId": "4720ccd5-02ad-40a3-b298-d651ad8ff1b5",
+        "botEndpoint": "https://rndtabmultifeaturebot.azurewebsites.net",
         "frontendEndpoint": "https://rndtabmultifeaturetab.azurewebsites.net"
     },
     "fx-resource-frontend-hosting": {
