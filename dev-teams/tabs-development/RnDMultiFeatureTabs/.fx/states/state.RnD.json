@@ -7,23 +7,23 @@
         "needCreateResourceGroup": false,
         "resourceGroupName": "TCS-teams-DEV",
         "location": "eastus",
-        "resourceNameSuffix": "20b4cc",
+        "resourceNameSuffix": "d63bb7",
         "provisionSucceeded": true
     },
     "fx-resource-appstudio": {
         "tenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
-        "teamsAppId": "bce17036-85ec-4e7b-bc4f-d75a46a64997",
-        "teamsAppUpdatedAt": 1653543811250
+        "teamsAppId": "4353fdce-53be-4320-89d1-5da91f41f4ee",
+        "teamsAppUpdatedAt": 1653557338635
     },
     "fx-resource-identity": {
         "identityName": "rndtabmultifeature",
         "identityResourceId": "/subscriptions/acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2/resourceGroups/TCS-teams-DEV/providers/Microsoft.ManagedIdentity/userAssignedIdentities/rndtabmultifeature",
-        "identityClientId": "04b69493-92f1-4f6f-8821-29bc3767b06e"
+        "identityClientId": "4e6d0835-8e60-4a70-a9bd-fcbcd2f0d6db"
     },
     "fx-resource-bot": {
-        "botId": "4720ccd5-02ad-40a3-b298-d651ad8ff1b5",
+        "botId": "f5fbe6d8-168c-4c1a-89cb-0d34b2113f7d",
         "botPassword": "{{fx-resource-bot.botPassword}}",
-        "objectId": "216b7fc9-ebe9-45db-a4e6-3999f31128c1",
+        "objectId": "bba30dd2-9269-48fa-85cb-ba8346d50a30",
         "skuName": "B1",
         "siteName": "rndtabmultifeaturebot",
         "validDomain": "rndtabmultifeaturebot.azurewebsites.net",
@@ -32,15 +32,15 @@
         "siteEndpoint": "https://rndtabmultifeaturebot.azurewebsites.net"
     },
     "fx-resource-aad-app-for-teams": {
-        "clientId": "db6c453d-11a4-49e5-858a-1b4d528577ec",
+        "clientId": "43cdb967-44c2-4d1d-8056-9f91390acb0a",
         "clientSecret": "{{fx-resource-aad-app-for-teams.clientSecret}}",
-        "objectId": "2efd6f23-ffcc-4b53-b309-a3b8e5ada19d",
-        "oauth2PermissionScopeId": "279ee322-67fb-4eee-8afd-683db7ce4b35",
+        "objectId": "3db57db0-e2ef-465e-9538-9a312288b0ce",
+        "oauth2PermissionScopeId": "6e885265-041c-413e-ab5e-3ab3960938e8",
         "tenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
         "oauthHost": "https://login.microsoftonline.com",
         "oauthAuthority": "https://login.microsoftonline.com/7c9154c9-0f63-443e-a07a-8a3ede021afc",
-        "applicationIdUris": "api://rndtabmultifeaturetab.azurewebsites.net/botid-4720ccd5-02ad-40a3-b298-d651ad8ff1b5",
-        "botId": "4720ccd5-02ad-40a3-b298-d651ad8ff1b5",
+        "applicationIdUris": "api://rndtabmultifeaturetab.azurewebsites.net/botid-f5fbe6d8-168c-4c1a-89cb-0d34b2113f7d",
+        "botId": "f5fbe6d8-168c-4c1a-89cb-0d34b2113f7d",
         "botEndpoint": "https://rndtabmultifeaturebot.azurewebsites.net",
         "frontendEndpoint": "https://rndtabmultifeaturetab.azurewebsites.net"
     },

@@ -1,6 +1,5 @@
 @secure()
 param provisionParameters object
-param userAssignedIdentityId string
 var resourceBaseName = provisionParameters.resourceBaseName
 var storageName = contains(provisionParameters, 'frontendHostingStorageName') ? provisionParameters['frontendHostingStorageName'] : '${resourceBaseName}tab' // Try to read name for frontend hosting Storage Account from parameters
 var storageSku = contains(provisionParameters, 'frontendHostingStorageSku') ? provisionParameters['frontendHostingStorageSku'] : 'Standard_LRS' // Try to read SKU for frontend hosting Storage Account from parameters
@@ -45,7 +44,6 @@ resource webApp 'Microsoft.Web/sites@2021-02-01' = {
   name: webAppName
   properties: {
     serverFarmId: serverfarm.id
-    keyVaultReferenceIdentity: userAssignedIdentityId // Use given user assigned identity to access Key Vault
     httpsOnly: true
     siteConfig: {
       alwaysOn: true
@@ -64,12 +62,6 @@ resource webApp 'Microsoft.Web/sites@2021-02-01' = {
         }
       ]
       ftpsState: 'FtpsOnly'
-    }
-  }
-  identity: {
-    type: 'UserAssigned'
-    userAssignedIdentities: {
-      '${userAssignedIdentityId}': {} // The identity is used to access other Azure resources
     }
   }
 }

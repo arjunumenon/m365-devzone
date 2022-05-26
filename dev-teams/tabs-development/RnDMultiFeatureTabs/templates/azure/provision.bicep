@@ -5,7 +5,6 @@ module frontendHostingProvision './provision/frontendHosting.bicep' = {
   name: 'frontendHostingProvision'
   params: {
     provisionParameters: provisionParameters
-    userAssignedIdentityId:userAssignedIdentityProvision.outputs.identityResourceId
   }
 }
 
