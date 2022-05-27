@@ -9,6 +9,7 @@ import { useData } from "@microsoft/teamsfx-react";
 import { Deploy } from "./Deploy";
 import { Publish } from "./Publish";
 import { TeamsFxContext } from "../Context";
+import * as microsoftTeams from "@microsoft/teams-js";
 
 export function Welcome(props: { showFunction?: boolean; environment?: string }) {
   const { showFunction, environment } = {
@@ -45,11 +46,13 @@ export function Welcome(props: { showFunction?: boolean; environment?: string })
     }
   });
   const userName = (loading || error) ? "": data!.displayName;
+
   return (
     <div className="welcome page">
       <div className="narrow page-padding">
         <Image src="hello.png" />
         <h1 className="center">Congratulations{userName ? ", " + userName : ""}!</h1>
+        <p className="center">Your app is running in MEETNG CONTEXT {friendlyEnvironmentName}</p>
         <p className="center">Your app is running in your {friendlyEnvironmentName}</p>
         <Menu defaultActiveIndex={0} items={items} underlined secondary />
         <div className="sections">
