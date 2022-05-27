@@ -1,0 +1,42 @@
+{
+    "solution": {
+        "teamsAppTenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
+        "subscriptionId": "acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2",
+        "subscriptionName": "Visual Studio Enterprise",
+        "tenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
+        "needCreateResourceGroup": false,
+        "resourceGroupName": "TCS-teams-DEV",
+        "location": "eastus",
+        "resourceNameSuffix": "fb3a39",
+        "provisionSucceeded": true
+    },
+    "fx-resource-appstudio": {
+        "tenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
+        "teamsAppId": "5d97c926-0a75-4b41-b090-c06ad52bd13e",
+        "teamsAppUpdatedAt": 1653655957302
+    },
+    "fx-resource-identity": {
+        "identityName": "meetingapprnd",
+        "identityResourceId": "/subscriptions/acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2/resourceGroups/TCS-teams-DEV/providers/Microsoft.ManagedIdentity/userAssignedIdentities/meetingapprnd",
+        "identityClientId": "24121022-f6e3-4ecd-9aa9-11df93fb0120"
+    },
+    "fx-resource-aad-app-for-teams": {
+        "clientId": "7bdd83d3-3e6d-472b-8780-4701b5caf906",
+        "clientSecret": "{{fx-resource-aad-app-for-teams.clientSecret}}",
+        "objectId": "bd67af7d-cd82-4593-9e58-bca2f301ffa7",
+        "oauth2PermissionScopeId": "86973286-6f76-4693-9cd2-6cc5b2b900ec",
+        "tenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
+        "oauthHost": "https://login.microsoftonline.com",
+        "oauthAuthority": "https://login.microsoftonline.com/7c9154c9-0f63-443e-a07a-8a3ede021afc",
+        "applicationIdUris": "api://meetingapprndtab.azurewebsites.net/7bdd83d3-3e6d-472b-8780-4701b5caf906",
+        "frontendEndpoint": "https://meetingapprndtab.azurewebsites.net"
+    },
+    "fx-resource-frontend-hosting": {
+        "domain": "meetingapprndtab.azurewebsites.net",
+        "endpoint": "https://meetingapprndtab.azurewebsites.net",
+        "indexPath": "/index.html#",
+        "storageResourceId": "/subscriptions/acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2/resourceGroups/TCS-teams-DEV/providers/Microsoft.Storage/storageAccounts/meetingapprndtab"
+    },
+    "fx-resource-cicd": {},
+    "fx-resource-api-connector": {}
+}
