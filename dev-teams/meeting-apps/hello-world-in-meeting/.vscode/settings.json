@@ -1,3 +1,5 @@
 {
-    "debug.onTaskErrors": "abort"
+    "debug.onTaskErrors": "abort",
+    "appService.defaultWebAppToDeploy": "/subscriptions/acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2/microsoft.web/sites/subscriptions/acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2/resourceGroups/TCS-teams-DEV/providers/Microsoft.Web/sites/samplemeetingapprndtab",
+    "appService.deploySubpath": "tabs\\build"
 }

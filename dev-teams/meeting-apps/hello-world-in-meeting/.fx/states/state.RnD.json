@@ -1,0 +1,29 @@
+{
+    "solution": {
+        "teamsAppTenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
+        "subscriptionId": "acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2",
+        "subscriptionName": "Visual Studio Enterprise",
+        "tenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
+        "needCreateResourceGroup": false,
+        "resourceGroupName": "TCS-teams-DEV",
+        "location": "eastus",
+        "resourceNameSuffix": "c03815",
+        "provisionSucceeded": true
+    },
+    "fx-resource-appstudio": {
+        "tenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
+        "teamsAppId": "81ef1072-e101-443f-89cf-e28067eeed51",
+        "teamsAppUpdatedAt": 1653646797177
+    },
+    "fx-resource-identity": {
+        "identityName": "samplemeetingapprnd",
+        "identityResourceId": "/subscriptions/acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2/resourceGroups/TCS-teams-DEV/providers/Microsoft.ManagedIdentity/userAssignedIdentities/samplemeetingapprnd",
+        "identityClientId": "5facfda2-9eb1-400d-bce4-9eed674eb1d0"
+    },
+    "fx-resource-frontend-hosting": {
+        "domain": "samplemeetingapprndtab.azurewebsites.net",
+        "endpoint": "https://samplemeetingapprndtab.azurewebsites.net",
+        "indexPath": "/index.html#",
+        "storageResourceId": "/subscriptions/acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2/resourceGroups/TCS-teams-DEV/providers/Microsoft.Storage/storageAccounts/samplemeetingapprndtab"
+    }
+}

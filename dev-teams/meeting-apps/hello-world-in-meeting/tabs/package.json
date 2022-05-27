@@ -21,6 +21,7 @@
     "build": "react-scripts build",
     "build:teamsfx": "cross-env-shell \"env-cmd -f .env.teamsfx.${TEAMS_FX_ENV} npm run build\"",
     "build:teamsfx:dev": "cross-env TEAMS_FX_ENV=dev npm run build:teamsfx",
+    "build:teamsfx:RnD": "cross-env TEAMS_FX_ENV=RnD npm run build:teamsfx",
     "eject": "react-scripts eject",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
