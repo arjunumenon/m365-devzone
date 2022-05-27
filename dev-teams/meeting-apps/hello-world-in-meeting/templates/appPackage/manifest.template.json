@@ -38,6 +38,10 @@
                 "meetingDetailsTab",
                 "meetingSidePanel",
                 "meetingStage"
+              ],
+              "meetingSurfaces": [
+                "sidePanel",
+                "stage"
               ]
         }
     ],
