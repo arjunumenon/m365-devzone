@@ -3,7 +3,7 @@
     "appId": "{{state.fx-resource-aad-app-for-teams.clientId}}",
     "name": "{{config.manifest.appName.short}}-aad",
     "accessTokenAcceptedVersion": 2,
-    "signInAudience": "AzureADMyOrg",
+    "signInAudience": "AzureADMultipleOrgs",
     "optionalClaims": {
         "idToken": [],
         "accessToken": [
@@ -27,6 +27,8 @@
             ]
         }
     ],
+    "oauth2AllowIdTokenImplicitFlow": true,
+	"oauth2AllowImplicitFlow": true,
     "oauth2Permissions": [
         {
             "adminConsentDescription": "Allows Teams to call the app's web APIs as the current user.",

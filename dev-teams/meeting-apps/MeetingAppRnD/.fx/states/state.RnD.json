@@ -7,28 +7,28 @@
         "needCreateResourceGroup": false,
         "resourceGroupName": "TCS-teams-DEV",
         "location": "eastus",
-        "resourceNameSuffix": "fb3a39",
+        "resourceNameSuffix": "1fb30a",
         "provisionSucceeded": true
     },
     "fx-resource-appstudio": {
         "tenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
-        "teamsAppId": "5d97c926-0a75-4b41-b090-c06ad52bd13e",
-        "teamsAppUpdatedAt": 1653655957302
+        "teamsAppId": "f298b7d2-e609-4fd1-a94b-c3159a527f8b",
+        "teamsAppUpdatedAt": 1653909200055
     },
     "fx-resource-identity": {
         "identityName": "meetingapprnd",
         "identityResourceId": "/subscriptions/acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2/resourceGroups/TCS-teams-DEV/providers/Microsoft.ManagedIdentity/userAssignedIdentities/meetingapprnd",
-        "identityClientId": "24121022-f6e3-4ecd-9aa9-11df93fb0120"
+        "identityClientId": "285f9ea3-95b9-4abd-a1e7-4cf15418862e"
     },
     "fx-resource-aad-app-for-teams": {
-        "clientId": "7bdd83d3-3e6d-472b-8780-4701b5caf906",
+        "clientId": "74c02a95-2a98-4d95-b87d-2bd4d56e6430",
         "clientSecret": "{{fx-resource-aad-app-for-teams.clientSecret}}",
-        "objectId": "bd67af7d-cd82-4593-9e58-bca2f301ffa7",
-        "oauth2PermissionScopeId": "86973286-6f76-4693-9cd2-6cc5b2b900ec",
+        "objectId": "36b4b8d8-764c-46fc-865b-8f2719677b91",
+        "oauth2PermissionScopeId": "9e415a1d-54b3-4def-bd55-b4c0c67d2a0c",
         "tenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
         "oauthHost": "https://login.microsoftonline.com",
         "oauthAuthority": "https://login.microsoftonline.com/7c9154c9-0f63-443e-a07a-8a3ede021afc",
-        "applicationIdUris": "api://meetingapprndtab.azurewebsites.net/7bdd83d3-3e6d-472b-8780-4701b5caf906",
+        "applicationIdUris": "api://meetingapprndtab.azurewebsites.net/74c02a95-2a98-4d95-b87d-2bd4d56e6430",
         "frontendEndpoint": "https://meetingapprndtab.azurewebsites.net"
     },
     "fx-resource-frontend-hosting": {

@@ -34,10 +34,14 @@
                 "groupchat"
             ],
             "context": [
-              "meetingChatTab",
-              "meetingDetailsTab",
-              "meetingSidePanel",
-              "meetingStage"
+                "meetingChatTab",
+                "meetingDetailsTab",
+                "meetingSidePanel",
+                "meetingStage"
+            ],
+            "meetingSurfaces": [
+                "sidePanel",
+                "stage"
             ]
         }
     ],
