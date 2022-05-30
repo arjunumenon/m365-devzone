@@ -13,7 +13,7 @@
     "fx-resource-appstudio": {
         "tenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
         "teamsAppId": "f298b7d2-e609-4fd1-a94b-c3159a527f8b",
-        "teamsAppUpdatedAt": 1653909200055
+        "teamsAppUpdatedAt": 1653922123667
     },
     "fx-resource-identity": {
         "identityName": "meetingapprnd",
@@ -38,5 +38,9 @@
         "storageResourceId": "/subscriptions/acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2/resourceGroups/TCS-teams-DEV/providers/Microsoft.Storage/storageAccounts/meetingapprndtab"
     },
     "fx-resource-cicd": {},
-    "fx-resource-api-connector": {}
+    "fx-resource-api-connector": {},
+    "fx-resource-function": {
+        "functionAppResourceId": "/subscriptions/acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2/resourceGroups/TCS-teams-DEV/providers/Microsoft.Web/sites/meetingapprndapi",
+        "functionEndpoint": "https://meetingapprndapi.azurewebsites.net"
+    }
 }
