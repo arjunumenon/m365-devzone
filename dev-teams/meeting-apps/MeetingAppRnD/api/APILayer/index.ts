@@ -9,7 +9,7 @@ import { Context, HttpRequest } from "@azure/functions";
 import { Client } from "@microsoft/microsoft-graph-client";
 import { createMicrosoftGraphClient, TeamsFx, UserInfo } from "@microsoft/teamsfx";
 
-import {validateToken} from "./AuthUtils";
+import {validateTeamsFxToken} from "./AuthUtils";
 
 interface Response {
   status: number;
@@ -55,6 +55,18 @@ export default async function run(
 
   // Prepare access token.
   const accessToken: string = teamsfxContext["AccessToken"];
+
+  const token = await validateTeamsFxToken(accessToken);
+
+  if (!token) {
+    return {
+      status: 400,
+      body: {
+        error: "No access token was found in request header.",
+      },
+    };
+  }
+
   if (!accessToken) {
     return {
       status: 400,

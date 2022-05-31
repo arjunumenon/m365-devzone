@@ -36,3 +36,29 @@ export async function validateToken(req: express.Request): Promise<string> {
     }
   });
 };
+
+export async function validateTeamsFxToken(receivedTeamsFxToken: string): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const authHeader = receivedTeamsFxToken;
+
+    if (authHeader) {
+      const token = authHeader.split(" ").pop();
+
+      if (token) {
+        const validationOptions = {
+          audience: `${process.env.M365_APPLICATION_ID_URI}`
+        };
+
+        jwt.verify(token, getSigningKeys, validationOptions, (err, payload) => {
+          if (err) {console.error(err); reject(new Error("403")); }
+          console.log("Authenticated Token");
+          resolve(token);
+        });
+      } else {
+        reject(new Error("401"));
+      }
+    } else {
+      reject(new Error("401"));
+    }
+  });
+};
