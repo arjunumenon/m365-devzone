@@ -1,46 +1,46 @@
 {
     "solution": {
-        "teamsAppTenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
-        "subscriptionId": "acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2",
-        "subscriptionName": "Visual Studio Enterprise",
-        "tenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
+        "teamsAppTenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c",
+        "subscriptionId": "9f6c8d04-7a32-46d1-86f2-37766420bee0",
+        "subscriptionName": "Visual Studio Enterprise Subscription",
+        "tenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c",
         "needCreateResourceGroup": false,
-        "resourceGroupName": "TCS-teams-DEV",
+        "resourceGroupName": "Teams-Dev-TCS",
         "location": "eastus",
-        "resourceNameSuffix": "1fb30a",
+        "resourceNameSuffix": "377dfc",
         "provisionSucceeded": true
     },
     "fx-resource-appstudio": {
-        "tenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
-        "teamsAppId": "f298b7d2-e609-4fd1-a94b-c3159a527f8b",
-        "teamsAppUpdatedAt": 1653922123667
+        "tenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c",
+        "teamsAppId": "b38cfd05-e42b-4e10-8318-fc02712ab412",
+        "teamsAppUpdatedAt": 1654001950410
     },
     "fx-resource-identity": {
-        "identityName": "meetingapprnd",
-        "identityResourceId": "/subscriptions/acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2/resourceGroups/TCS-teams-DEV/providers/Microsoft.ManagedIdentity/userAssignedIdentities/meetingapprnd",
-        "identityClientId": "285f9ea3-95b9-4abd-a1e7-4cf15418862e"
+        "identityName": "meetingapprndv2",
+        "identityResourceId": "/subscriptions/9f6c8d04-7a32-46d1-86f2-37766420bee0/resourceGroups/Teams-Dev-TCS/providers/Microsoft.ManagedIdentity/userAssignedIdentities/meetingapprndv2",
+        "identityClientId": "c9c462ff-6b9a-486a-8621-1a09faded91f"
     },
     "fx-resource-aad-app-for-teams": {
-        "clientId": "74c02a95-2a98-4d95-b87d-2bd4d56e6430",
+        "clientId": "2b53991b-c4ce-4b5f-adbd-f45cea7505fc",
         "clientSecret": "{{fx-resource-aad-app-for-teams.clientSecret}}",
-        "objectId": "36b4b8d8-764c-46fc-865b-8f2719677b91",
-        "oauth2PermissionScopeId": "9e415a1d-54b3-4def-bd55-b4c0c67d2a0c",
-        "tenantId": "7c9154c9-0f63-443e-a07a-8a3ede021afc",
+        "objectId": "6c8bc6dd-b1bf-4b28-873c-caac21521b08",
+        "oauth2PermissionScopeId": "f2843057-d04b-4d7c-baf3-ac5224f8149a",
+        "tenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c",
         "oauthHost": "https://login.microsoftonline.com",
-        "oauthAuthority": "https://login.microsoftonline.com/7c9154c9-0f63-443e-a07a-8a3ede021afc",
-        "applicationIdUris": "api://meetingapprndtab.azurewebsites.net/74c02a95-2a98-4d95-b87d-2bd4d56e6430",
-        "frontendEndpoint": "https://meetingapprndtab.azurewebsites.net"
+        "oauthAuthority": "https://login.microsoftonline.com/095efa67-57fa-40c7-b7cc-e96dc3e5780c",
+        "applicationIdUris": "api://meetingapprndv2tab.azurewebsites.net/2b53991b-c4ce-4b5f-adbd-f45cea7505fc",
+        "frontendEndpoint": "https://meetingapprndv2tab.azurewebsites.net"
+    },
+    "fx-resource-function": {
+        "functionAppResourceId": "/subscriptions/9f6c8d04-7a32-46d1-86f2-37766420bee0/resourceGroups/Teams-Dev-TCS/providers/Microsoft.Web/sites/meetingapprndv2api",
+        "functionEndpoint": "https://meetingapprndv2api.azurewebsites.net"
     },
     "fx-resource-frontend-hosting": {
-        "domain": "meetingapprndtab.azurewebsites.net",
-        "endpoint": "https://meetingapprndtab.azurewebsites.net",
+        "domain": "meetingapprndv2tab.azurewebsites.net",
+        "endpoint": "https://meetingapprndv2tab.azurewebsites.net",
         "indexPath": "/index.html#",
-        "storageResourceId": "/subscriptions/acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2/resourceGroups/TCS-teams-DEV/providers/Microsoft.Storage/storageAccounts/meetingapprndtab"
+        "storageResourceId": "/subscriptions/9f6c8d04-7a32-46d1-86f2-37766420bee0/resourceGroups/Teams-Dev-TCS/providers/Microsoft.Storage/storageAccounts/meetingapprndv2tab"
     },
     "fx-resource-cicd": {},
-    "fx-resource-api-connector": {},
-    "fx-resource-function": {
-        "functionAppResourceId": "/subscriptions/acdf20d3-fbc8-4bf7-acf5-3d6b943bfba2/resourceGroups/TCS-teams-DEV/providers/Microsoft.Web/sites/meetingapprndapi",
-        "functionEndpoint": "https://meetingapprndapi.azurewebsites.net"
-    }
+    "fx-resource-api-connector": {}
 }

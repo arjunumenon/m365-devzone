@@ -9,6 +9,8 @@ import { Context, HttpRequest } from "@azure/functions";
 import { Client } from "@microsoft/microsoft-graph-client";
 import { createMicrosoftGraphClient, TeamsFx, UserInfo } from "@microsoft/teamsfx";
 
+import {validateToken} from "./AuthUtils";
+
 interface Response {
   status: number;
   body: { [key: string]: any };
