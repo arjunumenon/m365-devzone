@@ -7,28 +7,28 @@
         "needCreateResourceGroup": false,
         "resourceGroupName": "Teams-Dev-TCS",
         "location": "eastus",
-        "resourceNameSuffix": "377dfc",
+        "resourceNameSuffix": "05c223",
         "provisionSucceeded": true
     },
     "fx-resource-appstudio": {
         "tenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c",
-        "teamsAppId": "b38cfd05-e42b-4e10-8318-fc02712ab412",
-        "teamsAppUpdatedAt": 1654001950410
+        "teamsAppId": "aabef409-b3c9-40b1-8d56-8f83868763fc",
+        "teamsAppUpdatedAt": 1654088763712
     },
     "fx-resource-identity": {
         "identityName": "meetingapprndv2",
         "identityResourceId": "/subscriptions/9f6c8d04-7a32-46d1-86f2-37766420bee0/resourceGroups/Teams-Dev-TCS/providers/Microsoft.ManagedIdentity/userAssignedIdentities/meetingapprndv2",
-        "identityClientId": "c9c462ff-6b9a-486a-8621-1a09faded91f"
+        "identityClientId": "043ec9ce-7380-499e-8ced-d39127e31fff"
     },
     "fx-resource-aad-app-for-teams": {
-        "clientId": "2b53991b-c4ce-4b5f-adbd-f45cea7505fc",
+        "clientId": "9a3bfae5-cfac-4019-8e15-f2731afd93ee",
         "clientSecret": "{{fx-resource-aad-app-for-teams.clientSecret}}",
-        "objectId": "6c8bc6dd-b1bf-4b28-873c-caac21521b08",
-        "oauth2PermissionScopeId": "f2843057-d04b-4d7c-baf3-ac5224f8149a",
+        "objectId": "5baa50c7-5866-4920-8571-6c47441a2c91",
+        "oauth2PermissionScopeId": "5666e41b-d5a0-4fac-bb35-233fe4c38002",
         "tenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c",
         "oauthHost": "https://login.microsoftonline.com",
         "oauthAuthority": "https://login.microsoftonline.com/095efa67-57fa-40c7-b7cc-e96dc3e5780c",
-        "applicationIdUris": "api://meetingapprndv2tab.azurewebsites.net/2b53991b-c4ce-4b5f-adbd-f45cea7505fc",
+        "applicationIdUris": "api://meetingapprndv2tab.azurewebsites.net/9a3bfae5-cfac-4019-8e15-f2731afd93ee",
         "frontendEndpoint": "https://meetingapprndv2tab.azurewebsites.net"
     },
     "fx-resource-function": {
