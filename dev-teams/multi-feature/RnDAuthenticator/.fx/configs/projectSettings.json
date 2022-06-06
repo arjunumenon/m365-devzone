@@ -10,11 +10,13 @@
         "azureResources": [],
         "capabilities": [
             "Tab",
-            "TabSSO"
+            "TabSSO",
+            "Bot"
         ],
         "activeResourcePlugins": [
             "fx-resource-frontend-hosting",
             "fx-resource-identity",
+            "fx-resource-bot",
             "fx-resource-aad-app-for-teams",
             "fx-resource-local-debug",
             "fx-resource-appstudio",
@@ -22,5 +24,13 @@
             "fx-resource-api-connector"
         ]
     },
-    "programmingLanguage": "typescript"
+    "programmingLanguage": "typescript",
+    "pluginSettings": {
+        "fx-resource-bot": {
+            "host-type": "app-service",
+            "capabilities": [
+                "command-response"
+            ]
+        }
+    }
 }

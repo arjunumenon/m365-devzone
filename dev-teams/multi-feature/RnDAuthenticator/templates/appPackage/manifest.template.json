@@ -23,7 +23,33 @@
         "full": "Full description of {{config.manifest.appName.short}}"
     },
     "accentColor": "#FFFFFF",
-    "bots": [],
+    "bots": [
+        {
+            "botId": "{{state.fx-resource-bot.botId}}",
+            "scopes": [
+                "personal",
+                "team",
+                "groupchat"
+            ],
+            "supportsFiles": false,
+            "isNotificationOnly": false,
+            "commandLists": [
+                {
+                    "scopes": [
+                        "personal",
+                        "team",
+                        "groupchat"
+                    ],
+                    "commands": [
+                        {
+                            "title": "helloWorld",
+                            "description": "A helloworld command to send a welcome message"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
     "composeExtensions": [],
     "configurableTabs": [
         {

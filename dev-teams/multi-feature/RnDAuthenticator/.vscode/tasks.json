@@ -5,6 +5,7 @@
             "label": "Pre Debug Check & Start All",
             "dependsOn": [
                 "validate local prerequisites",
+                "start ngrok",
                 "prepare local environment",
                 "Start All"
             ],
@@ -19,6 +20,10 @@
             }
         },
         {
+            "label": "start ngrok",
+            "dependsOn": "teamsfx: ngrok start"
+        },
+        {
             "label": "prepare local environment",
             "type": "shell",
             "command": "exit ${command:fx-extension.pre-debug-check}",
@@ -29,7 +34,8 @@
         {
             "label": "Start All",
             "dependsOn": [
-                "Start Frontend"
+                "Start Frontend",
+                "Start Bot"
             ]
         },
         {
@@ -40,6 +46,33 @@
             "problemMatcher": "$teamsfx-frontend-watch",
             "options": {
                 "cwd": "${workspaceFolder}/tabs"
+            }
+        },
+        {
+            "label": "Start Bot",
+            "type": "shell",
+            "command": "npm run dev:teamsfx",
+            "isBackground": true,
+            "problemMatcher": {
+                "pattern": [
+                    {
+                        "regexp": "^.*$",
+                        "file": 0,
+                        "location": 1,
+                        "message": 2
+                    }
+                ],
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "[nodemon] starting",
+                    "endsPattern": "restify listening to|Bot/ME service listening at|[nodemon] app crashed"
+                }
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/bot"
+            },
+            "presentation": {
+                "reveal": "silent"
             }
         }
     ]

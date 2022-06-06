@@ -13,7 +13,7 @@
     "fx-resource-appstudio": {
         "tenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c",
         "teamsAppId": "a50d0f84-d430-437a-9582-41aebd926ec7",
-        "teamsAppUpdatedAt": 1654521694099
+        "teamsAppUpdatedAt": 1654525628386
     },
     "fx-resource-identity": {
         "identityName": "teamsrndauthenticator",
@@ -28,8 +28,10 @@
         "tenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c",
         "oauthHost": "https://login.microsoftonline.com",
         "oauthAuthority": "https://login.microsoftonline.com/095efa67-57fa-40c7-b7cc-e96dc3e5780c",
-        "applicationIdUris": "api://teamsrndauthenticatortab.azurewebsites.net/86eebb6b-6784-48af-949e-3ad228047912",
-        "frontendEndpoint": "https://teamsrndauthenticatortab.azurewebsites.net"
+        "applicationIdUris": "api://teamsrndauthenticatortab.azurewebsites.net/botid-9fb34f46-05ca-4de8-af7c-eb5c5c012444",
+        "frontendEndpoint": "https://teamsrndauthenticatortab.azurewebsites.net",
+        "botId": "9fb34f46-05ca-4de8-af7c-eb5c5c012444",
+        "botEndpoint": "https://teamsrndauthenticatorbot.azurewebsites.net"
     },
     "fx-resource-frontend-hosting": {
         "domain": "teamsrndauthenticatortab.azurewebsites.net",
@@ -38,5 +40,16 @@
         "storageResourceId": "/subscriptions/9f6c8d04-7a32-46d1-86f2-37766420bee0/resourceGroups/Teams-Dev-TCS/providers/Microsoft.Storage/storageAccounts/teamsrndauthenticatortab"
     },
     "fx-resource-cicd": {},
-    "fx-resource-api-connector": {}
+    "fx-resource-api-connector": {},
+    "fx-resource-bot": {
+        "botId": "9fb34f46-05ca-4de8-af7c-eb5c5c012444",
+        "botPassword": "{{fx-resource-bot.botPassword}}",
+        "objectId": "cadc3042-0737-4661-aa5a-612ad8880ac9",
+        "skuName": "B1",
+        "siteName": "teamsrndauthenticatorbot",
+        "validDomain": "teamsrndauthenticatorbot.azurewebsites.net",
+        "appServicePlanName": "teamsrndauthenticatorbot",
+        "botWebAppResourceId": "/subscriptions/9f6c8d04-7a32-46d1-86f2-37766420bee0/resourceGroups/Teams-Dev-TCS/providers/Microsoft.Web/sites/teamsrndauthenticatorbot",
+        "siteEndpoint": "https://teamsrndauthenticatorbot.azurewebsites.net"
+    }
 }
