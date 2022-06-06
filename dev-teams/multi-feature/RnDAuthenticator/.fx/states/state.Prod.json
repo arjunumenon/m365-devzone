@@ -1,0 +1,42 @@
+{
+    "solution": {
+        "teamsAppTenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c",
+        "subscriptionId": "9f6c8d04-7a32-46d1-86f2-37766420bee0",
+        "subscriptionName": "Visual Studio Enterprise Subscription",
+        "tenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c",
+        "needCreateResourceGroup": false,
+        "resourceGroupName": "Teams-Dev-TCS",
+        "location": "eastus",
+        "resourceNameSuffix": "1e00de",
+        "provisionSucceeded": true
+    },
+    "fx-resource-appstudio": {
+        "tenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c",
+        "teamsAppId": "a50d0f84-d430-437a-9582-41aebd926ec7",
+        "teamsAppUpdatedAt": 1654521694099
+    },
+    "fx-resource-identity": {
+        "identityName": "teamsrndauthenticator",
+        "identityResourceId": "/subscriptions/9f6c8d04-7a32-46d1-86f2-37766420bee0/resourceGroups/Teams-Dev-TCS/providers/Microsoft.ManagedIdentity/userAssignedIdentities/teamsrndauthenticator",
+        "identityClientId": "86db87fc-68b3-4dd1-9d19-a348da9318ce"
+    },
+    "fx-resource-aad-app-for-teams": {
+        "clientId": "86eebb6b-6784-48af-949e-3ad228047912",
+        "clientSecret": "{{fx-resource-aad-app-for-teams.clientSecret}}",
+        "objectId": "79c27615-cff6-48d0-a5ec-0b86e00c77da",
+        "oauth2PermissionScopeId": "7e2d57c0-e64b-4efb-b23c-18e8258b8b71",
+        "tenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c",
+        "oauthHost": "https://login.microsoftonline.com",
+        "oauthAuthority": "https://login.microsoftonline.com/095efa67-57fa-40c7-b7cc-e96dc3e5780c",
+        "applicationIdUris": "api://teamsrndauthenticatortab.azurewebsites.net/86eebb6b-6784-48af-949e-3ad228047912",
+        "frontendEndpoint": "https://teamsrndauthenticatortab.azurewebsites.net"
+    },
+    "fx-resource-frontend-hosting": {
+        "domain": "teamsrndauthenticatortab.azurewebsites.net",
+        "endpoint": "https://teamsrndauthenticatortab.azurewebsites.net",
+        "indexPath": "/index.html#",
+        "storageResourceId": "/subscriptions/9f6c8d04-7a32-46d1-86f2-37766420bee0/resourceGroups/Teams-Dev-TCS/providers/Microsoft.Storage/storageAccounts/teamsrndauthenticatortab"
+    },
+    "fx-resource-cicd": {},
+    "fx-resource-api-connector": {}
+}
