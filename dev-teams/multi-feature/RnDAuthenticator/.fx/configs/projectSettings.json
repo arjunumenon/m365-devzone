@@ -7,7 +7,9 @@
         "name": "fx-solution-azure",
         "version": "1.0.0",
         "hostType": "Azure",
-        "azureResources": [],
+        "azureResources": [
+            "function"
+        ],
         "capabilities": [
             "Tab",
             "TabSSO",
@@ -18,6 +20,7 @@
             "fx-resource-identity",
             "fx-resource-bot",
             "fx-resource-aad-app-for-teams",
+            "fx-resource-function",
             "fx-resource-local-debug",
             "fx-resource-appstudio",
             "fx-resource-cicd",
@@ -32,5 +35,6 @@
                 "command-response"
             ]
         }
-    }
+    },
+    "defaultFunctionName": "authConnector"
 }

@@ -9,5 +9,8 @@
         }
     ],
     "appService.defaultWebAppToDeploy": "/subscriptions/9f6c8d04-7a32-46d1-86f2-37766420bee0/microsoft.web/sites/subscriptions/9f6c8d04-7a32-46d1-86f2-37766420bee0/resourceGroups/Teams-Dev-TCS/providers/Microsoft.Web/sites/teamsrndauthenticatortab",
-    "appService.deploySubpath": "tabs\\build"
+    "appService.deploySubpath": "tabs\\build",
+    "azureFunctions.stopFuncTaskPostDebug": false,
+    "azureFunctions.showProjectWarning": false,
+    "csharp.suppressDotnetRestoreNotification": true
 }

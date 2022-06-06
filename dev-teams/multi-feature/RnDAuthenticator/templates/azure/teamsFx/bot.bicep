@@ -34,6 +34,7 @@ resource botWebAppSettings 'Microsoft.Web/sites/config@2021-02-01' = {
     M365_APPLICATION_ID_URI: m365ApplicationIdUri // Application ID URI of AAD application
     BOT_ID: botAadAppClientId // ID of your bot
     BOT_PASSWORD: botAadAppClientSecret // Secret of your bot
+    API_ENDPOINT: provisionOutputs.functionOutput.value.functionEndpoint // Azure Function endpoint
     IDENTITY_ID: provisionOutputs.identityOutput.value.identityClientId // User assigned identity id, the identity is used to access other Azure resources
   }, currentAppSettings)
 }

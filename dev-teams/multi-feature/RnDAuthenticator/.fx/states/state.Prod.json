@@ -13,7 +13,7 @@
     "fx-resource-appstudio": {
         "tenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c",
         "teamsAppId": "a50d0f84-d430-437a-9582-41aebd926ec7",
-        "teamsAppUpdatedAt": 1654525628386
+        "teamsAppUpdatedAt": 1654529446735
     },
     "fx-resource-identity": {
         "identityName": "teamsrndauthenticator",
@@ -51,5 +51,9 @@
         "appServicePlanName": "teamsrndauthenticatorbot",
         "botWebAppResourceId": "/subscriptions/9f6c8d04-7a32-46d1-86f2-37766420bee0/resourceGroups/Teams-Dev-TCS/providers/Microsoft.Web/sites/teamsrndauthenticatorbot",
         "siteEndpoint": "https://teamsrndauthenticatorbot.azurewebsites.net"
+    },
+    "fx-resource-function": {
+        "functionAppResourceId": "/subscriptions/9f6c8d04-7a32-46d1-86f2-37766420bee0/resourceGroups/Teams-Dev-TCS/providers/Microsoft.Web/sites/teamsrndauthenticatorapi",
+        "functionEndpoint": "https://teamsrndauthenticatorapi.azurewebsites.net"
     }
 }
