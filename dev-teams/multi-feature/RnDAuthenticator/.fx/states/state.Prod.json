@@ -7,31 +7,46 @@
         "needCreateResourceGroup": false,
         "resourceGroupName": "Teams-Dev-TCS",
         "location": "eastus",
-        "resourceNameSuffix": "1e00de",
+        "resourceNameSuffix": "f639a1",
         "provisionSucceeded": true
     },
     "fx-resource-appstudio": {
         "tenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c",
-        "teamsAppId": "a50d0f84-d430-437a-9582-41aebd926ec7",
-        "teamsAppUpdatedAt": 1654529446735
+        "teamsAppId": "a6c97933-3d3f-40e9-a28a-af156eeac97e",
+        "teamsAppUpdatedAt": 1654586182854
     },
     "fx-resource-identity": {
         "identityName": "teamsrndauthenticator",
         "identityResourceId": "/subscriptions/9f6c8d04-7a32-46d1-86f2-37766420bee0/resourceGroups/Teams-Dev-TCS/providers/Microsoft.ManagedIdentity/userAssignedIdentities/teamsrndauthenticator",
-        "identityClientId": "86db87fc-68b3-4dd1-9d19-a348da9318ce"
+        "identityClientId": "aaf19c15-5e2d-41ba-8f69-e5138498617d"
+    },
+    "fx-resource-bot": {
+        "botId": "33855475-2faa-426f-9563-53be36849bac",
+        "botPassword": "{{fx-resource-bot.botPassword}}",
+        "objectId": "b4ccb099-ca04-4f65-9d8e-83d9ddfe0333",
+        "skuName": "B1",
+        "siteName": "teamsrndauthenticatorbot",
+        "validDomain": "teamsrndauthenticatorbot.azurewebsites.net",
+        "appServicePlanName": "teamsrndauthenticatorbot",
+        "botWebAppResourceId": "/subscriptions/9f6c8d04-7a32-46d1-86f2-37766420bee0/resourceGroups/Teams-Dev-TCS/providers/Microsoft.Web/sites/teamsrndauthenticatorbot",
+        "siteEndpoint": "https://teamsrndauthenticatorbot.azurewebsites.net"
     },
     "fx-resource-aad-app-for-teams": {
-        "clientId": "86eebb6b-6784-48af-949e-3ad228047912",
+        "clientId": "cfe87a81-8db2-4015-8e4b-ba5bbe247c70",
         "clientSecret": "{{fx-resource-aad-app-for-teams.clientSecret}}",
-        "objectId": "79c27615-cff6-48d0-a5ec-0b86e00c77da",
-        "oauth2PermissionScopeId": "7e2d57c0-e64b-4efb-b23c-18e8258b8b71",
+        "objectId": "c0a8c9c0-c9b3-4d03-80f9-7a01d70c63e7",
+        "oauth2PermissionScopeId": "2247cf80-935c-4af3-b355-6873e9a70b13",
         "tenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c",
         "oauthHost": "https://login.microsoftonline.com",
         "oauthAuthority": "https://login.microsoftonline.com/095efa67-57fa-40c7-b7cc-e96dc3e5780c",
-        "applicationIdUris": "api://teamsrndauthenticatortab.azurewebsites.net/botid-9fb34f46-05ca-4de8-af7c-eb5c5c012444",
-        "frontendEndpoint": "https://teamsrndauthenticatortab.azurewebsites.net",
-        "botId": "9fb34f46-05ca-4de8-af7c-eb5c5c012444",
-        "botEndpoint": "https://teamsrndauthenticatorbot.azurewebsites.net"
+        "applicationIdUris": "api://teamsrndauthenticatortab.azurewebsites.net/botid-33855475-2faa-426f-9563-53be36849bac",
+        "botId": "33855475-2faa-426f-9563-53be36849bac",
+        "botEndpoint": "https://teamsrndauthenticatorbot.azurewebsites.net",
+        "frontendEndpoint": "https://teamsrndauthenticatortab.azurewebsites.net"
+    },
+    "fx-resource-function": {
+        "functionAppResourceId": "/subscriptions/9f6c8d04-7a32-46d1-86f2-37766420bee0/resourceGroups/Teams-Dev-TCS/providers/Microsoft.Web/sites/teamsrndauthenticatorapi",
+        "functionEndpoint": "https://teamsrndauthenticatorapi.azurewebsites.net"
     },
     "fx-resource-frontend-hosting": {
         "domain": "teamsrndauthenticatortab.azurewebsites.net",
@@ -40,20 +55,5 @@
         "storageResourceId": "/subscriptions/9f6c8d04-7a32-46d1-86f2-37766420bee0/resourceGroups/Teams-Dev-TCS/providers/Microsoft.Storage/storageAccounts/teamsrndauthenticatortab"
     },
     "fx-resource-cicd": {},
-    "fx-resource-api-connector": {},
-    "fx-resource-bot": {
-        "botId": "9fb34f46-05ca-4de8-af7c-eb5c5c012444",
-        "botPassword": "{{fx-resource-bot.botPassword}}",
-        "objectId": "cadc3042-0737-4661-aa5a-612ad8880ac9",
-        "skuName": "B1",
-        "siteName": "teamsrndauthenticatorbot",
-        "validDomain": "teamsrndauthenticatorbot.azurewebsites.net",
-        "appServicePlanName": "teamsrndauthenticatorbot",
-        "botWebAppResourceId": "/subscriptions/9f6c8d04-7a32-46d1-86f2-37766420bee0/resourceGroups/Teams-Dev-TCS/providers/Microsoft.Web/sites/teamsrndauthenticatorbot",
-        "siteEndpoint": "https://teamsrndauthenticatorbot.azurewebsites.net"
-    },
-    "fx-resource-function": {
-        "functionAppResourceId": "/subscriptions/9f6c8d04-7a32-46d1-86f2-37766420bee0/resourceGroups/Teams-Dev-TCS/providers/Microsoft.Web/sites/teamsrndauthenticatorapi",
-        "functionEndpoint": "https://teamsrndauthenticatorapi.azurewebsites.net"
-    }
+    "fx-resource-api-connector": {}
 }
