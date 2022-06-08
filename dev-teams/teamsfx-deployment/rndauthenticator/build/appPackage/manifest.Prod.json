@@ -1,0 +1,87 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.11/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.11",
+    "version": "1.0.0",
+    "id": "aadf33c0-7152-4f9e-b6b1-6aba4d19fc26",
+    "packageName": "com.microsoft.teams.extension",
+    "developer": {
+        "name": "Teams App, Inc.",
+        "websiteUrl": "https://teamsrndauthenticatortab.azurewebsites.net",
+        "privacyUrl": "https://teamsrndauthenticatortab.azurewebsites.net/index.html#/privacy",
+        "termsOfUseUrl": "https://teamsrndauthenticatortab.azurewebsites.net/index.html#/termsofuse"
+    },
+    "icons": {
+        "color": "resources/color.png",
+        "outline": "resources/outline.png"
+    },
+    "name": {
+        "short": "RnDAuthenticator",
+        "full": "Full name for RnDAuthenticator"
+    },
+    "description": {
+        "short": "Short description of RnDAuthenticator",
+        "full": "Full description of RnDAuthenticator"
+    },
+    "accentColor": "#FFFFFF",
+    "bots": [
+        {
+            "botId": "56f04c1c-42a3-45c9-bdbe-b3b52b8789e0",
+            "scopes": [
+                "personal",
+                "team",
+                "groupchat"
+            ],
+            "supportsFiles": false,
+            "isNotificationOnly": false,
+            "commandLists": [
+                {
+                    "scopes": [
+                        "personal",
+                        "team",
+                        "groupchat"
+                    ],
+                    "commands": [
+                        {
+                            "title": "helloWorld",
+                            "description": "A helloworld command to send a welcome message"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "composeExtensions": [],
+    "configurableTabs": [
+        {
+            "configurationUrl": "https://teamsrndauthenticatortab.azurewebsites.net/index.html#/config",
+            "canUpdateConfiguration": true,
+            "scopes": [
+                "team",
+                "groupchat"
+            ]
+        }
+    ],
+    "staticTabs": [
+        {
+            "entityId": "index",
+            "name": "Personal Tab",
+            "contentUrl": "https://teamsrndauthenticatortab.azurewebsites.net/index.html#/tab",
+            "websiteUrl": "https://teamsrndauthenticatortab.azurewebsites.net/index.html#/tab",
+            "scopes": [
+                "personal"
+            ]
+        }
+    ],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "validDomains": [
+        "teamsrndauthenticatortab.azurewebsites.net",
+        "teamsrndauthenticatorbot.azurewebsites.net"
+    ],
+    "webApplicationInfo": {
+        "id": "1aacf6bb-9f6d-47be-ab63-e4d1d1eaf065",
+        "resource": "api://teamsrndauthenticatortab.azurewebsites.net/botid-56f04c1c-42a3-45c9-bdbe-b3b52b8789e0"
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "solution": {
+        "teamsAppTenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c"
+    },
+    "fx-resource-frontend-hosting": {
+        "indexPath": "/index.html#",
+        "endpoint": "https://localhost:53000",
+        "domain": "localhost",
+        "sslCertFile": "C:/Users/arjun/.fx/certificate/localhost.crt",
+        "sslKeyFile": "C:/Users/arjun/.fx/certificate/localhost.key"
+    },
+    "fx-resource-aad-app-for-teams": {
+        "clientId": "72e4d3eb-e5ab-4369-afae-9962a2b7cbec",
+        "clientSecret": "{{fx-resource-aad-app-for-teams.clientSecret}}",
+        "objectId": "33c88127-393e-40ae-8118-f0ecac129a8a",
+        "oauth2PermissionScopeId": "e09b3eab-c45e-4005-bbc9-8ea4f7e96973",
+        "tenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c",
+        "oauthHost": "https://login.microsoftonline.com",
+        "oauthAuthority": "https://login.microsoftonline.com/095efa67-57fa-40c7-b7cc-e96dc3e5780c",
+        "applicationIdUris": "api://localhost/botid-c278b0a1-20bf-422a-b65d-8623031eb01a",
+        "botId": "c278b0a1-20bf-422a-b65d-8623031eb01a",
+        "botEndpoint": "https://teamsrndauthenticatorbot.azurewebsites.net",
+        "frontendEndpoint": "https://localhost"
+    },
+    "fx-resource-bot": {
+        "botId": "c278b0a1-20bf-422a-b65d-8623031eb01a",
+        "botPassword": "{{fx-resource-bot.botPassword}}",
+        "objectId": "ec4efda5-0809-4dd4-9a1d-7c9c0373791a",
+        "siteEndpoint": "https://teamsrndauthenticatorbot.azurewebsites.net",
+        "validDomain": "teamsrndauthenticatorbot.azurewebsites.net"
+    },
+    "fx-resource-simple-auth": {},
+    "fx-resource-function": {
+        "functionEndpoint": "http://localhost:7071"
+    },
+    "fx-resource-appstudio": {
+        "teamsAppUpdatedAt": 1654589910593,
+        "teamsAppId": "47deca0a-f0b1-4d6d-b21d-de9d4d20106a"
+    }
+}
