@@ -10,3 +10,4 @@ build
 .fx/states/state.local.json
 .fx/states/*.json
 templates/azure/teamsFx
+tabs/.env.*
