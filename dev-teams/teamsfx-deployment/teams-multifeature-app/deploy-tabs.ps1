@@ -10,7 +10,7 @@ Write-Host $appServiceInfo.Id
 # Going to the Tab Folders in the App Service
 cd tabs
 
-# npm install
+npm install
 $npmscriptCommand = "build:teamsfx:$environmentName"
 npm run $npmscriptCommand
 
