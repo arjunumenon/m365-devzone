@@ -1,4 +1,4 @@
-$ResourceGroupName = "Teams-Dev-TCS"
+$ResourceGroupName = "Teams-Dev-RnD"
 
 az configure --defaults group="$ResourceGroupName"
 
