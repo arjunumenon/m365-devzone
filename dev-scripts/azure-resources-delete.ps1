@@ -12,16 +12,13 @@ Param(
 )
 
 function executeDeleteAzureResources {
-    az configure --defaults group="$resourcegroupName"
 
-    # az group list
-
-    $ResourceList = (az resource list) | ConvertFrom-Json
+    $ResourceList = (az resource list --query "[?resourceGroup=='$resourcegroupName'].{ Name: name, Id: id}") | ConvertFrom-Json
 
     Write-Host "Total Resource Count is : "$ResourceList.Count
 
     ForEach ($Resource in $ResourceList) {
-        Write-Host "Deleting Resource with ID :  $($Resource.Id)"
+        Write-Host "Deleting Resource :  $($Resource.Name)"
         az resource delete --ids $Resource.Id
     }
 }
