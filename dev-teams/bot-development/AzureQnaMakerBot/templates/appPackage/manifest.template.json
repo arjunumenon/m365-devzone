@@ -44,6 +44,14 @@
                         {
                             "title": "helloWorld",
                             "description": "A helloworld command to send a welcome message"
+                        },
+                        {
+                            "title": "profile",
+                            "description": "Show user profile using Single Sign On feature"
+                        },
+                        {
+                            "title": "photo",
+                            "description": "Show user photo using Single Sign On feature"
                         }
                     ]
                 }

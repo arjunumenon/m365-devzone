@@ -1,3 +1,4 @@
+import { BotAdapter } from "botbuilder";
 import * as restify from "restify";
 import { commandBot } from "./internal/initialize";
 
@@ -15,5 +16,21 @@ server.listen(process.env.port || process.env.PORT || 3978, () => {
 // Bot Framework endpoint. If you customize this route, update the Bot registration
 // in `templates/azure/provision/botservice.bicep`.
 server.post("/api/messages", async (req, res) => {
-  await commandBot.requestHandler(req, res);
+  await commandBot.requestHandler(req, res).catch((err) => {
+      // Error message including "412" means it is waiting for user's consent, which is a normal process of SSO, sholdn't throw this error.
+      if (!err.message.includes("412")) {
+          throw err;
+      }
+  });
 });
+
+// Adding the SSO for Bot
+const path = require("path");
+
+server.get(
+    "/auth-*.html",
+    restify.plugins.serveStatic({
+        directory: path.join(__dirname, "public"),
+    })
+);
+// End of Bot SSO Setup
