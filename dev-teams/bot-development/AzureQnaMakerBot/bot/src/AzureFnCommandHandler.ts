@@ -19,10 +19,13 @@ export class AzureFnCommandHandler implements TeamsFxBotSsoCommandHandler {
     await context.sendActivity("Invoking the Azure Function...");
     const teamsfx = new TeamsFx().setSsoToken(tokenResponse.ssoToken);
 
-    // Calling the Azure Function for getting the QnA Result
-    const azFunctionResult : any = await callFunction("getQnAResponse", teamsfx);
+    // // Calling the Azure Function for getting the QnA Result
+    // const azFunctionResult : any = await callFunction("getQnAResponse", teamsfx);
 
-    return azFunctionResult;
+    // Calling the Azure Function for getting the QnA Result from Azure Language Studio
+    const azLangStudioResult : any = await callFunction("getQnALangStudio", teamsfx);
+
+    return azLangStudioResult;
   }
 
 }

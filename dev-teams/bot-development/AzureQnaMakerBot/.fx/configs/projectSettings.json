@@ -38,7 +38,8 @@
             "name": "teams-api",
             "hosting": "azure-function",
             "functionNames": [
-                "getQnAResponse"
+                "getQnAResponse",
+                "getQnALangStudio"
             ],
             "deploy": true,
             "build": true,

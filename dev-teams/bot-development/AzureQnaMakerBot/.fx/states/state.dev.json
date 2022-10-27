@@ -1,6 +1,6 @@
 {
     "solution": {
-        "provisionSucceeded": true,
+        "provisionSucceeded": false,
         "teamsAppTenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c",
         "subscriptionId": "9f6c8d04-7a32-46d1-86f2-37766420bee0",
         "subscriptionName": "Visual Studio Enterprise Subscription",
