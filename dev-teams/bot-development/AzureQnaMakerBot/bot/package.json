@@ -19,6 +19,7 @@
     },
     "dependencies": {
         "@microsoft/teamsfx": "^1.2.0",
+        "axios": "^1.1.3",
         "botbuilder": "^4.17.0",
         "isomorphic-fetch": "^3.0.0",
         "restify": "^8.5.1"
