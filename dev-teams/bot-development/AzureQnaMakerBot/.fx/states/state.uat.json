@@ -1,6 +1,53 @@
 {
     "solution": {
-        "provisionSucceeded": false
+        "provisionSucceeded": true,
+        "teamsAppTenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c",
+        "subscriptionId": "9f6c8d04-7a32-46d1-86f2-37766420bee0",
+        "subscriptionName": "Visual Studio Enterprise Subscription",
+        "tenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c",
+        "needCreateResourceGroup": false,
+        "resourceGroupName": "Teams-Dev-RnD",
+        "location": "eastus",
+        "resourceNameSuffix": "327f24"
     },
-    "fx-resource-appstudio": {}
+    "fx-resource-appstudio": {
+        "tenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c",
+        "teamsAppId": "85c14149-0c40-4bf3-a386-de3813a41136"
+    },
+    "fx-resource-aad-app-for-teams": {
+        "clientId": "22b1e673-d98b-4122-b180-7de73689cafe",
+        "clientSecret": "{{fx-resource-aad-app-for-teams.clientSecret}}",
+        "objectId": "8edb0504-97fc-4569-8ff4-dda6cd456587",
+        "oauth2PermissionScopeId": "37d26fd4-0d4b-448a-8fc3-8390b4d89388",
+        "tenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c",
+        "oauthHost": "https://login.microsoftonline.com",
+        "oauthAuthority": "https://login.microsoftonline.com/095efa67-57fa-40c7-b7cc-e96dc3e5780c",
+        "applicationIdUris": "api://botid-563aa319-01b5-4815-91e5-b69a5179ada3",
+        "botId": "563aa319-01b5-4815-91e5-b69a5179ada3",
+        "botEndpoint": "https://azureqnamakeruatbot.azurewebsites.net"
+    },
+    "fx-resource-bot": {
+        "botId": "563aa319-01b5-4815-91e5-b69a5179ada3",
+        "botPassword": "{{fx-resource-bot.botPassword}}",
+        "objectId": "d525147b-ab3a-4251-a69f-785aa74bd0b4",
+        "skuName": "B1",
+        "siteName": "azureqnamakeruatbot",
+        "domain": "azureqnamakeruatbot.azurewebsites.net",
+        "appServicePlanName": "azureqnamakeruatbot",
+        "resourceId": "/subscriptions/9f6c8d04-7a32-46d1-86f2-37766420bee0/resourceGroups/Teams-Dev-RnD/providers/Microsoft.Web/sites/azureqnamakeruatbot",
+        "siteEndpoint": "https://azureqnamakeruatbot.azurewebsites.net"
+    },
+    "fx-resource-identity": {
+        "identityName": "azureqnamakeruat",
+        "identityResourceId": "/subscriptions/9f6c8d04-7a32-46d1-86f2-37766420bee0/resourceGroups/Teams-Dev-RnD/providers/Microsoft.ManagedIdentity/userAssignedIdentities/azureqnamakeruat",
+        "identityClientId": "b5bb7383-0a89-4e3c-aef0-14181b2ef4aa"
+    },
+    "fx-resource-function": {
+        "sku": "B1",
+        "appName": "azureqnamakeruatapi",
+        "domain": "azureqnamakeruatapi.azurewebsites.net",
+        "appServicePlanName": "azureqnamakeruatapi",
+        "functionAppResourceId": "/subscriptions/9f6c8d04-7a32-46d1-86f2-37766420bee0/resourceGroups/Teams-Dev-RnD/providers/Microsoft.Web/sites/azureqnamakeruatapi",
+        "functionEndpoint": "https://azureqnamakeruatapi.azurewebsites.net"
+    }
 }
