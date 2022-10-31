@@ -8,9 +8,13 @@ import {
 } from "@microsoft/teamsfx"
 import axios from 'axios';
 
+interface QnARequestProperties {
+  question: string;
+  top: number;
+}
 export class AzureFnCommandHandler implements TeamsFxBotSsoCommandHandler {
   triggerPatterns: TriggerPatterns = "azurefn";
-
+  
   async handleCommandReceived(
     context: TurnContext,
     message: CommandMessage,
@@ -19,11 +23,16 @@ export class AzureFnCommandHandler implements TeamsFxBotSsoCommandHandler {
     await context.sendActivity("Invoking the Azure Function...");
     const teamsfx = new TeamsFx().setSsoToken(tokenResponse.ssoToken);
 
+    const qnarequestProperties: QnARequestProperties = {
+      question: "I'm so hungry",
+      top: 1
+    }
+
     // // Calling the Azure Function for getting the QnA Result
     // const azFunctionResult : any = await callFunction("getQnAResponse", teamsfx);
 
     // Calling the Azure Function for getting the QnA Result from Azure Language Studio
-    const azLangStudioResult : any = await callFunction("getQnALangStudio", teamsfx);
+    const azLangStudioResult : any = await callFunction("getQnALangStudio", teamsfx, qnarequestProperties);
 
     return azLangStudioResult;
   }
@@ -31,7 +40,7 @@ export class AzureFnCommandHandler implements TeamsFxBotSsoCommandHandler {
 }
 
 // Call the Azure Function
-async function callFunction(functionName: string, teamsfx?: TeamsFx) {
+async function callFunction(functionName: string, teamsfx?: TeamsFx, qnarequestProperties?: QnARequestProperties): Promise<any> {
   const accessToken = await teamsfx.getCredential().getToken(""); // Get SSO token 
   // teamsfx.getConfig("apiEndpoint") will read REACT_APP_FUNC_ENDPOINT environment variable 
   const endpoint = teamsfx.getConfig("apiEndpoint");
@@ -42,8 +51,10 @@ async function callFunction(functionName: string, teamsfx?: TeamsFx) {
       headers: {
         authorization: "Bearer " + accessToken.token,
       },
+      data: qnarequestProperties,
     });
     message = response.data;
+    message = response.data.answers[0].answer;
   }
   catch (err : any) {
     if (err.response && err.response.status && err.response.status === 404) {
