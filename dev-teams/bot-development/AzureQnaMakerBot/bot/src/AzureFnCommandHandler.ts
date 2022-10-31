@@ -13,18 +13,18 @@ interface QnARequestProperties {
   top: number;
 }
 export class AzureFnCommandHandler implements TeamsFxBotSsoCommandHandler {
-  triggerPatterns: TriggerPatterns = "azurefn";
+  triggerPatterns: TriggerPatterns = ".";
   
   async handleCommandReceived(
     context: TurnContext,
     message: CommandMessage,
     tokenResponse: TeamsBotSsoPromptTokenResponse
   ): Promise<string | Partial<Activity> | void> {
-    await context.sendActivity("Invoking the Azure Function...");
+    await context.sendActivity("Let me see what I can do for you...");
     const teamsfx = new TeamsFx().setSsoToken(tokenResponse.ssoToken);
 
     const qnarequestProperties: QnARequestProperties = {
-      question: "I'm so hungry",
+      question: message.text,
       top: 1
     }
 
