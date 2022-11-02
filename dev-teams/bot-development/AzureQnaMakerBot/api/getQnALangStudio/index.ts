@@ -106,7 +106,7 @@ async function callLanguageStudioEndPoint(context: Context, qnarequestProperties
     };
   const qnaEndPoint: string = "https://teams-qnabot.cognitiveservices.azure.com";
   const qnaProjectName: string = "QnaBot";
-  const qnaSubsriptionkey: string = "74fad91798c64435b7128a33635afa63";
+  const qnaSubsriptionkey: string = "INVALIDKEY";
 
   const langstudioEndPoint = `${qnaEndPoint}/language/:query-knowledgebases?projectName=${qnaProjectName}&api-version=2021-10-01&deploymentName=production`;
   const langstudioHeader: any = {
