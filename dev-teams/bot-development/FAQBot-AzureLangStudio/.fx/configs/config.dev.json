@@ -1,0 +1,18 @@
+{
+    "$schema": "https://aka.ms/teamsfx-env-config-schema",
+    "description": "You can customize the TeamsFx config for different environments. Visit https://aka.ms/teamsfx-env-config to learn more about this.",
+    "manifest": {
+        "appName": {
+            "short": "FAQBot-AzureLangStudio",
+            "full": "Full name for FAQBot-AzureLangStudio"
+        },
+        "description": {
+            "short": "Short description of FAQBot-AzureLangStudio",
+            "full": "Full description of FAQBot-AzureLangStudio"
+        },
+        "icons": {
+            "color": "resources/color.png",
+            "outline": "resources/outline.png"
+        }
+    }
+}
