@@ -42,8 +42,8 @@
                     ],
                     "commands": [
                         {
-                            "title": "helloWorld",
-                            "description": "A helloworld command to send a welcome message"
+                            "title": "help",
+                            "description": "Help me how to use the Bot"
                         }
                     ]
                 }

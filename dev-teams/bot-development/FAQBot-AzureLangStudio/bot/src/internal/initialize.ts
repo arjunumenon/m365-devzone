@@ -1,4 +1,5 @@
-import { HelloWorldCommandHandler } from "../helloworldCommandHandler";
+import { helpCommandHandler } from "../helpCommandHandler";
+import { azureqnaCommandHandler } from "../azureqnaCommandHandler";
 import { ConversationBot } from "@microsoft/teamsfx";
 
 // Create the command bot and register the command handlers for your app.
@@ -13,6 +14,6 @@ export const commandBot = new ConversationBot({
   },
   command: {
     enabled: true,
-    commands: [new HelloWorldCommandHandler()],
+    commands: [new helpCommandHandler(), new azureqnaCommandHandler()],
   },
 });

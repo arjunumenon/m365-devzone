@@ -8,8 +8,8 @@ import { CardData } from "./cardModels";
  * The `HelloWorldCommandHandler` registers a pattern with the `TeamsFxBotCommandHandler` and responds
  * with an Adaptive Card if the user types the `triggerPatterns`.
  */
-export class HelloWorldCommandHandler implements TeamsFxBotCommandHandler {
-  triggerPatterns: TriggerPatterns = "helloWorld";
+export class helpCommandHandler implements TeamsFxBotCommandHandler {
+  triggerPatterns: TriggerPatterns = "help";
 
   async handleCommandReceived(
     context: TurnContext,
@@ -19,8 +19,8 @@ export class HelloWorldCommandHandler implements TeamsFxBotCommandHandler {
 
     // Render your adaptive card for reply message
     const cardData: CardData = {
-      title: "Your Hello World Bot is Running",
-      body: "Congratulations! Your hello world bot is running. Click the documentation below to learn more about Bots and the Teams Toolkit.",
+      title: "How to use QnA Bot",
+      body: "This is a bot which will help you to get answers to your questions. Please ask the question to the bot and the bot will try to find the answer for you. IF the bot does not know the answer for you, it will ask you to ask the question to the admin. The admin will then add the answer to the bot and the bot will be able to answer your question next time.",
     };
 
     const cardJson = AdaptiveCards.declare(helloWorldCard).render(cardData);
