@@ -59,5 +59,9 @@
     ],
     "validDomains": [
         "{{state.fx-resource-bot.domain}}"
-    ]
+    ],
+    "webApplicationInfo": {
+        "id": "{{state.fx-resource-aad-app-for-teams.clientId}}",
+        "resource": "{{{state.fx-resource-aad-app-for-teams.applicationIdUris}}}"
+    }
 }
