@@ -1,6 +1,7 @@
 import { helpCommandHandler } from "../helpCommandHandler";
 import { azureqnaCommandHandler } from "../azureqnaCommandHandler";
 import { ConversationBot } from "@microsoft/teamsfx";
+import { ProfileSsoCommandHandler } from "../profileSsoCommandHandler";
 
 // Create the command bot and register the command handlers for your app.
 // You can also use the commandBot.command.registerCommands to register other commands
@@ -14,6 +15,7 @@ export const commandBot = new ConversationBot({
   },
   command: {
     enabled: true,
-    commands: [new helpCommandHandler(), new azureqnaCommandHandler()],
+    commands: [new helpCommandHandler()],
+    ssoCommands:[new azureqnaCommandHandler(), new ProfileSsoCommandHandler()],
   },
 });
