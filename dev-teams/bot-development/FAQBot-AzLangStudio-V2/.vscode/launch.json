@@ -2,6 +2,36 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Launch Bot (Edge)",
+            "type": "pwa-msedge",
+            "request": "launch",
+            "url": "https://teams.microsoft.com/l/app/${localTeamsAppId}?installAppPackage=true&webjoin=true&${account-hint}",
+            "cascadeTerminateToConfigurations": [
+                "Attach to Bot",
+                "Attach to Backend"
+            ],
+            "presentation": {
+                "group": "all",
+                "hidden": true
+            },
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "name": "Launch Bot (Chrome)",
+            "type": "pwa-chrome",
+            "request": "launch",
+            "url": "https://teams.microsoft.com/l/app/${localTeamsAppId}?installAppPackage=true&webjoin=true&${account-hint}",
+            "cascadeTerminateToConfigurations": [
+                "Attach to Bot",
+                "Attach to Backend"
+            ],
+            "presentation": {
+                "group": "all",
+                "hidden": true
+            },
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
             "name": "Launch Remote (Edge)",
             "type": "pwa-msedge",
             "request": "launch",
@@ -24,11 +54,12 @@
             "internalConsoleOptions": "neverOpen"
         },
         {
-            "name": "Launch Bot (Edge)",
+            "name": "Attach to Frontend (Edge)",
             "type": "pwa-msedge",
             "request": "launch",
             "url": "https://teams.microsoft.com/l/app/${localTeamsAppId}?installAppPackage=true&webjoin=true&${account-hint}",
             "cascadeTerminateToConfigurations": [
+                "Attach to Backend",
                 "Attach to Bot"
             ],
             "presentation": {
@@ -38,11 +69,12 @@
             "internalConsoleOptions": "neverOpen"
         },
         {
-            "name": "Launch Bot (Chrome)",
+            "name": "Attach to Frontend (Chrome)",
             "type": "pwa-chrome",
             "request": "launch",
             "url": "https://teams.microsoft.com/l/app/${localTeamsAppId}?installAppPackage=true&webjoin=true&${account-hint}",
             "cascadeTerminateToConfigurations": [
+                "Attach to Backend",
                 "Attach to Bot"
             ],
             "presentation": {
@@ -62,14 +94,27 @@
                 "hidden": true
             },
             "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "name": "Attach to Backend",
+            "type": "pwa-node",
+            "request": "attach",
+            "port": 9229,
+            "restart": true,
+            "presentation": {
+                "group": "all",
+                "hidden": true
+            },
+            "internalConsoleOptions": "neverOpen"
         }
     ],
     "compounds": [
         {
             "name": "Debug (Edge)",
             "configurations": [
-                "Launch Bot (Edge)",
-                "Attach to Bot"
+                "Attach to Frontend (Edge)",
+                "Attach to Bot",
+                "Attach to Backend"
             ],
             "preLaunchTask": "Start Teams App Locally",
             "presentation": {
@@ -81,8 +126,9 @@
         {
             "name": "Debug (Chrome)",
             "configurations": [
-                "Launch Bot (Chrome)",
-                "Attach to Bot"
+                "Attach to Frontend (Chrome)",
+                "Attach to Bot",
+                "Attach to Backend"
             ],
             "preLaunchTask": "Start Teams App Locally",
             "presentation": {
