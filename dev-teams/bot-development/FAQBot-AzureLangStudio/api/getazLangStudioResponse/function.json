@@ -9,7 +9,7 @@
         "get",
         "post"
       ],
-      "route": "getAzureQnAResponse"
+      "route": "getazLangStudioResponse"
     },
     {
       "type": "http",
@@ -22,5 +22,5 @@
       "type": "TeamsFx"
     }
   ],
-  "scriptFile": "../dist/getAzureQnAResponse/index.js"
+  "scriptFile": "../dist/getazLangStudioResponse/index.js"
 }
