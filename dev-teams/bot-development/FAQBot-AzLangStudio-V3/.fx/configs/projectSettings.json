@@ -13,7 +13,8 @@
             ],
             "build": true,
             "folder": "bot",
-            "sso": true
+            "sso": true,
+            "artifactFolder": "bot"
         },
         {
             "name": "bot-service",
@@ -41,7 +42,8 @@
             "provision": true,
             "build": true,
             "folder": "tabs",
-            "sso": true
+            "sso": true,
+            "artifactFolder": "tabs\\build"
         },
         {
             "name": "azure-storage",
