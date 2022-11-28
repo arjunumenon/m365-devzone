@@ -22,3 +22,12 @@ server.post("/api/messages", async (req, res) => {
     }
   });
 });
+
+const path = require("path");
+
+server.get(
+  "/auth-*.html",
+  restify.plugins.serveStatic({
+    directory: path.join(__dirname, "public"),
+  })
+);
