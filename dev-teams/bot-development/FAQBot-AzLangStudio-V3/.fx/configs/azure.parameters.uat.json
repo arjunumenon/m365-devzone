@@ -6,8 +6,8 @@
       "value": {
         "botAadAppClientId": "{{state.teams-bot.botId}}",
         "botAadAppClientSecret": "{{state.teams-bot.botPassword}}",
-        "botDisplayName": "FAQ Lang Studio V3 - DEV",
-        "resourceBaseName": "faqazlangstdv3DEV",
+        "botDisplayName": "FAQ Lang Studio V3 - UAT",
+        "resourceBaseName": "faqazlangstdv3UAT",
         "m365ClientId": "{{state.aad-app.clientId}}",
         "m365ClientSecret": "{{state.aad-app.clientSecret}}",
         "m365TenantId": "{{state.aad-app.tenantId}}",

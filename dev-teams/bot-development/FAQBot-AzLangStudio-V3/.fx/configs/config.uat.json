@@ -3,8 +3,8 @@
     "description": "You can customize the TeamsFx config for different environments. Visit https://aka.ms/teamsfx-env-config to learn more about this.",
     "manifest": {
         "appName": {
-            "short": "FAQ Bot - Lang Studio - DEV",
-            "full": "FAQ Bot - Azure Lang Studio - DEV"
+            "short": "FAQ Bot - Lang Studio - UAT",
+            "full": "FAQ Bot - Azure Lang Studio - UAT"
         },
         "description": {
             "short": "Teams FAQ Bot built on Azure Language Studio",
