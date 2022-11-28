@@ -6,3 +6,8 @@ export interface CardData {
   title: string;
   body: string;
 }
+
+export interface qnaEchoCardData extends CardData {
+  appName: string;
+  description: string;
+}
