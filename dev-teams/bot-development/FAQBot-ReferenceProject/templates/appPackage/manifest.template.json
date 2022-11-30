@@ -44,6 +44,10 @@
                         {
                             "title": "helloWorld",
                             "description": "A helloworld command to send a welcome message"
+                        },
+                        {
+                            "title": "profile",
+                            "description": "Show user profile using Single Sign On feature"
                         }
                     ]
                 }
@@ -59,5 +63,9 @@
     ],
     "validDomains": [
         "{{state.fx-resource-bot.domain}}"
-    ]
+    ],
+    "webApplicationInfo": {
+        "id": "{{state.fx-resource-aad-app-for-teams.clientId}}",
+        "resource": "{{{state.fx-resource-aad-app-for-teams.applicationIdUris}}}"
+    }
 }
