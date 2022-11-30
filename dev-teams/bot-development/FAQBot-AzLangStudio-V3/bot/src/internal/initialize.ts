@@ -12,7 +12,13 @@ export const commandBot = new ConversationBot({
   adapterConfig: {
     appId: config.botId,
     appPassword: config.botPassword,
-  },  
+  },
+  // To learn more about ssoConfig, please refer teamsfx sdk document: https://docs.microsoft.com/microsoftteams/platform/toolkit/teamsfx-sdk
+  ssoConfig: {
+    aad: {
+      scopes: ["User.Read"],
+    },
+  },
   command: {
     enabled: true,
     commands: [new HelloWorldCommandHandler()],
