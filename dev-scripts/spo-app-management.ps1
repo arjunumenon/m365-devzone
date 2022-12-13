@@ -5,7 +5,7 @@ function removeCustomAppAll{
         [string]$URL
     )
 
-    $CustomApp = m365 spo app list --scope sitecollection --appCatalogUrl $URL --output json | ConvertFrom-Json
+    $CustomApp = m365 spo app list --appCatalogScope sitecollection --appCatalogUrl $URL --output json | ConvertFrom-Json
 
     Foreach ($IndiApp in $CustomApp)
     {
@@ -31,7 +31,7 @@ function removeCustomApp{
 
     #Removing App
     Write-Host "Removing from App Catalog. App ID : $AppId"
-    m365 spo app remove  --scope sitecollection  --id $AppId --appCatalogUrl $SiteCollectionUrl --confirm
+    m365 spo app remove  --appCatalogScope sitecollection  --id $AppId --appCatalogUrl $SiteCollectionUrl --confirm
 }
 
 function retractCustomApp{
@@ -43,7 +43,7 @@ function retractCustomApp{
     )
 
     Write-Host "Retracting from Site. App ID : $AppId"
-    m365 spo app retract --id $AppId --scope sitecollection --appCatalogUrl $URL --confirm
+    m365 spo app retract --id $AppId --appCatalogScope sitecollection --appCatalogUrl $URL --confirm
 }
 
 function uninstallCustomApp{
@@ -55,7 +55,7 @@ function uninstallCustomApp{
     )
 
     Write-Host "Uninstalling from Site. App ID : $AppId"
-    m365 spo app uninstall --scope sitecollection --id $AppId --siteUrl $URL --confirm
+    m365 spo app uninstall --appCatalogScope sitecollection --id $AppId --siteUrl $URL --confirm
 }
 
 function addAllCustomApps{
@@ -102,7 +102,7 @@ function addCustomApp{
     if($IsAdd)
     {
         Write-Host "Adding App Catalog : $packageName"
-        $AppId = m365 spo app add --filePath $CompletePath --scope sitecollection --appCatalogUrl $URL
+        $AppId = m365 spo app add --filePath $CompletePath --appCatalogScope sitecollection --appCatalogUrl $URL --output text
     }
 
     if($IsDeploy)
@@ -127,7 +127,7 @@ function deployCustomApp{
     )
 
     Write-Host "Deploying App with ID : $AppId"
-    m365 spo app deploy --id $AppId --scope sitecollection --appCatalogUrl $URL
+    m365 spo app deploy --id $AppId --appCatalogScope sitecollection --appCatalogUrl $URL
 }
 
 function installCustomApp{
@@ -139,7 +139,7 @@ function installCustomApp{
     )
 
     Write-Host "Installing App with ID : $AppId"
-    m365 spo app install --id $AppId --siteUrl $URL --scope sitecollection
+    m365 spo app install --id $AppId --siteUrl $URL --appCatalogScope sitecollection
 }
 
 function listCustomAppDisplay{
@@ -148,7 +148,7 @@ function listCustomAppDisplay{
         [string]$URL
     )
 
-    m365 spo app list --scope sitecollection --appCatalogUrl $URL
+    m365 spo app list --appCatalogScope sitecollection --appCatalogUrl $URL
 }
 
 function downloadCustomAppPackages{
@@ -185,15 +185,15 @@ function downloadCustomAppPackages{
 }
 
 #TCSTEG - Production
-$SiteCollectionUrl = "https://aum365.sharepoint.com/sites/M365CLI/"
+$SiteCollectionUrl = "https://aum365.sharepoint.com/sites/M365SaturdayBLR-2022"
 
-$AppId = "2d771dfe-f9eb-46ac-a98d-e2e0bc899223"
-$packageName = "tutorial-dashboard" + ".sppkg"
+$AppId = "66ac4865-ce2d-40da-b41b-e3131e9e6e95"
+$packageName = "m365sat2022-spfx-upgrade" + ".sppkg"
 # $packageName = "rn-d-sp-fx-extension-deployment + ".sppkg"
 # $packageFolder = "./Solution"
 # # Direct Package Folder - For Testing and UAT
 # $packageFolder = "\\wsl$\Ubuntu-18.04\home\arjun\labs-codes\m365-devzone\dev-sp\spfx-extn-rnd\sharepoint\solution\"
-$packageFolder = "C:\Arjun\Codes\m365-devzone\dev-viva\tutorial-dashboard\sharepoint\solution\"
+$packageFolder = "C:\Arjun\Codes\sessions\M365SatBLR-2022\demo-dev\m365sat2022-turboboost-spfx\sharepoint\solution"
 $DownloadFolder = "./Solution-Downloads"
 
 
@@ -215,8 +215,8 @@ listCustomAppDisplay -URL $SiteCollectionUrl
 # #Download App Packages
 # downloadCustomAppPackages -DownloadFolder $DownloadFolder -URL $SiteCollectionUrl
 
-# #Remove All Custom App
-# removeCustomAppAll -URL $SiteCollectionUrl
+#Remove All Custom App
+removeCustomAppAll -URL $SiteCollectionUrl
 
 # # Remove Custom App
 # removeCustomApp -URL $SiteCollectionUrl -AppId $AppId

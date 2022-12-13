@@ -25,8 +25,8 @@ export class faqQnaCommandHandler implements TeamsFxBotSsoCommandHandler {
             question: message.text,
             top: 1
         }
-        // // Calling the Azure Function for getting the QnA Result from Azure Language Studio
-        // const azQnAResponse : any = await callFunction("getAzLangStudioResponse", teamsfx, qnarequestProperties);
+        // Calling the Azure Function for getting the QnA Result from Azure Language Studio
+        const azQnAResponse : any = await callFunction("getAzLangStudioResponse", teamsfx, qnarequestProperties);
 
         // return azQnAResponse;
 
@@ -35,7 +35,7 @@ export class faqQnaCommandHandler implements TeamsFxBotSsoCommandHandler {
             title: "This card will show the Question Asked by the user",
             body: "This card will show the Question Asked by the user",
             appName: "Azure QnA Bot",
-            description: `You have asked the question : ${message.text}`,
+            description: `You have asked the question : ${message.text}. Response is ${azQnAResponse.userInfoMessage}`,
         };
 
         const cardJson = AdaptiveCards.declare(qnaEchoCard).render(cardData);
@@ -58,7 +58,7 @@ async function callFunction(functionName: string, teamsfx?: TeamsFx, qnarequestP
             data: qnarequestProperties,
         });
         message = response.data;
-        message = response.data.answers[0].answer;
+        // message = response.data.answers[0].answer;
     }
     catch (err: any) {
         if (err.response && err.response.status && err.response.status === 404) {
