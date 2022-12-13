@@ -1,5 +1,6 @@
 import { Context } from "@azure/functions";
 import { AxiosStatic } from "axios";
+import config from "../../config";
 import { IQnARequestProperties } from "../models/IQnARequestProperties";
 import { IqnaResponse, IResponse } from "../models/IQnAResponse";
 
@@ -7,9 +8,9 @@ import { IqnaResponse, IResponse } from "../models/IQnAResponse";
 const Axios = require("axios") as AxiosStatic;
 export const callLanguageStudioEndPoint = async (context: Context, qnarequestProperties: IQnARequestProperties): Promise<any> => {
 
-    const qnaEndPoint: string = "https://teams-qnabot.cognitiveservices.azure.com";
-    const qnaProjectName: string = "QnaBot";
-    const qnaSubsriptionkey: string = "UNIQUE_KEY";
+    const qnaEndPoint: string = config.qnaEndpoint;
+    const qnaProjectName: string = config.qnaProjectName;
+    const qnaSubsriptionkey: string = config.qnaSubscriptionKey;
 
     const langstudioEndPoint = `${qnaEndPoint}/language/:query-knowledgebases?projectName=${qnaProjectName}&api-version=2021-10-01&deploymentName=production`;
     const langstudioHeader: any = {
