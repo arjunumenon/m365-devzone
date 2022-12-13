@@ -14,6 +14,8 @@ import {
   UserInfo,
 } from "@microsoft/teamsfx";
 import config from "../config";
+import { IQnARequestProperties } from "./models/IQnARequestProperties";
+import { callLanguageStudioEndPoint } from "./services/services";
 
 interface Response {
   status: number;
@@ -90,39 +92,14 @@ export default async function run(
     };
   }
 
-  // Query user's information from the access token.
-  try {
-    const currentUser: UserInfo = await credential.getUserInfo();
-    if (currentUser && currentUser.displayName) {
-      res.body.userInfoMessage = `User display name is ${currentUser.displayName}.`;
-    } else {
-      res.body.userInfoMessage = "No user information was found in access token.";
+    //Setting the Question details
+    const qnaReqProps : IQnARequestProperties = {
+      question:res.body.receivedHTTPRequestBody.question,
+      top:res.body.receivedHTTPRequestBody.top,
     }
-  } catch (e) {
-    context.log.error(e);
-    return {
-      status: 400,
-      body: {
-        error: "Access token is invalid.",
-      },
-    };
-  }
-
-  // Create a graph client to access user's Microsoft 365 data after user has consented.
-  try {
-    const graphClient: Client = createMicrosoftGraphClientWithCredential(credential, [".default"]);
-    const profile: any = await graphClient.api("/me").get();
-    res.body.graphClientMessage = profile;
-  } catch (e) {
-    context.log.error(e);
-    return {
-      status: 500,
-      body: {
-        error:
-          "Failed to retrieve user profile from Microsoft Graph. The application may not be authorized.",
-      },
-    };
-  }
-
-  return res;
+    // Initiate QnA Maker Response from Language Studio
+    const qnaReponse: Promise<any> = await callLanguageStudioEndPoint(context,qnaReqProps);
+  
+    res.body = qnaReponse;
+    return res;
 }
