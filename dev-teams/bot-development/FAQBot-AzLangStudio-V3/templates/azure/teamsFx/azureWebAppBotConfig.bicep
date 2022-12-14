@@ -9,13 +9,13 @@ param currentAppSettings object
 var webAppName = split(provisionOutputs.azureWebAppBotOutput.value.resourceId, '/')[8]
 var webappEndpoint = provisionOutputs.azureWebAppBotOutput.value.siteEndpoint
 var m365ClientId = provisionParameters['m365ClientId']
-var m365ClientSecret = provisionParameters['m365ClientSecret']
+var m365ClientSecret = provisionOutputs.keyVaultOutput.value.m365ClientSecretReference
 var m365TenantId = provisionParameters['m365TenantId']
 var m365OauthAuthorityHost = provisionParameters['m365OauthAuthorityHost']
 var botId = provisionParameters['botAadAppClientId']
 var m365ApplicationIdUri = 'api://${ provisionOutputs.TabOutput.value.domain }/botid-${botId}'
 var botAadAppClientId = provisionParameters['botAadAppClientId']
-var botAadAppClientSecret = provisionParameters['botAadAppClientSecret']
+var botAadAppClientSecret = provisionOutputs.keyVaultOutput.value.botClientSecretReference
 
 resource webAppSettings 'Microsoft.Web/sites/config@2021-02-01' = {
   name: '${webAppName}/appsettings'

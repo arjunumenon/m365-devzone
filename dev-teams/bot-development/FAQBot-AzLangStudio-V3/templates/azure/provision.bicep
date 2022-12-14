@@ -95,3 +95,19 @@ output ApiOutput object = {
   domain: azureFunctionApiProvision.outputs.domain
   endpoint: azureFunctionApiProvision.outputs.functionEndpoint
 }
+
+// Resources for Azure Key Vault
+module keyVaultProvision './provision/keyVault.bicep' = {
+  name: 'keyVaultProvision'
+  params: {
+    provisionParameters: provisionParameters
+    userAssignedIdentityObjectId: userAssignedIdentityProvision.outputs.identityPrincipalId
+  }
+}
+
+output keyVaultOutput object = {
+  teamsFxPluginId: 'key-vault'
+  keyVaultResourceId: keyVaultProvision.outputs.keyVaultResourceId
+  m365ClientSecretReference: keyVaultProvision.outputs.m365ClientSecretReference
+  botClientSecretReference: keyVaultProvision.outputs.botClientSecretReference
+}

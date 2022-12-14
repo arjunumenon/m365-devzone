@@ -55,5 +55,10 @@
         "appServicePlanName": "faqazlangstdv3devapi",
         "functionAppResourceId": "/subscriptions/9f6c8d04-7a32-46d1-86f2-37766420bee0/resourceGroups/Teams-Dev-TCS/providers/Microsoft.Web/sites/faqazlangstdv3devapi",
         "functionEndpoint": "https://faqazlangstdv3devapi.azurewebsites.net"
+    },
+    "fx-resource-key-vault": {
+        "keyVaultResourceId": "/subscriptions/9f6c8d04-7a32-46d1-86f2-37766420bee0/resourceGroups/Teams-Dev-TCS/providers/Microsoft.KeyVault/vaults/faqazlangstdv3dev",
+        "m365ClientSecretReference": "@Microsoft.KeyVault(VaultName=faqazlangstdv3dev;SecretName=m365ClientSecret)",
+        "botClientSecretReference": "@Microsoft.KeyVault(VaultName=faqazlangstdv3dev;SecretName=botClientSecret)"
     }
 }

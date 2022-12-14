@@ -10,14 +10,14 @@ param currentAppSettings object
 
 var functionAppName = split(provisionOutputs.azureFunctionApiOutput.value.functionAppResourceId, '/')[8]
 var m365ClientId = provisionParameters['m365ClientId']
-var m365ClientSecret = provisionParameters['m365ClientSecret']
+var m365ClientSecret = provisionOutputs.keyVaultOutput.value.m365ClientSecretReference
 var m365TenantId = provisionParameters['m365TenantId']
 var m365OauthAuthorityHost = provisionParameters['m365OauthAuthorityHost']
 var oauthAuthority = uri(m365OauthAuthorityHost, m365TenantId)
 var botId = provisionParameters['botAadAppClientId']
 var m365ApplicationIdUri = 'api://${ provisionOutputs.TabOutput.value.domain }/botid-${botId}'
 var botAadAppClientId = provisionParameters['botAadAppClientId']
-var botAadAppClientSecret = provisionParameters['botAadAppClientSecret']
+var botAadAppClientSecret = provisionOutputs.keyVaultOutput.value.botClientSecretReference
 
 var teamsMobileOrDesktopAppClientId = '1fec8e78-bce4-4aaf-ab1b-5451cc387264'
 var teamsWebAppClientId = '5e3ce6c0-2b1f-4285-8d4b-75ee78787346'

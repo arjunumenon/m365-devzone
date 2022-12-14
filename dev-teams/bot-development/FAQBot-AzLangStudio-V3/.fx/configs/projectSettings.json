@@ -25,6 +25,7 @@
             "scenario": "Bot",
             "connections": [
                 "identity",
+                "key-vault",
                 "aad-app",
                 "teams-tab",
                 "teams-bot",
@@ -72,11 +73,19 @@
             "provision": true,
             "connections": [
                 "identity",
+                "key-vault",
                 "aad-app",
                 "teams-tab",
                 "teams-bot",
                 "teams-api"
             ]
+        },
+        {
+            "name": "key-vault",
+            "connections": [
+                "identity"
+            ],
+            "provision": true
         }
     ],
     "programmingLanguage": "typescript",
@@ -85,6 +94,7 @@
         "version": "1.0.0",
         "hostType": "Azure",
         "azureResources": [
+            "keyvault",
             "function"
         ],
         "capabilities": [
@@ -102,6 +112,7 @@
             "fx-resource-frontend-hosting",
             "fx-resource-bot",
             "fx-resource-identity",
+            "fx-resource-key-vault",
             "fx-resource-function"
         ]
     },
