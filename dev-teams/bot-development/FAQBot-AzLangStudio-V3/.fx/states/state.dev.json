@@ -1,0 +1,59 @@
+{
+    "solution": {
+        "provisionSucceeded": true,
+        "teamsAppTenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c",
+        "subscriptionId": "9f6c8d04-7a32-46d1-86f2-37766420bee0",
+        "subscriptionName": "Visual Studio Enterprise Subscription",
+        "tenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c",
+        "needCreateResourceGroup": false,
+        "resourceGroupName": "Teams-Dev-TCS",
+        "location": "eastus",
+        "resourceNameSuffix": "d94bbb"
+    },
+    "fx-resource-appstudio": {
+        "tenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c",
+        "teamsAppId": "09d6af06-d4fc-45f1-90eb-1a8de518e752"
+    },
+    "fx-resource-frontend-hosting": {
+        "indexPath": "/index.html#",
+        "domain": "faqazlangstdv3devtab.z13.web.core.windows.net",
+        "endpoint": "https://faqazlangstdv3devtab.z13.web.core.windows.net",
+        "storageResourceId": "/subscriptions/9f6c8d04-7a32-46d1-86f2-37766420bee0/resourceGroups/Teams-Dev-TCS/providers/Microsoft.Storage/storageAccounts/faqazlangstdv3devtab"
+    },
+    "fx-resource-aad-app-for-teams": {
+        "clientId": "ce30a9e8-edf2-4029-a5a0-0e2e8abdbb30",
+        "clientSecret": "{{fx-resource-aad-app-for-teams.clientSecret}}",
+        "objectId": "4298f644-911a-4ecb-9fa4-517a95d40b9a",
+        "oauth2PermissionScopeId": "814c5091-426e-4f18-ad2a-f5008c9a2a66",
+        "tenantId": "095efa67-57fa-40c7-b7cc-e96dc3e5780c",
+        "oauthHost": "https://login.microsoftonline.com",
+        "oauthAuthority": "https://login.microsoftonline.com/095efa67-57fa-40c7-b7cc-e96dc3e5780c",
+        "applicationIdUris": "api://faqazlangstdv3devtab.z13.web.core.windows.net/botid-cb230881-0d1a-4d7e-9062-7214fb0a4d66",
+        "botId": "cb230881-0d1a-4d7e-9062-7214fb0a4d66",
+        "botEndpoint": "https://faqazlangstdv3devbot.azurewebsites.net",
+        "frontendEndpoint": "https://faqazlangstdv3devtab.z13.web.core.windows.net"
+    },
+    "fx-resource-bot": {
+        "botId": "cb230881-0d1a-4d7e-9062-7214fb0a4d66",
+        "botPassword": "{{fx-resource-bot.botPassword}}",
+        "skuName": "B1",
+        "siteName": "faqazlangstdv3devbot",
+        "domain": "faqazlangstdv3devbot.azurewebsites.net",
+        "appServicePlanName": "faqazlangstdv3devbot",
+        "resourceId": "/subscriptions/9f6c8d04-7a32-46d1-86f2-37766420bee0/resourceGroups/Teams-Dev-TCS/providers/Microsoft.Web/sites/faqazlangstdv3devbot",
+        "siteEndpoint": "https://faqazlangstdv3devbot.azurewebsites.net"
+    },
+    "fx-resource-identity": {
+        "identityName": "faqazlangstdv3dev",
+        "identityResourceId": "/subscriptions/9f6c8d04-7a32-46d1-86f2-37766420bee0/resourceGroups/Teams-Dev-TCS/providers/Microsoft.ManagedIdentity/userAssignedIdentities/faqazlangstdv3dev",
+        "identityClientId": "f7886238-1a0b-4dbb-b2b7-6de8254d40ec"
+    },
+    "fx-resource-function": {
+        "sku": "B1",
+        "appName": "faqazlangstdv3devapi",
+        "domain": "faqazlangstdv3devapi.azurewebsites.net",
+        "appServicePlanName": "faqazlangstdv3devapi",
+        "functionAppResourceId": "/subscriptions/9f6c8d04-7a32-46d1-86f2-37766420bee0/resourceGroups/Teams-Dev-TCS/providers/Microsoft.Web/sites/faqazlangstdv3devapi",
+        "functionEndpoint": "https://faqazlangstdv3devapi.azurewebsites.net"
+    }
+}
