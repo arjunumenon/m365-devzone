@@ -13,7 +13,7 @@ Param(
     [Parameter(Mandatory = $true)]
     [string]$AppName,
     [Parameter(Mandatory = $false)]
-    [string]$APIPermissionList = "https://microsoft.sharepoint-df.com/Sites.FullControl.All, https://graph.microsoft.com/Sites.Read.All",
+    [string]$APIPermissionList = "https://graph.microsoft.com/User.Read",
     [Parameter(Mandatory = $false)]
     [switch]$AutoAdminConsent = $true,
     [Parameter(Mandatory = $false)]
