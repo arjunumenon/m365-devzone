@@ -13,7 +13,7 @@ async function createAADApp(appName, apiPermissions) {
     return createdApp;
 }
 const appName = 'AUM Testing App';
-const apiPermissions = 'https://graph.microsoft.com/User.Read123';
+const apiPermissions = 'https://graph.microsoft.com/User.Read';
 
 const appCreated = await createAADApp(appName, apiPermissions);
 if (appCreated == null) {
