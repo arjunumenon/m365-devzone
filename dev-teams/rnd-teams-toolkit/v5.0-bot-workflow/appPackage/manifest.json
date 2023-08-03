@@ -5,22 +5,22 @@
     "id": "${{TEAMS_APP_ID}}",
     "packageName": "com.microsoft.teams.extension",
     "developer": {
-        "name": "Teams App, Inc.",
-        "websiteUrl": "https://www.example.com",
-        "privacyUrl": "https://www.example.com/privacy",
-        "termsOfUseUrl": "https://www.example.com/termofuse"
+        "name": "Arjun Menon Development",
+        "websiteUrl": "https://arjunumenon.com",
+        "privacyUrl": "https://arjunumenon.com",
+        "termsOfUseUrl": "https://arjunumenon.com"
     },
     "icons": {
         "color": "color.png",
         "outline": "outline.png"
     },
     "name": {
-        "short": "v5.0-bot-workflow-${{TEAMSFX_ENV}}",
-        "full": "Full name for v5.0-bot-workflow"
+        "short": "${{TEAMS_APP_NAME}}",
+        "full": "Teams App for Research and Learning of Teams Toolkit with Card Actions"
     },
     "description": {
-        "short": "Short description of v5.0-bot-workflow",
-        "full": "Full description of v5.0-bot-workflow"
+        "short": "This is a teams app created for Research and Learning using the Teams Toolkit",
+        "full": "This is a teams app created for Research and Learning using the Teams Toolkit. It uses Card Actions and all the moving components which could be used as a Learning Reference for building Teams App using Teams Toolkit"
     },
     "accentColor": "#FFFFFF",
     "bots": [
