@@ -16,6 +16,7 @@ export class DoStuffActionHandler implements TeamsFxAdaptiveCardActionHandler {
   triggerVerb = "doStuff";
 
   async handleActionInvoked(context: TurnContext, actionData: any): Promise<InvokeResponse> {
+    console.log(`Bot received action: ${this.triggerVerb}. Data: ${JSON.stringify(actionData)}`);
     /**
      * You can send an adaptive card to respond to the card action invoke.
      */
