@@ -42,9 +42,14 @@
                     ],
                     "commands": [
                         {
-                            "title": "helloWorld",
-                            "description": "A helloworld command to send a welcome message"
+                            "title": "help",
+                            "description": "A help command which will send the help card on the usage of the bot"
+                        },
+                        {
+                            "title": "invokeCard",
+                            "description": "Invoke the card to demonstrate the card Action"
                         }
+                        
                     ]
                 }
             ]

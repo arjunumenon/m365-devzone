@@ -1,15 +1,15 @@
 import { Activity, CardFactory, MessageFactory, TurnContext } from "botbuilder";
 import { CommandMessage, TeamsFxBotCommandHandler, TriggerPatterns } from "@microsoft/teamsfx";
 import { AdaptiveCards } from "@microsoft/adaptivecards-tools";
-import helloWorldCard from "../adaptiveCards/helloworldCommandResponse.json";
+import actionCard from "../adaptiveCards/invokeActioncardCommandResponse.json";
 import { CardData } from "../cardModels";
 
 /**
  * The `HelloWorldCommandHandler` registers a pattern with the `TeamsFxBotCommandHandler` and responds
  * with an Adaptive Card if the user types the `triggerPatterns`.
  */
-export class HelloWorldCommandHandler implements TeamsFxBotCommandHandler {
-  triggerPatterns: TriggerPatterns = "helloWorld";
+export class InvokeActionCardCommandHandler implements TeamsFxBotCommandHandler {
+  triggerPatterns: TriggerPatterns = "invokeCard";
 
   async handleCommandReceived(
     context: TurnContext,
@@ -23,7 +23,7 @@ export class HelloWorldCommandHandler implements TeamsFxBotCommandHandler {
       body: "Congratulations! Your hello world bot is running. Click the button below to trigger an action.",
     };
 
-    const cardJson = AdaptiveCards.declare(helloWorldCard).render(cardData);
+    const cardJson = AdaptiveCards.declare(actionCard).render(cardData);
     return MessageFactory.attachment(CardFactory.adaptiveCard(cardJson));
   }
 }

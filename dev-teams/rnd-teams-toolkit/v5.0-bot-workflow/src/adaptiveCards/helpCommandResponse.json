@@ -1,0 +1,32 @@
+{
+    "type": "AdaptiveCard",
+    "body": [
+        {
+            "type": "TextBlock",
+            "size": "Medium",
+            "weight": "Bolder",
+            "text": "Welcome to RnD Action Bot",
+            "style": "heading",
+            "wrap": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "Hello ${initiator}, Welcome to the bot.  Following are some of the features of the bot. Click on any of the button below to invoke any action",
+            "wrap": true
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Invoke Card Action",
+            "data": {
+                "msteams": {
+                    "type": "imBack",
+                    "value": "invokeCard"
+                }
+            }
+        }
+    ],
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.3"
+}

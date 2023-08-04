@@ -1,8 +1,9 @@
 import { DoStuffActionHandler } from "../cardActions/doStuffActionHandler";
-import { HelloWorldCommandHandler } from "../commands/helloworldCommandHandler";
+import { InvokeActionCardCommandHandler } from "../commands/invokeActioncardCommandHandler";
 import { BotBuilderCloudAdapter } from "@microsoft/teamsfx";
 import ConversationBot = BotBuilderCloudAdapter.ConversationBot;
 import config from "./config";
+import { helpCommandHandler } from "../commands/helpCommandHandler";
 
 // Create the conversation bot and register the command and card action handlers for your app.
 export const workflowApp = new ConversationBot({
@@ -15,7 +16,7 @@ export const workflowApp = new ConversationBot({
   },
   command: {
     enabled: true,
-    commands: [new HelloWorldCommandHandler()],
+    commands: [new InvokeActionCardCommandHandler(), new helpCommandHandler()],
   },
   cardAction: {
     enabled: true,
