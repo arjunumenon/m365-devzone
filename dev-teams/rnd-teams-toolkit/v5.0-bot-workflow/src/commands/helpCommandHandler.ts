@@ -1,17 +1,16 @@
-import { AdaptiveCards } from "@microsoft/adaptivecards-tools";
 import { TeamsFxBotCommandHandler } from "@microsoft/teamsfx";
-import { CardFactory, MessageFactory } from "botbuilder";
-import  helpCommandResponse  from "../adaptiveCards/helpCommandResponse.json";
+import {  MessageFactory } from "botbuilder";
+import { WelcomeCardData } from "../models/AdaptiveCardData";
+import { adaptiveCardsUtils } from "../utils/generateAdaptiveCards";
 
 export class helpCommandHandler implements TeamsFxBotCommandHandler {
     triggerPatterns = "help";
     async handleCommandReceived(context, message) {
         console.log(`Bot received message: ${message.text}`);
         // Render your adaptive card for reply message
-        const cardData = {
+        const helpCardData : WelcomeCardData = {
             initiator: context.activity.from.name,
         };
-        const cardJson = AdaptiveCards.declare(helpCommandResponse).render(cardData);
-        return MessageFactory.attachment(CardFactory.adaptiveCard(cardJson));
+        return MessageFactory.attachment(adaptiveCardsUtils.getWelcomeCard(helpCardData));
     }
 }
