@@ -19,13 +19,18 @@ export const adaptiveCardsUtils = {
      * @returns Returns the Adaptive Card for Dummy Action
      */
     getDummyActionCard(dummyActionData : DummyActionCardData) : Attachment {
-        const dummyActionCardJson = getGenericAdaptiveCard("invokeDummyActioncardCommandResponse");
+        const dummyActionCardJson = getGenericAdaptiveCard("invokeDummyActioncard");
         return getAdaptiveCard(dummyActionCardJson,dummyActionData);
     },
 
-    getDummyActionResponseCard(dummyActionData : DummyActionResponseCardData) : Attachment {
-        const dummyActionCardJson = getGenericAdaptiveCard("dummyActionResponse");
-        return getAdaptiveCard(dummyActionCardJson,dummyActionData);
+    /**
+     * 
+     * @param dummyActionResponseData Dummy Action Response Card Data Model
+     * @returns Adaptive Card for Action Response Data
+     */
+    getDummyActionResponseCard(dummyActionResponseData : DummyActionResponseCardData) : Attachment {
+        const dummyActionResponseCardJson = getGenericAdaptiveCard("dummyActionCardResponse");
+        return getAdaptiveCard(dummyActionResponseCardJson,dummyActionResponseData);
     }
 }
 /**
