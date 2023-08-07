@@ -1,5 +1,5 @@
-import { DoStuffActionHandler } from "../cardActions/doStuffActionHandler";
-import { InvokeActionCardCommandHandler } from "../commands/invokeActioncardCommandHandler";
+import { DummyActionHandler } from "../cardActions/dummyActionActionHandler";
+import { InvokeDummyActionCardCommandHandler } from "../commands/invokeDummyActionCommandHandler";
 import { BotBuilderCloudAdapter } from "@microsoft/teamsfx";
 import ConversationBot = BotBuilderCloudAdapter.ConversationBot;
 import config from "./config";
@@ -16,10 +16,10 @@ export const workflowApp = new ConversationBot({
   },
   command: {
     enabled: true,
-    commands: [new InvokeActionCardCommandHandler(), new helpCommandHandler()],
+    commands: [new InvokeDummyActionCardCommandHandler(), new helpCommandHandler()],
   },
   cardAction: {
     enabled: true,
-    actions: [new DoStuffActionHandler()],
+    actions: [new DummyActionHandler()],
   },
 });

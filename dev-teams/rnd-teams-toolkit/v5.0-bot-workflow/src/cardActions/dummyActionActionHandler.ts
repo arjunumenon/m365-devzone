@@ -1,19 +1,19 @@
 import { AdaptiveCards } from "@microsoft/adaptivecards-tools";
 import { TurnContext, InvokeResponse } from "botbuilder";
 import { TeamsFxAdaptiveCardActionHandler, InvokeResponseFactory } from "@microsoft/teamsfx";
-import responseCard from "../adaptiveCards/doStuffActionResponse.json";
+import responseCard from "../adaptiveCards/dummyActionResponse.json";
 import { CardData } from "../cardModels";
 
 /**
  * The `DoStuffActionHandler` registers an action with the `TeamsFxBotActionHandler` and responds
  * with an Adaptive Card if the user clicks the Adaptive Card action with `triggerVerb`.
  */
-export class DoStuffActionHandler implements TeamsFxAdaptiveCardActionHandler {
+export class DummyActionHandler implements TeamsFxAdaptiveCardActionHandler {
   /**
    * A global unique string associated with the `Action.Execute` action.
    * The value should be the same as the `verb` property which you define in your adaptive card JSON.
    */
-  triggerVerb = "doStuff";
+  triggerVerb = "dummyAction";
 
   async handleActionInvoked(context: TurnContext, actionData: any): Promise<InvokeResponse> {
     console.log(`Bot received action: ${this.triggerVerb}. Data: ${JSON.stringify(actionData)}`);
@@ -21,8 +21,8 @@ export class DoStuffActionHandler implements TeamsFxAdaptiveCardActionHandler {
      * You can send an adaptive card to respond to the card action invoke.
      */
     const cardData: CardData = {
-      title: "Hello World Bot",
-      body: "Congratulations! Your task is processed successfully.",
+      title: "Your action is completed Successfully!",
+      body: `Congratulations ${context.activity.from.name}! Your dummy action is processed successfully.`,
     };
 
     const cardJson = AdaptiveCards.declare(responseCard).render(cardData);

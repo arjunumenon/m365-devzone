@@ -17,8 +17,8 @@
       "actions": [
         {
           "type": "Action.Execute",
-          "verb": "doStuff",
-          "title": "DoStuff"
+          "verb": "dummyAction",
+          "title": "Dummy Action"
         }
       ]
     }

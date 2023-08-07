@@ -1,14 +1,14 @@
 import { Activity, CardFactory, MessageFactory, TurnContext } from "botbuilder";
 import { CommandMessage, TeamsFxBotCommandHandler, TriggerPatterns } from "@microsoft/teamsfx";
 import { AdaptiveCards } from "@microsoft/adaptivecards-tools";
-import actionCard from "../adaptiveCards/invokeActioncardCommandResponse.json";
+import actionCard from "../adaptiveCards/invokeDummyActioncardCommandResponse.json";
 import { CardData } from "../cardModels";
 
 /**
  * The `HelloWorldCommandHandler` registers a pattern with the `TeamsFxBotCommandHandler` and responds
  * with an Adaptive Card if the user types the `triggerPatterns`.
  */
-export class InvokeActionCardCommandHandler implements TeamsFxBotCommandHandler {
+export class InvokeDummyActionCardCommandHandler implements TeamsFxBotCommandHandler {
   triggerPatterns: TriggerPatterns = "invokeCard";
 
   async handleCommandReceived(
@@ -19,8 +19,8 @@ export class InvokeActionCardCommandHandler implements TeamsFxBotCommandHandler 
 
     // Render your adaptive card for reply message
     const cardData: CardData = {
-      title: "Your Hello World Bot is Running",
-      body: "Congratulations! Your hello world bot is running. Click the button below to trigger an action.",
+      title: "You have invoked Dummy Action Card",
+      body: `Congratulations ${context.activity.from.name} ! You have invoked dummy action card. Click the button below to trigger an action.`,
     };
 
     const cardJson = AdaptiveCards.declare(actionCard).render(cardData);
