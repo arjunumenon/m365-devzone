@@ -1,4 +1,4 @@
-import { DummyActionHandler } from "../cardActions/dummyActionActionHandler";
+import { DummyActionHandler } from "../cardActions/dummyActionHandler";
 import { InvokeDummyActionCardCommandHandler } from "../commands/invokeDummyActionCommandHandler";
 import { BotBuilderCloudAdapter } from "@microsoft/teamsfx";
 import ConversationBot = BotBuilderCloudAdapter.ConversationBot;

@@ -11,3 +11,13 @@ export interface GenericAdaptiveCards {
 export interface WelcomeCardData {
     initiator: string;
 }
+
+export interface DummyActionCardData{
+    title: string;
+    body: string;
+}
+
+export interface DummyActionResponseCardData{
+    title: string;
+    body: string;
+}

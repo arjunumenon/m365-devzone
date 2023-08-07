@@ -1,8 +1,7 @@
-import { AdaptiveCards } from "@microsoft/adaptivecards-tools";
 import { TurnContext, InvokeResponse } from "botbuilder";
 import { TeamsFxAdaptiveCardActionHandler, InvokeResponseFactory } from "@microsoft/teamsfx";
-import responseCard from "../adaptiveCards/dummyActionResponse.json";
-import { CardData } from "../cardModels";
+import { DummyActionCardData, DummyActionResponseCardData } from "../models/AdaptiveCardData";
+import { adaptiveCardsUtils } from "../utils/generateAdaptiveCards";
 
 /**
  * The `DoStuffActionHandler` registers an action with the `TeamsFxBotActionHandler` and responds
@@ -20,13 +19,12 @@ export class DummyActionHandler implements TeamsFxAdaptiveCardActionHandler {
     /**
      * You can send an adaptive card to respond to the card action invoke.
      */
-    const cardData: CardData = {
+    const actionResponseCardData: DummyActionResponseCardData = {
       title: "Your action is completed Successfully!",
       body: `Congratulations ${context.activity.from.name}! Your dummy action is processed successfully.`,
     };
 
-    const cardJson = AdaptiveCards.declare(responseCard).render(cardData);
-    return InvokeResponseFactory.adaptiveCard(cardJson);
+    return InvokeResponseFactory.adaptiveCard(adaptiveCardsUtils.getDummyActionResponseCard(actionResponseCardData));
 
     /**
      * If you want to send invoke response with text message, you can:
