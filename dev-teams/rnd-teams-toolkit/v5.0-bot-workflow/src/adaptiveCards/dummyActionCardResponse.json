@@ -8,8 +8,7 @@
       "text": "✅[ACK] ${title}"
     },
     {
-      "type": "TextBlock",
-      
+      "type": "TextBlock",      
       "text": "${body}",
       "wrap": true
     }
