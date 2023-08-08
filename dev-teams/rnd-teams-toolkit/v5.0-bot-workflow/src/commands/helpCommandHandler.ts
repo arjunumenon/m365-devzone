@@ -1,7 +1,5 @@
 import { TeamsFxBotCommandHandler } from "@microsoft/teamsfx";
 import { MessageFactory } from "botbuilder";
-import { WelcomeCardData } from "../models/AdaptiveCardData";
-import { adaptiveCardsUtils } from "../utils/generateAdaptiveCards";
 import { welcomeCardUtils } from "../utils/commonUtils";
 
 export class helpCommandHandler implements TeamsFxBotCommandHandler {

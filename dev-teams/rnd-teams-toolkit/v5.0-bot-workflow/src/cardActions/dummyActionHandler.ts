@@ -24,7 +24,8 @@ export class DummyActionHandler implements TeamsFxAdaptiveCardActionHandler {
       body: `Congratulations ${context.activity.from.name}! Your dummy action is processed successfully.`,
     };
 
-    return InvokeResponseFactory.adaptiveCard(adaptiveCardsUtils.getDummyActionResponseCard(actionResponseCardData));
+    //Should be returned as IAttachment and not as generic Attachment which you return otherwise for normal Commands
+    return InvokeResponseFactory.adaptiveCard(adaptiveCardsUtils.getDummyActionCardResponse(actionResponseCardData));
 
     /**
      * If you want to send invoke response with text message, you can:

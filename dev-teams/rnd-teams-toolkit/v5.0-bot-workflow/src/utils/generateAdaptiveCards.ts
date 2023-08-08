@@ -10,7 +10,7 @@ export const adaptiveCardsUtils = {
      */
     getWelcomeCard(welcomeCardData : WelcomeCardData) : Attachment {
         const helpCommandJson =  getGenericAdaptiveCard("helpCommandResponse");
-        return getAdaptiveCard(helpCommandJson,welcomeCardData);
+        return getAdaptiveCardAsAttachment(helpCommandJson,welcomeCardData);
     },
 
     /**
@@ -19,8 +19,8 @@ export const adaptiveCardsUtils = {
      * @returns Returns the Adaptive Card for Dummy Action
      */
     getDummyActionCard(dummyActionData : DummyActionCardData) : Attachment {
-        const dummyActionCardJson = getGenericAdaptiveCard("invokeDummyActioncard");
-        return getAdaptiveCard(dummyActionCardJson,dummyActionData);
+        const dummyActionCardJson = getGenericAdaptiveCard("dummyActionCard");
+        return getAdaptiveCardAsAttachment(dummyActionCardJson,dummyActionData);
     },
 
     /**
@@ -28,9 +28,10 @@ export const adaptiveCardsUtils = {
      * @param dummyActionResponseData Dummy Action Response Card Data Model
      * @returns Adaptive Card for Action Response Data
      */
-    getDummyActionResponseCard(dummyActionResponseData : DummyActionResponseCardData) : Attachment {
+    getDummyActionCardResponse(dummyActionResponseData : DummyActionResponseCardData) : any {
         const dummyActionResponseCardJson = getGenericAdaptiveCard("dummyActionCardResponse");
-        return getAdaptiveCard(dummyActionResponseCardJson,dummyActionResponseData);
+        //
+        return getAdaptiveCardAsIAttachment(dummyActionResponseCardJson,dummyActionResponseData);
     }
 }
 /**
@@ -42,13 +43,18 @@ function getGenericAdaptiveCard(cardFileName : string) : GenericAdaptiveCards {
     const cardJson : GenericAdaptiveCards = require(`../adaptiveCards/${cardFileName}.json`);
     return cardJson;
 }
+
+function getAdaptiveCardAsIAttachment(responseCard : GenericAdaptiveCards, cardData? : WelcomeCardData | DummyActionCardData| DummyActionResponseCardData) : any {
+    return AdaptiveCards.declare(responseCard).render(cardData);
+}
+
 /**
  * 
  * @param responseCard Response Card which has to be generated
  * @param cardData Card Data Model
  * @returns Adaptive Card which can be returned via Partial Activity
  */
-function getAdaptiveCard(responseCard : GenericAdaptiveCards, cardData? : WelcomeCardData | DummyActionCardData| DummyActionResponseCardData) : Attachment {
-    const cardJson = AdaptiveCards.declare(responseCard).render(cardData);
+function getAdaptiveCardAsAttachment(responseCard : GenericAdaptiveCards, cardData? : WelcomeCardData | DummyActionCardData| DummyActionResponseCardData) : Attachment {
+    const cardJson = getAdaptiveCardAsIAttachment(responseCard,cardData);
     return CardFactory.adaptiveCard(cardJson);
 }
