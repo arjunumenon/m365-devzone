@@ -8,9 +8,9 @@ export const adaptiveCardsUtils = {
      * @param welcomeCardData Welcome Card Data Model
      * @returns Get the Help / Welcome Card
      */
-    getWelcomeCard(welcomeCardData : WelcomeCardData) : Attachment {
-        const helpCommandJson =  getGenericAdaptiveCard("helpCommandResponse");
-        return getAdaptiveCardAsAttachment(helpCommandJson,welcomeCardData);
+    getWelcomeCard(welcomeCardData: WelcomeCardData): Attachment {
+        const helpCommandJson = getGenericAdaptiveCard("helpCommandResponse");
+        return getAdaptiveCard(helpCommandJson, welcomeCardData);
     },
 
     /**
@@ -18,9 +18,9 @@ export const adaptiveCardsUtils = {
      * @param dummyActionData Dummy Action Card Data Model
      * @returns Returns the Adaptive Card for Dummy Action
      */
-    getDummyActionCard(dummyActionData : DummyActionCardData) : Attachment {
+    getDummyActionCard(dummyActionData: DummyActionCardData): Attachment {
         const dummyActionCardJson = getGenericAdaptiveCard("dummyActionCard");
-        return getAdaptiveCardAsAttachment(dummyActionCardJson,dummyActionData);
+        return getAdaptiveCard(dummyActionCardJson, dummyActionData);
     },
 
     /**
@@ -28,10 +28,10 @@ export const adaptiveCardsUtils = {
      * @param dummyActionResponseData Dummy Action Response Card Data Model
      * @returns Adaptive Card for Action Response Data
      */
-    getDummyActionCardResponse(dummyActionResponseData : DummyActionResponseCardData) : any {
+    getDummyActionCardResponse(dummyActionResponseData: DummyActionResponseCardData): any {
         const dummyActionResponseCardJson = getGenericAdaptiveCard("dummyActionCardResponse");
-        //
-        return getAdaptiveCardAsIAttachment(dummyActionResponseCardJson,dummyActionResponseData);
+        //Since we are returning the Adaptive Card as IAdaptiveCard, we need to pass the last parameter as true. Card Action Response only supports IAdaptiveCard
+        return getAdaptiveCard(dummyActionResponseCardJson, dummyActionResponseData, true);
     }
 }
 /**
@@ -39,22 +39,19 @@ export const adaptiveCardsUtils = {
  * @param cardFileName Name of the Adaptive Card JSON file
  * @returns Returns the Adaptive Card JSON
  */
-function getGenericAdaptiveCard(cardFileName : string) : GenericAdaptiveCards {
-    const cardJson : GenericAdaptiveCards = require(`../adaptiveCards/${cardFileName}.json`);
+function getGenericAdaptiveCard(cardFileName: string): GenericAdaptiveCards {
+    const cardJson: GenericAdaptiveCards = require(`../adaptiveCards/${cardFileName}.json`);
     return cardJson;
-}
-
-function getAdaptiveCardAsIAttachment(responseCard : GenericAdaptiveCards, cardData? : WelcomeCardData | DummyActionCardData| DummyActionResponseCardData) : any {
-    return AdaptiveCards.declare(responseCard).render(cardData);
 }
 
 /**
  * 
  * @param responseCard Response Card which has to be generated
  * @param cardData Card Data Model
+ * @param getInIAdaptiveCard If true, returns the Adaptive Card as IAdaptiveCard. Otherwise, returns as Attachment
  * @returns Adaptive Card which can be returned via Partial Activity
  */
-function getAdaptiveCardAsAttachment(responseCard : GenericAdaptiveCards, cardData? : WelcomeCardData | DummyActionCardData| DummyActionResponseCardData) : Attachment {
-    const cardJson = getAdaptiveCardAsIAttachment(responseCard,cardData);
-    return CardFactory.adaptiveCard(cardJson);
+function getAdaptiveCard(responseCard: GenericAdaptiveCards, cardData?: WelcomeCardData | DummyActionCardData | DummyActionResponseCardData, getInIAdaptiveCard: boolean = false): Attachment | any {
+    const cardIAdaptiveCard = AdaptiveCards.declare(responseCard).render(cardData);
+    return getInIAdaptiveCard ? cardIAdaptiveCard : CardFactory.adaptiveCard(cardIAdaptiveCard);
 }
