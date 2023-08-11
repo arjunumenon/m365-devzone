@@ -18,6 +18,11 @@ param botDisplayName string
 param serverfarmsName string = resourceBaseName
 param webAppName string = resourceBaseName
 param location string = resourceGroup().location
+param aadAppClientId string
+param aadAppTenantId string
+param aadAppOauthAuthorityHost string
+@secure()
+param aadAppClientSecret string
 
 // Compute resources for your Web App
 resource serverfarm 'Microsoft.Web/serverfarms@2021-02-01' = {
@@ -41,28 +46,36 @@ resource webApp 'Microsoft.Web/sites@2021-02-01' = {
       alwaysOn: true
       appSettings: [
         {
-          name: 'WEBSITE_RUN_FROM_PACKAGE'
-          value: '1' // Run Azure APP Service from a package file
-        }
-        {
           name: 'WEBSITE_NODE_DEFAULT_VERSION'
           value: '~18' // Set NodeJS version to 18.x for your site
+        }
+        {
+          name: 'WEBSITE_RUN_FROM_PACKAGE'
+          value: '1'
         }
         {
           name: 'RUNNING_ON_AZURE'
           value: '1'
         }
-        {
-          name: 'BOT_ID'
-          value: botAadAppClientId
-        }
-        {
-          name: 'BOT_PASSWORD'
-          value: botAadAppClientSecret
-        }
       ]
       ftpsState: 'FtpsOnly'
     }
+  }
+}
+
+resource webAppSettings 'Microsoft.Web/sites/config@2021-02-01' = {
+  name: '${webAppName}/appsettings'
+  properties: {
+    WEBSITE_NODE_DEFAULT_VERSION: '~18'
+    WEBSITE_RUN_FROM_PACKAGE: '1'
+    BOT_ID: botAadAppClientId
+    BOT_PASSWORD: botAadAppClientSecret
+    BOT_DOMAIN: webApp.properties.defaultHostName
+    AAD_APP_CLIENT_ID: aadAppClientId
+    AAD_APP_CLIENT_SECRET: aadAppClientSecret
+    AAD_APP_TENANT_ID: aadAppTenantId
+    AAD_APP_OAUTH_AUTHORITY_HOST: aadAppOauthAuthorityHost
+    RUNNING_ON_AZURE: '1'
   }
 }
 

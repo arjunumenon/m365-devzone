@@ -4,6 +4,7 @@ import { BotBuilderCloudAdapter } from "@microsoft/teamsfx";
 import ConversationBot = BotBuilderCloudAdapter.ConversationBot;
 import config from "./config";
 import { helpCommandHandler } from "../commands/helpCommandHandler";
+import { ShowProfilePhoto } from "../commands/showProfilePhotoCommandHandler";
 
 // Create the conversation bot and register the command and card action handlers for your app.
 export const workflowApp = new ConversationBot({
@@ -14,9 +15,15 @@ export const workflowApp = new ConversationBot({
     MicrosoftAppPassword: config.botPassword,
     MicrosoftAppType: "MultiTenant",
   },
+  ssoConfig: {
+    aad :{
+      scopes:["User.Read"],
+    },
+  },
   command: {
     enabled: true,
     commands: [new InvokeDummyActionCardCommandHandler(), new helpCommandHandler()],
+    ssoCommands: [new ShowProfilePhoto()],
   },
   cardAction: {
     enabled: true,
