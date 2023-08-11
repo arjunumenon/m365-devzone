@@ -1,11 +1,11 @@
 {
-    "name": "TeamsToolkitRnD-CardActions",
+    "name": "TeamsToolkitRnD-CompleteFeatures",
     "version": "1.0.0",
-    "description": "Rnd Bot to learn the Card Actions and all the custom features",
+    "description": "Teams Toolkit Project to learn the complete Features available as Teams App",
     "engines": {
         "node": "16 || 18"
     },
-    "author": "Microsoft",
+    "author": "Arjun Menon",
     "license": "MIT",
     "main": "./src/index.js",
     "scripts": {
