@@ -18,6 +18,12 @@ param botDisplayName string
 param serverfarmsName string = resourceBaseName
 param webAppName string = resourceBaseName
 param location string = resourceGroup().location
+param m365ClientId string
+param m365TenantId string
+param m365OauthAuthorityHost string
+param m365ApplicationIdUri string = 'api://botid-${botAadAppClientId}'
+@secure()
+param m365ClientSecret string
 
 // Compute resources for your Web App
 resource serverfarm 'Microsoft.Web/serverfarms@2021-02-01' = {
@@ -41,28 +47,37 @@ resource webApp 'Microsoft.Web/sites@2021-02-01' = {
       alwaysOn: true
       appSettings: [
         {
-          name: 'WEBSITE_RUN_FROM_PACKAGE'
-          value: '1' // Run Azure APP Service from a package file
-        }
-        {
           name: 'WEBSITE_NODE_DEFAULT_VERSION'
           value: '~18' // Set NodeJS version to 18.x for your site
+        }
+        {
+          name: 'WEBSITE_RUN_FROM_PACKAGE'
+          value: '1'
         }
         {
           name: 'RUNNING_ON_AZURE'
           value: '1'
         }
-        {
-          name: 'BOT_ID'
-          value: botAadAppClientId
-        }
-        {
-          name: 'BOT_PASSWORD'
-          value: botAadAppClientSecret
-        }
       ]
       ftpsState: 'FtpsOnly'
     }
+  }
+}
+
+resource webAppSettings 'Microsoft.Web/sites/config@2021-02-01' = {
+  name: '${webAppName}/appsettings'
+  properties: {
+    WEBSITE_NODE_DEFAULT_VERSION: '~18'
+    WEBSITE_RUN_FROM_PACKAGE: '1'
+    BOT_ID: botAadAppClientId
+    BOT_PASSWORD: botAadAppClientSecret
+    BOT_DOMAIN: webApp.properties.defaultHostName
+    M365_CLIENT_ID: m365ClientId
+    M365_CLIENT_SECRET: m365ClientSecret
+    INITIATE_LOGIN_ENDPOINT: uri('https://${webApp.properties.defaultHostName}', 'auth-start.html')
+    M365_TENANT_ID: m365TenantId
+    M365_AUTHORITY_HOST: m365OauthAuthorityHost
+    RUNNING_ON_AZURE: '1'
   }
 }
 

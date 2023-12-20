@@ -1,6 +1,8 @@
 import * as restify from "restify";
 import { workflowApp } from "./internal/initialize";
 import { TeamsBot } from "./teamsBot";
+import "isomorphic-fetch";
+import * as path from "path";
 
 // This template uses `restify` to serve HTTP responses.
 // Create a restify server.
@@ -17,8 +19,22 @@ server.listen(process.env.port || process.env.PORT || 3978, () => {
 // Bot Framework endpoint. If you customize this route, update the Bot registration
 // in `/templates/provision/bot.bicep`.
 const teamsBot = new TeamsBot();
+
 server.post("/api/messages", async (req, res) => {
   await workflowApp.requestHandler(req, res, async (context) => {
     await teamsBot.run(context);
+  }).catch((err) => {
+    // Error message including "412" means it is waiting for user's consent, which is a normal process of SSO, sholdn't throw this error.
+    if (!err.message.includes("412")) {
+      throw err;
+    }
   });
 });
+
+
+server.get(
+  "/auth-:name(start|end).html",
+  restify.plugins.serveStatic({
+    directory: path.join(__dirname, "auth-sso"),
+  })
+);
