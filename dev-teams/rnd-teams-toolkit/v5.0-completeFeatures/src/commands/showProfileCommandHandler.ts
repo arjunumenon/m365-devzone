@@ -6,6 +6,8 @@ import {
     TeamsBotSsoPromptTokenResponse,
     OnBehalfOfUserCredential,
     OnBehalfOfCredentialAuthConfig,
+    createApiClient,
+    BearerTokenAuthProvider,
 } from "@microsoft/teamsfx";
 import { Client } from "@microsoft/microsoft-graph-client";
 import { TokenCredentialAuthenticationProvider } from "@microsoft/microsoft-graph-client/authProviders/azureTokenCredentials";
@@ -42,6 +44,8 @@ export class ShowProfile implements TeamsFxBotSsoCommandHandler {
             authProvider: authProvider,
         });
 
+        await getProfileFromAzureFunction(tokenResponse.ssoToken);
+
         // Call graph api use `graph` instance to get user profile information
         const me = await graphClient.api("/me").get();
 
@@ -53,4 +57,16 @@ export class ShowProfile implements TeamsFxBotSsoCommandHandler {
         }
 
     }
+}
+
+async function getProfileFromAzureFunction(ssoToken: string): Promise<void> {
+    const functionName = process.env.REACT_APP_FUNC_NAME;
+    const functionEndpoint = process.env.REACT_APP_FUNC_ENDPOINT;
+
+    const apiClient = createApiClient(
+        `${functionEndpoint}/api/`,
+        new BearerTokenAuthProvider(async () => (ssoToken)));
+    const response = await apiClient.get(`getUserProfile`);
+
+    console.log(response);
 }
