@@ -18,11 +18,12 @@ param botDisplayName string
 param serverfarmsName string = resourceBaseName
 param webAppName string = resourceBaseName
 param location string = resourceGroup().location
-param aadAppClientId string
-param aadAppTenantId string
-param aadAppOauthAuthorityHost string
+param m365ClientId string
+param m365TenantId string
+param m365OauthAuthorityHost string
+param m365ApplicationIdUri string = 'api://botid-${botAadAppClientId}'
 @secure()
-param aadAppClientSecret string
+param m365ClientSecret string
 
 // Compute resources for your Web App
 resource serverfarm 'Microsoft.Web/serverfarms@2021-02-01' = {
@@ -71,10 +72,11 @@ resource webAppSettings 'Microsoft.Web/sites/config@2021-02-01' = {
     BOT_ID: botAadAppClientId
     BOT_PASSWORD: botAadAppClientSecret
     BOT_DOMAIN: webApp.properties.defaultHostName
-    AAD_APP_CLIENT_ID: aadAppClientId
-    AAD_APP_CLIENT_SECRET: aadAppClientSecret
-    AAD_APP_TENANT_ID: aadAppTenantId
-    AAD_APP_OAUTH_AUTHORITY_HOST: aadAppOauthAuthorityHost
+    M365_CLIENT_ID: m365ClientId
+    M365_CLIENT_SECRET: m365ClientSecret
+    INITIATE_LOGIN_ENDPOINT: uri('https://${webApp.properties.defaultHostName}', 'auth-start.html')
+    M365_TENANT_ID: m365TenantId
+    M365_AUTHORITY_HOST: m365OauthAuthorityHost
     RUNNING_ON_AZURE: '1'
   }
 }
