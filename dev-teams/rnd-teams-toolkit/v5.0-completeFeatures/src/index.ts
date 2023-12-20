@@ -35,6 +35,6 @@ server.post("/api/messages", async (req, res) => {
 server.get(
   "/auth-:name(start|end).html",
   restify.plugins.serveStatic({
-    directory: path.join(__dirname, "public"),
+    directory: path.join(__dirname, "auth-sso"),
   })
 );

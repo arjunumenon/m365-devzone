@@ -18,8 +18,8 @@ const oboAuthConfig: OnBehalfOfCredentialAuthConfig = {
     clientSecret: process.env.M365_CLIENT_SECRET,
 };
 
-export class ShowProfilePhoto implements TeamsFxBotSsoCommandHandler {
-    triggerPatterns = "showPhoto";
+export class ShowProfile implements TeamsFxBotSsoCommandHandler {
+    triggerPatterns = "showProfile";
     async handleCommandReceived(
         context: TurnContext,
         message: CommandMessage,
