@@ -16,6 +16,50 @@
             "dependsOrder": "sequence"
         },
         {
+            "label": "Start backend",
+            "type": "shell",
+            "command": "npm run dev:teamsfx",
+            "isBackground": true,
+            "options": {
+                "cwd": "${workspaceFolder}/api",
+                "env": {
+                    "PATH": "${workspaceFolder}/devTools/func:${env:PATH}"
+                }
+            },
+            "problemMatcher": {
+                "pattern": {
+                    "regexp": "^.*$",
+                    "file": 0,
+                    "location": 1,
+                    "message": 2
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "^.*(Job host stopped|signaling restart).*$",
+                    "endsPattern": "^.*(Worker process started and initialized|Host lock lease acquired by instance ID).*$"
+                }
+            },
+            "presentation": {
+                "reveal": "silent"
+            },
+            "dependsOn": [
+                "Watch backend"
+            ]
+        },
+        {
+            "label": "Watch backend",
+            "type": "shell",
+            "command": "npm run watch",
+            "isBackground": true,
+            "options": {
+                "cwd": "${workspaceFolder}/api"
+            },
+            "problemMatcher": "$tsc-watch",
+            "presentation": {
+                "reveal": "silent"
+            }
+        },
+        {
             // Check all required prerequisites.
             // See https://aka.ms/teamsfx-tasks/check-prerequisites to know the details and how to customize the args.
             "label": "Validate prerequisites",
@@ -82,6 +126,10 @@
             "type": "shell",
             "command": "npm run dev:teamsfx",
             "isBackground": true,
+            "dependsOn": [
+                "Start frontend",
+                "Start backend"
+            ],
             "options": {
                 "cwd": "${workspaceFolder}"
             },
