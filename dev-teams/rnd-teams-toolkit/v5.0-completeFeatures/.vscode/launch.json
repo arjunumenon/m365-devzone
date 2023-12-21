@@ -95,7 +95,8 @@
             "name": "Debug (Edge)",
             "configurations": [
                 "Launch App (Edge)",
-                "Attach to Local Service"
+                "Attach to Local Service",
+                "Attach to Backend"
             ],
             "preLaunchTask": "Start Teams App Locally",
             "presentation": {
