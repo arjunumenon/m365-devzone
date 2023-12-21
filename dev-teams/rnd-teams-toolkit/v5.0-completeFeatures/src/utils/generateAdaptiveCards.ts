@@ -9,7 +9,7 @@ export const adaptiveCardsUtils = {
      * @returns Get the Help / Welcome Card
      */
     getWelcomeCard(welcomeCardData: WelcomeCardData): Attachment {
-        const helpCommandJson = getGenericAdaptiveCard("helpCommandResponse");
+        const helpCommandJson = getGenericAdaptiveCard("welcome");
         return getAdaptiveCard(helpCommandJson, welcomeCardData);
     },
 
