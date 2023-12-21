@@ -4,7 +4,7 @@ import { Client } from "@microsoft/microsoft-graph-client";
 import { TokenCredentialAuthenticationProvider } from "@microsoft/microsoft-graph-client/authProviders/azureTokenCredentials";
 import { oboAuthConfig } from "../models/authModel";
 
-export async function getUserProfile(accessToken: string): Promise<any> {
+export async function getCompleteUserProfile(accessToken: string): Promise<any> {
     // Init OnBehalfOfUserCredential instance with SSO token
     const oboCredential = new OnBehalfOfUserCredential(accessToken, oboAuthConfig);
 
