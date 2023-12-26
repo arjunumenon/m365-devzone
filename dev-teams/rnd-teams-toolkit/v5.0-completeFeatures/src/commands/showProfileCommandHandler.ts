@@ -1,7 +1,6 @@
 import { Activity, TurnContext } from "botbuilder";
 import {
     CommandMessage,
-    TriggerPatterns,
     TeamsFxBotSsoCommandHandler,
     TeamsBotSsoPromptTokenResponse,
     OnBehalfOfUserCredential,
@@ -63,10 +62,14 @@ async function getProfileFromAzureFunction(ssoToken: string): Promise<void> {
     const functionName = process.env.REACT_APP_FUNC_NAME;
     const functionEndpoint = process.env.REACT_APP_FUNC_ENDPOINT;
 
-    const apiClient = createApiClient(
-        `${functionEndpoint}/api/`,
-        new BearerTokenAuthProvider(async () => (ssoToken)));
-    const response = await apiClient.get(`getUserProfile`);
+    const apiClient = createApiClient(`${functionEndpoint}/api/`, new BearerTokenAuthProvider(async () => (ssoToken)));
+    let responseAPI = null;
 
-    console.log(response);
+    try {
+        responseAPI = await apiClient.post(`${functionName}`);
+    } catch (error) {
+        console.log(error);
+    }
+
+    console.log(responseAPI);
 }
